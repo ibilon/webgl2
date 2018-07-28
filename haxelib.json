@@ -1,0 +1,10 @@
+{
+	"name": "webgl2",
+	"url" : "https://github.com/ibilon/webgl2/",
+	"license": "MIT",
+	"tags": ["webgl", "webgl2", "js"],
+	"description": "WebGL 2 externs",
+	"version": "1.0.0",
+	"releasenote": "Initial release",
+	"contributors": ["_ibilon"]
+}

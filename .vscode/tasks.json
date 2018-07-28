@@ -1,0 +1,56 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "checkstyle",
+			"command": "haxelib",
+			"args": [
+				"run",
+				"checkstyle",
+				"-s",
+				"js/webgl2"
+			],
+			"problemMatcher": [
+				"$haxe-absolute",
+				"$haxe",
+				"$haxe-error",
+				"$haxe-trace"
+			]
+		},
+		{
+			"label": "documentation",
+			"command": "haxelib",
+			"args": [
+				"run",
+				"dox",
+				"-i",
+				"webgl2.xml",
+				"-o",
+				"documentation/",
+				"-in",
+				"js.webgl2",
+				"--title",
+				"WebGL 2 API documentation"
+			],
+			"dependsOn": "test",
+			"problemMatcher": []
+		},
+		{
+			"label": "test",
+			"type": "hxml",
+			"file": "test.hxml",
+			"problemMatcher": [
+				"$haxe-absolute",
+				"$haxe",
+				"$haxe-error",
+				"$haxe-trace"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

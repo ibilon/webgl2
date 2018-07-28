@@ -1,0 +1,5 @@
+Return from RenderingContext2.clientWaitSync
+    gl.ALREADY_SIGNALED
+    gl.TIMEOUT_EXPIRED
+    gl.CONDITION_SATISFIED
+    gl.WAIT_FAILED

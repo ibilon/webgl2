@@ -1,0 +1,5 @@
+--macro include("js.webgl2")
+--macro include("tests")
+-js dummy.js
+--no-output
+-xml webgl2.xml
