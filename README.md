@@ -6,11 +6,13 @@ Haxe WebGL 1 and 2 externs.
 
 ## Differences with raw js webgl
 
-Constants in `RenderingContext` and `RenderingContext2` don't have the Int type, but a more restrictive from `js.webgl2.constants.*` to prevent at compile time the `INVALID_ENUM` errors.
+Constants in `RenderingContext` and `RenderingContext2` don't have the Int type, but a more restrictive type from `js.webgl2.constants.*` to prevent at compile time most of the `INVALID_ENUM` errors.
 
 Some functions have type safe helpers when the return type depends on a parameter value.
 * `gl.getBufferParameter(target, gl.BUFFER_SIZE) : Any` => `gl.getBufferSize(target) : Int`
 * `gl.getBufferParameter(target, gl.BUFFER_USAGE) : Any` => `gl.getBufferUsage(target) : BufferDrawHint`
+
+This is done by adding a global `using js.webgl2.Helpers`, which can be disabled by adding the define `-D webgl2_no_helper`.
 
 ## License
 

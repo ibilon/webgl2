@@ -1,6 +1,6 @@
 package js.webgl2;
 
-
+import js.html.ArrayBuffer;
 import js.html.ArrayBufferView;
 import js.html.CanvasElement;
 import js.html.Float32Array;
@@ -910,7 +910,48 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.getRenderbufferParameter`
 	**/
-	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:UInt, filter:GLenum) : Void;
+	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:GLenum, filter:GLenum) : Void;
+
+	/**
+	Initialize and create the buffer object's data store.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferData>.
+
+	@param target The binding point.
+	@param size The size of the buffer object's data store.
+	@param srcData The typed array types that will be copied into the data store. If null, a data store is still created, but the content is uninitialized and undefined.
+	@param usage The hint specifying the usage pattern of the data store.
+	@param srcOffset The element index offset where to start reading the buffer.
+	@param length Default to 0.
+
+	@throws OUT_OF_MEMORY If the context is unable to create a data store with the given size.
+
+	@see `RenderingContext.bindBuffer`
+	@see `RenderingContext.bufferSubData`
+	@see `RenderingContext.createBuffer`
+	**/
+	@:overload(function (target:GLenum, srcData:ArrayBufferView, usage:GLenum, srcOffset:Int, length:Int = 0) : Void {})
+	override public function bufferData (target:GLenum, srcData:ArrayBufferView, usage:GLenum) : Void;
+
+	/**
+	Updates a subset of a buffer object's data store.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferSubData>.
+
+	@param target The binding point (target).
+	@param offset The element index offset where to start reading the buffer.
+	@param srcData The typed array types that will be copied into the data store.
+	@param dstByteOffset The offset in bytes where the data replacement will start.
+	@param length Default to 0.
+
+	@throws INVALID_VALUE If the data would be written past the end of the buffer or if srcData is null.
+
+	@see `RenderingContext.bindBuffer`
+	@see `RenderingContext.bufferData`
+	@see `RenderingContext.createBuffer`
+	**/
+	@:overload(function (target:GLenum, dstByteOffset:Int, srcData:ArrayBufferView, offset:UInt, length:UInt = 0) : Void {})
+	override public function bufferSubData (target:GLenum, offset:UInt, srcData:ArrayBuffer) : Void;
 
 	/**
 	Clear buffer from the currently bound framebuffer.
@@ -994,7 +1035,85 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.createSync`
 	**/
-	public function clientWaitSync (sync:Sync, flags:UInt, timeout:Int) : GLenum; //TODO return type
+	public function clientWaitSync (sync:Sync, flags:GLenum, timeout:Int) : GLenum; //TODO return type
+
+	/**
+	Specify a two-dimensional texture image in a compressed format.
+
+	Compressed image formats must be enabled by WebGL extensions before using these methods.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/compressedTexImage2D>.
+
+	@param target The binding point of the active texture.
+	@param internalformat The compressed image format. Compressed image formats must be enabled by WebGL extensions before using this method.
+	@param width The width of the texture.
+	@param height The height of the texture.
+	@param border The width of the border. Must be 0.
+	@param pixels The data store for the compressed image data in memory.
+	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
+	@param imageSize The number of bytes to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param offset The offset in bytes from which to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param srcOffset The offset from which to read from `pixels`.
+	@param srcLengthOverride The length of `pixels`.
+
+	@see `RenderingContext.getExtension`
+	@see `RenderingContext.compressTexSubImage2D`
+	**/
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, imageSize:Int, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	public function compressedTexImage2D (target:GLenum, internalformat:GLenum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
+
+	/**
+	Specify a three-dimensional texture image in a compressed format.
+
+	Compressed image formats must be enabled by WebGL extensions before using these methods.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/compressedTexImage2D>.
+
+	@param target The binding point of the active texture.
+	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
+	@param internalformat The compressed image format. Compressed image formats must be enabled by WebGL extensions before using this method.
+	@param width The width of the texture.
+	@param height The height of the texture.
+	@param depth The depth of the texture/the number of textures in a `TEXTURE_2D_ARRAY`.
+	@param border The width of the border. Must be 0.
+	@param imageSize The number of bytes to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param offset The offset in bytes from which to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param pixels The data store for the compressed image data in memory.
+	@param srcOffset The offset from which to read from `pixels`.
+	@param srcLengthOverride The length of `pixels`.
+
+	@see `RenderingContext.getExtension`
+	**/
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	public function compressedTexImage3D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, imageSize:Int, offset:Int) : Void;
+
+	/**
+	Specify a two-dimensional sub-rectangle for a texture image in a compressed format.
+
+	Compressed image formats must be enabled by WebGL extensions before using this method.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D>.
+
+	@param target The binding point of the active compressed texture.
+	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
+	@param xoffset The horizontal offset within the compressed texture image.
+	@param yoffset The vertical offset within the compressed texture image.
+	@param width The width of the compressed texture.
+	@param height The height of the compressed texture.
+	@param format The compressed image format.
+	@param pixels The data store for the compressed image data in memory.
+	@param imageSize The number of bytes to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param offset The offset in bytes from which to read from the buffer bound to `PIXEL_UNPACK_BUFFER`.
+	@param srcOffset The offset from which to read from `pixels`.
+	@param srcLengthOverride The length of `pixels`.
+
+	@see `RenderingContext.getExtension`
+	@see `RenderingContext.compressTexImage2D`
+	**/
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, imageSize:Int, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	override public function compressedTexSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional sub-rectangle for a texture image in a compressed format.
@@ -1510,6 +1629,28 @@ extern class RenderingContext2 extends RenderingContext
 	public function readBuffer (src:GLenum) : Void;
 
 	/**
+	Read a block of pixels from a specified rectangle of the current color framebuffer into an `ArrayBufferView` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/readPixels>.
+
+	@param x The first horizontal pixel that is read from the lower left corner of a rectangular block of pixels.
+	@param y The first vertical pixel that is read from the lower left corner of a rectangular block of pixels.
+	@param width The width of the rectangle.
+	@param height The height of the rectangle.
+	@param format The format of the pixel data.
+	@param type The data type of the pixel data.
+	@param pixels An ArrayBufferView object to read data into. The array type must match the type of the type parameter: `Uint8Array` for `UNSIGNED_BYTE`; `Uint16Array` for `UNSIGNED_SHORT_5_6_5`, `UNSIGNED_SHORT_4_4_4_4`, or `UNSIGNED_SHORT_5_5_5_1`; `Float32Array` for `FLOAT`.
+	@param dstOffset Offset. Defaults to 0.
+
+	@throws INVALID_OPERATION If `type` is `UNSIGNED_SHORT_5_6_5` or `UNSIGNED_SHORT_4_4_4_4` and format is not `RGB`.
+	@throws INVALID_OPERATION If `type` does not match the typed array type of pixels.
+	@throws INVALID_FRAMEBUFFER_OPERATION If the currently bound framebuffer is not framebuffer complete.
+	**/
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, dstOffset:UInt) : Void {})
+	override public function readPixels (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+
+	/**
 	Create and initialize a renderbuffer object's data store and allows specifying a number of samples to be used.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample>.
@@ -1554,6 +1695,34 @@ extern class RenderingContext2 extends RenderingContext
 	@param param The value to set.
 	**/
 	public function samplerParameteri (sampler:Sampler, pname:GLenum, param:Int) : Void;
+
+	/**
+	Specify a two-dimensional texture image.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D>.
+
+	@param target The binding point (target) of the active texture.
+	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
+	@param internalformat The color components in the texture.
+	@param width The width of the texture.
+	@param height The height of the texture.
+	@param border The width of the border. Must be 0.
+	@param format The format of the texel data. See <https://www.khronos.org/registry/webgl/specs/latest/2.0/#TEXTURE_TYPES_FORMATS_FROM_DOM_ELEMENTS_TABLE> for the possible combinations.
+	@param type The data type of the texel data.
+	@param pixels The pixel source for the texture.
+	@param offset The byte offset into the `Buffer`'s data store. Used to upload data to the currently bound `Texture` from the `Buffer` bound to the `PIXEL_UNPACK_BUFFER` target.
+
+	@see `RenderingContext.createTexture`
+	@see `RenderingContext.texSubImage2D`
+	**/
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, srcOffset:Int) : Void {})
+	override public function texImage2D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional texture image.
@@ -1618,6 +1787,34 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.texStorage2D`
 	**/
 	public function texStorage3D (target:GLenum, levels:Int, internalformat:GLenum, width:Int, height:Int, depth:Int) : Void;
+
+	/**
+	Specify a sub-rectangle of the current texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texSubImage2D>.
+
+	@param target The binding point (target) of the active texture.
+	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
+	@param xoffset The horizontal offset within the texture image.
+	@param yoffset The vertical offset within the texture image.
+	@param width The width of the texture.
+	@param height The height of the texture.
+	@param format The format of the texel data.
+	@param type The data type of the texel data.
+	@param pixels The pixel source for the texture.
+	@param offset The byte offset into the `Buffer`'s data store. Used to upload data to the currently bound `Texture` from the `Buffer` bound to the `PIXEL_UNPACK_BUFFER` target.
+
+	@see `RenderingContext.createTexture`
+	@see `RenderingContext.texImage2D`
+	**/
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, offset:Int) : Void {})
+	override public function texSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
