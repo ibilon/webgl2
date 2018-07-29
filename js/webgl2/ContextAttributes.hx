@@ -19,6 +19,9 @@ typedef ContextAttributes =
 	/** If a context will be created if the system performance is low. **/
 	@:optional var failIfMajorPerformanceCaveat : Bool;
 
+	/** Provides a hint to the user agent indicating what configuration of GPU is suitable for this WebGL context. **/
+	@:optional var powerPreference : PowerPreference;
+
 	/** If the page compositor will assume the drawing buffer contains colors with pre-multiplied alpha. **/
 	@:optional var premultipliedAlpha : Bool;
 
@@ -27,4 +30,11 @@ typedef ContextAttributes =
 
 	/** If the drawing buffer has a stencil buffer of at least 8 bits. **/
 	@:optional var stencil : Bool;
+}
+
+@:enum abstract PowerPreference (String)
+{
+	var default = "default";
+	var highPerformance = "high-performance";
+	var lowPower = "low-power";
 }

@@ -145,6 +145,25 @@ class ConstantsTest
 		gl.clientWaitSync(null, gl.ZERO, 0);
 		gl.clientWaitSync(null, gl.SYNC_FLUSH_COMMANDS_BIT, 0);
 
+		gl.compressedTexSubImage3D(gl.TEXTURE_3D, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_R11_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_SIGNED_R11_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_RG11_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_SIGNED_RG11_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_RGB8_ETC2, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_RGBA8_ETC2_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_SRGB8_ETC2, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0);
+		gl.compressedTexSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0);
+
+		gl.copyBufferSubData(gl.ARRAY_BUFFER, gl.ARRAY_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.ELEMENT_ARRAY_BUFFER, gl.ELEMENT_ARRAY_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.COPY_READ_BUFFER, gl.COPY_WRITE_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.TRANSFORM_FEEDBACK_BUFFER, gl.TRANSFORM_FEEDBACK_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.UNIFORM_BUFFER, gl.UNIFORM_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.PIXEL_PACK_BUFFER, gl.PIXEL_PACK_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.PIXEL_UNPACK_BUFFER, gl.PIXEL_UNPACK_BUFFER, 0, 0, 0);
+
 		gl.copyTexImage2D(gl.TEXTURE_2D, 0, gl.ALPHA, 0, 0, 0, 0, 0);
 		gl.copyTexImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X, 0, gl.RGB, 0, 0, 0, 0, 0);
 		gl.copyTexImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_X, 0, gl.RGBA, 0, 0, 0, 0, 0);
@@ -196,6 +215,33 @@ class ConstantsTest
 		gl.drawArrays(gl.TRIANGLE_FAN, 0, 0);
 		gl.drawArrays(gl.TRIANGLES, 0, 0);
 
+		gl.drawArraysInstanced(gl.POINTS, 0, 0, 0);
+		gl.drawArraysInstanced(gl.LINE_STRIP, 0, 0, 0);
+		gl.drawArraysInstanced(gl.LINE_LOOP, 0, 0, 0);
+		gl.drawArraysInstanced(gl.LINES, 0, 0, 0);
+		gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 0, 0);
+		gl.drawArraysInstanced(gl.TRIANGLE_FAN, 0, 0, 0);
+		gl.drawArraysInstanced(gl.TRIANGLES, 0, 0, 0);
+
+		gl.drawBuffers([gl.NONE]);
+		gl.drawBuffers([gl.BACK]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT0]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT1]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT2]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT3]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT4]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT5]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT6]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT7]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT8]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT9]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT10]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT11]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT12]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT13]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT14]);
+		gl.drawBuffers([gl.COLOR_ATTACHMENT15]);
+
 		gl.drawElements(gl.POINTS, 0, gl.UNSIGNED_BYTE, 0);
 		gl.drawElements(gl.LINE_STRIP, 0, gl.UNSIGNED_SHORT, 0);
 		gl.drawElements(gl.LINE_LOOP, 0, gl.UNSIGNED_INT, 0);
@@ -203,6 +249,22 @@ class ConstantsTest
 		gl.drawElements(gl.TRIANGLE_STRIP, 0, gl.UNSIGNED_INT, 0);
 		gl.drawElements(gl.TRIANGLE_FAN, 0, gl.UNSIGNED_INT, 0);
 		gl.drawElements(gl.TRIANGLES, 0, gl.UNSIGNED_INT, 0);
+
+		gl.drawElementsInstanced(gl.POINTS, 0, gl.UNSIGNED_BYTE, 0, 0);
+		gl.drawElementsInstanced(gl.LINE_STRIP, 0, gl.UNSIGNED_SHORT, 0, 0);
+		gl.drawElementsInstanced(gl.LINE_LOOP, 0, gl.UNSIGNED_INT, 0, 0);
+		gl.drawElementsInstanced(gl.LINES, 0, gl.UNSIGNED_INT, 0, 0);
+		gl.drawElementsInstanced(gl.TRIANGLE_STRIP, 0, gl.UNSIGNED_INT, 0, 0);
+		gl.drawElementsInstanced(gl.TRIANGLE_FAN, 0, gl.UNSIGNED_INT, 0, 0);
+		gl.drawElementsInstanced(gl.TRIANGLES, 0, gl.UNSIGNED_INT, 0, 0);
+
+		gl.drawRangeElements(gl.POINTS, 0, 0, 0, gl.UNSIGNED_BYTE, 0);
+		gl.drawRangeElements(gl.LINE_STRIP, 0, 0, 0, gl.UNSIGNED_SHORT, 0);
+		gl.drawRangeElements(gl.LINE_LOOP, 0, 0, 0, gl.UNSIGNED_INT, 0);
+		gl.drawRangeElements(gl.LINES, 0, 0, 0, gl.UNSIGNED_INT, 0);
+		gl.drawRangeElements(gl.TRIANGLE_STRIP, 0, 0, 0, gl.UNSIGNED_INT, 0);
+		gl.drawRangeElements(gl.TRIANGLE_FAN, 0, 0, 0, gl.UNSIGNED_INT, 0);
+		gl.drawRangeElements(gl.TRIANGLES, 0, 0, 0, gl.UNSIGNED_INT, 0);
 
 		gl.enable(gl.BLEND);
 		gl.enable(gl.CULL_FACE);
@@ -214,6 +276,12 @@ class ConstantsTest
 		gl.enable(gl.SCISSOR_TEST);
 		gl.enable(gl.STENCIL_TEST);
 		gl.enable(gl.RASTERIZER_DISCARD);
+
+		gl.endQuery(gl.ANY_SAMPLES_PASSED);
+		gl.endQuery(gl.ANY_SAMPLES_PASSED_CONSERVATIVE);
+		gl.endQuery(gl.TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN);
+
+		gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0);
 
 		gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, null, null);
 		gl.framebufferRenderbuffer(gl.DRAW_FRAMEBUFFER, gl.DEPTH_ATTACHMENT, null, null);
@@ -255,6 +323,26 @@ class ConstantsTest
 		gl.framebufferTexture2D(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT14, null, null, 0);
 		gl.framebufferTexture2D(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT15, null, null, 0);
 
+		gl.framebufferTextureLayer(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, null, 0, 0);
+		gl.framebufferTextureLayer(gl.DRAW_FRAMEBUFFER, gl.COLOR_ATTACHMENT1, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT2, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT3, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT4, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT5, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT6, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT7, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT8, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT9, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT10, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT11, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT12, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT13, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT14, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT15, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.DEPTH_ATTACHMENT, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.STENCIL_ATTACHMENT, null, 0, 0);
+		gl.framebufferTextureLayer(gl.READ_FRAMEBUFFER, gl.DEPTH_STENCIL_ATTACHMENT, null, 0, 0);
+
 		gl.frontFace(gl.CW);
 		gl.frontFace(gl.CCW);
 
@@ -262,6 +350,21 @@ class ConstantsTest
 		gl.generateMipmap(gl.TEXTURE_CUBE_MAP);
 		gl.generateMipmap(gl.TEXTURE_3D);
 		gl.generateMipmap(gl.TEXTURE_2D_ARRAY);
+
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_BINDING);
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_DATA_SIZE);
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_ACTIVE_UNIFORMS);
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES);
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER);
+		gl.getActiveUniformBlockParameter(null, 0, gl.UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER);
+
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_TYPE);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_SIZE);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_BLOCK_INDEX);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_OFFSET);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_ARRAY_STRIDE);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_MATRIX_STRIDE);
+		gl.getActiveUniforms(null, [0], gl.UNIFORM_IS_ROW_MAJOR);
 
 		gl.getBufferParameter(gl.ARRAY_BUFFER, gl.BUFFER_SIZE);
 		gl.getBufferParameter(gl.ELEMENT_ARRAY_BUFFER, gl.BUFFER_USAGE);
@@ -271,6 +374,15 @@ class ConstantsTest
 		gl.getBufferParameter(gl.UNIFORM_BUFFER, gl.BUFFER_USAGE);
 		gl.getBufferParameter(gl.PIXEL_PACK_BUFFER, gl.BUFFER_USAGE);
 		gl.getBufferParameter(gl.PIXEL_UNPACK_BUFFER, gl.BUFFER_USAGE);
+
+		gl.getBufferSubData(gl.ARRAY_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.ELEMENT_ARRAY_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.COPY_READ_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.COPY_WRITE_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.TRANSFORM_FEEDBACK_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.UNIFORM_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.PIXEL_PACK_BUFFER, 0, null, 0, 0);
+		gl.getBufferSubData(gl.PIXEL_UNPACK_BUFFER, 0, null, 0, 0);
 
 		gl.getFramebufferAttachmentParameter(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 		gl.getFramebufferAttachmentParameter(gl.DRAW_FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME);
@@ -291,6 +403,49 @@ class ConstantsTest
 		gl.getFramebufferAttachmentParameter(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT13, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER);
 		gl.getFramebufferAttachmentParameter(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT14, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER);
 		gl.getFramebufferAttachmentParameter(gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT15, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER);
+
+		gl.getIndexedParameter(gl.TRANSFORM_FEEDBACK_BUFFER_BINDING, 0);
+		gl.getIndexedParameter(gl.TRANSFORM_FEEDBACK_BUFFER_SIZE, 0);
+		gl.getIndexedParameter(gl.TRANSFORM_FEEDBACK_BUFFER_START, 0);
+		gl.getIndexedParameter(gl.UNIFORM_BUFFER_BINDING, 0);
+		gl.getIndexedParameter(gl.UNIFORM_BUFFER_SIZE, 0);
+		gl.getIndexedParameter(gl.UNIFORM_BUFFER_START, 0);
+
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R8UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R8I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R16UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R16I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R32UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.R32I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG8UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG8I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG16UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG16I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG32UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RG32I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGB8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.SRGB8_ALPHA8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA4, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGB565, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGB5_A1, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGB10_A2, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA8UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA8I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGB10_A2UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA16UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA16I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA32I, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA32UI, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT24, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT32F, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_STENCIL, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH24_STENCIL8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH32F_STENCIL8, gl.SAMPLES);
+		gl.getInternalformatParameter(gl.RENDERBUFFER, gl.STENCIL_INDEX8, gl.SAMPLES);
 
 		gl.getParameter(gl.ACTIVE_TEXTURE);
 		gl.getParameter(gl.ALIASED_LINE_WIDTH_RANGE);
@@ -463,6 +618,13 @@ class ConstantsTest
 		gl.getProgramParameter(null, gl.TRANSFORM_FEEDBACK_VARYINGS);
 		gl.getProgramParameter(null, gl.ACTIVE_UNIFORM_BLOCKS);
 
+		gl.getQuery(gl.ANY_SAMPLES_PASSED, gl.CURRENT_QUERY);
+		gl.getQuery(gl.ANY_SAMPLES_PASSED_CONSERVATIVE, gl.CURRENT_QUERY);
+		gl.getQuery(gl.TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, gl.CURRENT_QUERY);
+
+		gl.getQueryParameter(null, gl.QUERY_RESULT);
+		gl.getQueryParameter(null, gl.QUERY_RESULT_AVAILABLE);
+
 		gl.getRenderbufferParameter(gl.RENDERBUFFER, gl.RENDERBUFFER_WIDTH);
 		gl.getRenderbufferParameter(gl.RENDERBUFFER, gl.RENDERBUFFER_HEIGHT);
 		gl.getRenderbufferParameter(gl.RENDERBUFFER, gl.RENDERBUFFER_INTERNAL_FORMAT);
@@ -474,6 +636,16 @@ class ConstantsTest
 		gl.getRenderbufferParameter(gl.RENDERBUFFER, gl.RENDERBUFFER_STENCIL_SIZE);
 		gl.getRenderbufferParameter(gl.RENDERBUFFER, gl.RENDERBUFFER_SAMPLES);
 
+		gl.getSamplerParameter(null, gl.TEXTURE_COMPARE_FUNC);
+		gl.getSamplerParameter(null, gl.TEXTURE_COMPARE_MODE);
+		gl.getSamplerParameter(null, gl.TEXTURE_MAG_FILTER);
+		gl.getSamplerParameter(null, gl.TEXTURE_MAX_LOD);
+		gl.getSamplerParameter(null, gl.TEXTURE_MIN_FILTER);
+		gl.getSamplerParameter(null, gl.TEXTURE_MIN_LOD);
+		gl.getSamplerParameter(null, gl.TEXTURE_WRAP_R);
+		gl.getSamplerParameter(null, gl.TEXTURE_WRAP_S);
+		gl.getSamplerParameter(null, gl.TEXTURE_WRAP_T);
+
 		gl.getShaderParameter(null, gl.DELETE_STATUS);
 		gl.getShaderParameter(null, gl.COMPILE_STATUS);
 		gl.getShaderParameter(null, gl.SHADER_TYPE);
@@ -484,6 +656,11 @@ class ConstantsTest
 		gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.LOW_INT);
 		gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_INT);
 		gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_INT);
+
+		gl.getSyncParameter(null, gl.OBJECT_TYPE);
+		gl.getSyncParameter(null, gl.SYNC_STATUS);
+		gl.getSyncParameter(null, gl.SYNC_CONDITION);
+		gl.getSyncParameter(null, gl.SYNC_FLAGS);
 
 		gl.getTexParameter(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER);
 		gl.getTexParameter(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER);
@@ -518,6 +695,46 @@ class ConstantsTest
 		gl.hint(gl.FRAGMENT_SHADER_DERIVATIVE_HINT, gl.NICEST);
 		gl.hint(gl.FRAGMENT_SHADER_DERIVATIVE_HINT, gl.DONT_CARE);
 
+		gl.invalidateFramebuffer(gl.FRAMEBUFFER, [gl.COLOR_ATTACHMENT0]);
+		gl.invalidateFramebuffer(gl.DRAW_FRAMEBUFFER, [gl.COLOR_ATTACHMENT1]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT2]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT3]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT4]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT5]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT6]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT7]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT8]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT9]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT10]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT11]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT12]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT13]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT14]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT15]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.DEPTH_ATTACHMENT]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.STENCIL_ATTACHMENT]);
+		gl.invalidateFramebuffer(gl.READ_FRAMEBUFFER, [gl.DEPTH_STENCIL_ATTACHMENT]);
+
+		gl.invalidateSubFramebuffer(gl.FRAMEBUFFER, [gl.COLOR_ATTACHMENT0], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.DRAW_FRAMEBUFFER, [gl.COLOR_ATTACHMENT1], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT2], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT3], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT4], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT5], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT6], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT7], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT8], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT9], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT10], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT11], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT12], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT13], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT14], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.COLOR_ATTACHMENT15], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.DEPTH_ATTACHMENT], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.STENCIL_ATTACHMENT], 0, 0, 0, 0);
+		gl.invalidateSubFramebuffer(gl.READ_FRAMEBUFFER, [gl.DEPTH_STENCIL_ATTACHMENT, 0, 0, 0, 0]);
+
 		gl.isEnabled(gl.BLEND);
 		gl.isEnabled(gl.CULL_FACE);
 		gl.isEnabled(gl.DEPTH_TEST);
@@ -542,6 +759,25 @@ class ConstantsTest
 		gl.pixelStorei(gl.UNPACK_SKIP_PIXELS, 0);
 		gl.pixelStorei(gl.UNPACK_SKIP_ROWS, 0);
 		gl.pixelStorei(gl.UNPACK_SKIP_IMAGES, 0);
+
+		gl.readBuffer(gl.BACK);
+		gl.readBuffer(gl.NONE);
+		gl.readBuffer(gl.COLOR_ATTACHMENT0);
+		gl.readBuffer(gl.COLOR_ATTACHMENT1);
+		gl.readBuffer(gl.COLOR_ATTACHMENT2);
+		gl.readBuffer(gl.COLOR_ATTACHMENT3);
+		gl.readBuffer(gl.COLOR_ATTACHMENT4);
+		gl.readBuffer(gl.COLOR_ATTACHMENT5);
+		gl.readBuffer(gl.COLOR_ATTACHMENT6);
+		gl.readBuffer(gl.COLOR_ATTACHMENT7);
+		gl.readBuffer(gl.COLOR_ATTACHMENT8);
+		gl.readBuffer(gl.COLOR_ATTACHMENT9);
+		gl.readBuffer(gl.COLOR_ATTACHMENT10);
+		gl.readBuffer(gl.COLOR_ATTACHMENT11);
+		gl.readBuffer(gl.COLOR_ATTACHMENT12);
+		gl.readBuffer(gl.COLOR_ATTACHMENT13);
+		gl.readBuffer(gl.COLOR_ATTACHMENT14);
+		gl.readBuffer(gl.COLOR_ATTACHMENT15);
 
 		gl.readPixels(0, 0, 0, 0, gl.ALPHA, gl.UNSIGNED_BYTE, null);
 		gl.readPixels(0, 0, 0, 0, gl.RGB, gl.UNSIGNED_SHORT_5_6_5, null);
@@ -584,6 +820,62 @@ class ConstantsTest
 		gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT32F, 0, 0);
 		gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH24_STENCIL8, 0, 0);
 		gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH32F_STENCIL8, 0, 0);
+
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R8UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R8I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R16UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R16I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R32UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.R32I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG8UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG8I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG16UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG16I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG32UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RG32I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGB8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.SRGB8_ALPHA8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA4, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGB565, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGB5_A1, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGB10_A2, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA8UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA8I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGB10_A2UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA16UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA16I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA32I, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.RGBA32UI, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH_COMPONENT16, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH_COMPONENT24, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH_COMPONENT32F, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH_STENCIL, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH24_STENCIL8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.DEPTH32F_STENCIL8, 0, 0);
+		gl.renderbufferStorageMultisample(gl.RENDERBUFFER, 0, gl.STENCIL_INDEX8, 0, 0);
+
+		gl.samplerParameterf(null, gl.TEXTURE_COMPARE_FUNC, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_COMPARE_MODE, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_MAG_FILTER, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_MAX_LOD, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_MIN_FILTER, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_MIN_LOD, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_WRAP_R, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_WRAP_S, 0);
+		gl.samplerParameterf(null, gl.TEXTURE_WRAP_T, 0);
+
+		gl.samplerParameteri(null, gl.TEXTURE_COMPARE_FUNC, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_COMPARE_MODE, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_MAG_FILTER, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_MAX_LOD, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_MIN_FILTER, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_MIN_LOD, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_WRAP_R, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_WRAP_S, 0);
+		gl.samplerParameteri(null, gl.TEXTURE_WRAP_T, 0);
 
 		gl.stencilFunc(gl.NEVER, 0, 0);
 		gl.stencilFunc(gl.LESS, 0, 0);
@@ -658,6 +950,35 @@ class ConstantsTest
 		gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, gl.RGBA32F, 0, 0, 0, gl.RGBA32F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, null, 0);
 		gl.texImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, gl.RGBA8UI, 0, 0, 0, gl.RGBA8UI, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, null, 0);
 
+		gl.texImage3D(gl.TEXTURE_3D, 0, gl.ALPHA, 0, 0, 0, 0, gl.ALPHA, gl.UNSIGNED_BYTE, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_SHORT_5_6_5, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA, 0, 0, 0, 0, gl.RGBA, gl.UNSIGNED_SHORT_4_4_4_4, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.LUMINANCE, 0, 0, 0, 0, gl.LUMINANCE, gl.UNSIGNED_SHORT_5_5_5_1, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.LUMINANCE_ALPHA, 0, 0, 0, 0, gl.LUMINANCE_ALPHA, gl.BYTE, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R8, 0, 0, 0, 0, gl.RED, gl.UNSIGNED_SHORT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R16F, 0, 0, 0, 0, gl.RED, gl.SHORT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R32F, 0, 0, 0, 0, gl.RED, gl.UNSIGNED_INT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R8UI, 0, 0, 0, 0, gl.RED_INTEGER, gl.INT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG8, 0, 0, 0, 0, gl.RG, gl.HALF_FLOAT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG16F, 0, 0, 0, 0, gl.RG, gl.FLOAT, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG32F, 0, 0, 0, 0, gl.RG, gl.UNSIGNED_INT_2_10_10_10_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG8UI, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_INT_10F_11F_11F_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB8, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_INT_5_9_9_9_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.SRGB8, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_INT_24_8, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB565, 0, 0, 0, 0, gl.RGB, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R11F_G11F_B10F, 0, 0, 0, 0, gl.RGB, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB9_E5, 0, 0, 0, 0, gl.RGB, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB16F, 0, 0, 0, 0, gl.RGB, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB32F, 0, 0, 0, 0, gl.RGB, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB8UI, 0, 0, 0, 0, gl.RGB_INTEGER, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA8, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.SRGB8_ALPHA8, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB5_A1, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA4, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA16F, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA32F, 0, 0, 0, 0, gl.RGBA, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texImage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA8UI, 0, 0, 0, 0, gl.RGBA_INTEGER, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+
 		gl.texParameterf(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, 0);
 		gl.texParameterf(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MIN_FILTER, 0);
 		gl.texParameterf(gl.TEXTURE_3D, gl.TEXTURE_WRAP_S, 0);
@@ -681,6 +1002,75 @@ class ConstantsTest
 		gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MAX_LOD, 0);
 		gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MIN_LOD, 0);
 		gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_R, 0);
+
+		gl.texStorage2D(gl.TEXTURE_2D, 0, gl.R8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.R16F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.R32F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.R8UI, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RG8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RG16F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RG32F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RG8UI, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.SRGB8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB565, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.R11F_G11F_B10F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB9_E5, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB16F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB32F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB8UI, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGBA8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.SRGB_APLHA8, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGB5_A1, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGBA4, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGBA16F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGBA32F, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.RGBA8UI, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_R11_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_SIGNED_R11_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_RG11_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_SIGNED_RG11_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_RGB8_ETC2, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_RGBA8_ETC2_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_SRGB8_ETC2, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0);
+		gl.texStorage2D(gl.TEXTURE_CUBE_MAP, 0, gl.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0);
+
+		gl.texStorage3D(gl.TEXTURE_3D, 0, gl.R8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R16F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R32F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R8UI, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG16F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG32F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RG8UI, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.SRGB8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB565, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.R11F_G11F_B10F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB9_E5, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB16F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB32F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB8UI, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.SRGB8_ALPHA8, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGB5_A1, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA4, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA16F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA32F, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.RGBA8UI, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_R11_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_SIGNED_R11_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_RG11_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_SIGNED_RG11_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_RGB8_ETC2, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_RGBA8_ETC2_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_SRGB8_ETC2, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0, 0);
+		gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 0, gl.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2, 0, 0, 0);
+
 
 		gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 0, 0, gl.ALPHA, gl.UNSIGNED_BYTE, null, 0);
 		gl.texSubImage2D(gl.TEXTURE_CUBE_MAP_POSITIVE_X, 0, 0, 0, 0, 0, gl.RGBA, gl.UNSIGNED_SHORT_5_6_5, null, 0);
@@ -714,5 +1104,46 @@ class ConstantsTest
 		gl.texSubImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, 0, 0, 0, 0, gl.RGBA16F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, null, 0);
 		gl.texSubImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, 0, 0, 0, 0, gl.RGBA32F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, null, 0);
 		gl.texSubImage2D(gl.TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, 0, 0, 0, 0, gl.RGBA8UI, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, null, 0);
+
+		gl.texSubImage3D(gl.TEXTURE_3D, 0, 0, 0, 0, 0, 0, 0, gl.ALPHA, gl.UNSIGNED_BYTE, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_SHORT_5_6_5, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA, gl.UNSIGNED_SHORT_4_4_4_4, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.LUMINANCE, gl.UNSIGNED_SHORT_5_5_5_1, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.LUMINANCE_ALPHA,gl.BYTE , 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R8, gl.UNSIGNED_SHORT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R16F, gl.SHORT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R32F, gl.UNSIGNED_INT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R8UI, gl.INT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RG8, gl.HALF_FLOAT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RG16F, gl.FLOAT, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RG32F, gl.UNSIGNED_INT_2_10_10_10_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RG8UI, gl.UNSIGNED_INT_10F_11F_11F_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB8, gl.UNSIGNED_INT_5_9_9_9_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.SRGB8, gl.UNSIGNED_INT_24_8, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB565, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R11F_G11F_B10F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB9_E5, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB16F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB32F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB8UI, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA8, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.SRGB8_ALPHA8, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB5_A1, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA4, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA16F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA32F, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA8UI, gl.FLOAT_32_UNSIGNED_INT_24_8_REV, 0);
+
+		gl.transformFeedbackVaryings(null, [], gl.INTERLEAVED_ATTRIBS);
+		gl.transformFeedbackVaryings(null, [], gl.SEPARATE_ATTRIBS);
+
+		gl.vertexAttribIPointer(0, 0, gl.BYTE, 0, 0);
+		gl.vertexAttribIPointer(0, 0, gl.UNSIGNED_BYTE, 0, 0);
+		gl.vertexAttribIPointer(0, 0, gl.SHORT, 0, 0);
+		gl.vertexAttribIPointer(0, 0, gl.UNSIGNED_SHORT, 0, 0);
+		gl.vertexAttribIPointer(0, 0, gl.INT, 0, 0);
+		gl.vertexAttribIPointer(0, 0, gl.UNSIGNED_INT, 0, 0);
+
+		gl.waitSync(null, 0, gl.TIMEOUT_IGNORED);
 	}
 }
