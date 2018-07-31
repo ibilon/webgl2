@@ -148,22 +148,13 @@
 		},
 		{
 			"props": {
-				"ignoreExtern": true,
-				"format": "^[a-z][a-zA-Z0-9]*$",
+				"ignoreExtern": false,
+				"format": "^[a-zA-Z0-9_]*$",
 				"tokens": [
 					"PUBLIC",
 					"CLASS",
 					"TYPEDEF",
-					"PRIVATE"
-				]
-			},
-			"type": "MemberName"
-		},
-		{
-			"props": {
-				"ignoreExtern": true,
-				"format": "^[A-Z][a-zA-Z0-9]*$",
-				"tokens": [
+					"PRIVATE",
 					"ABSTRACT",
 					"ENUM"
 				]
@@ -178,19 +169,10 @@
 		},
 		{
 			"props": {
-				"ignoreExtern": true,
-				"format": "^[A-Z][a-zA-Z0-9_]*$",
+				"ignoreExtern": false,
+				"format": "^[a-z][a-zA-Z0-9_]*$",
 				"tokens": [
-					"PUBLIC"
-				]
-			},
-			"type": "MethodName"
-		},
-		{
-			"props": {
-				"ignoreExtern": true,
-				"format": "^[a-zA-Z0-9_]*$",
-				"tokens": [
+					"PUBLIC",
 					"PRIVATE"
 				]
 			},

@@ -11,8 +11,6 @@ import js.html.Int32Array;
 import js.html.Uint32Array;
 import js.html.VideoElement;
 
-//TODO type safe version of functions returning Any
-
 /**
 RenderingContext provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML `<canvas>` element.
 
@@ -995,7 +993,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bindBuffer>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param buffer The buffer to bind.
 
 	@throws INVALID_OPERATION Only one target can be bound to a given `Buffer`. An attempt to bind the buffer to another target will throw and the current buffer binding will remain the same.
@@ -1010,7 +1008,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bindFramebuffer>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param framebuffer The framebuffer to bind.
 
 	@see `RenderingContext.createFramebuffer`
@@ -1023,7 +1021,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bindRenderbuffer>.
 
-	@param target The binding point (target), can only be `RENDERBUFFER`.
+	@param target The binding point, can only be `RENDERBUFFER`.
 	@param renderbuffer The renderbuffer to bind.
 
 	@see `RenderingContext.createRenderbuffer`
@@ -1036,7 +1034,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bindTexture>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param texture The texture to bind.
 
 	@see `RenderingContext.createTexture`
@@ -1154,7 +1152,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferSubData>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param offset The element index offset where to start reading the buffer.
 	@param srcData The typed array types that will be copied into the data store.
 
@@ -1172,7 +1170,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus>.
 
-	@param target The binding point (target)
+	@param target The binding point.
 
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.isFramebuffer`
@@ -1319,7 +1317,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/copyTexImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param internalformat The format for the color components in the texture.
 	@param x The x coordinate of the lower left corner where to start copying.
@@ -1339,7 +1337,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/copyTexSubImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param xoffset The horizontal offset within the texture image.
 	@param yoffset The vertical offset within the texture image.
@@ -1693,9 +1691,9 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferRenderbuffer>.
 
-	@param target The binding point (target) for the framebuffer.
+	@param target The binding point for the framebuffer.
 	@param attachment The attachment point for the render buffer.
-	@param renderbuffertarget The binding point (target) for the render buffer.
+	@param renderbuffertarget The binding point for the render buffer.
 	@param renderbuffer The renderbuffer to attach.
 
 	@see `RenderingContext.createFramebuffer`
@@ -1708,7 +1706,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	@param textarget The texture target.
 	@param texture The texture whose image to attach.
@@ -1741,7 +1739,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/generateMipmap>.
 
-	@param target The binding point (target) of the active texture whose mipmaps will be generated.
+	@param target The binding point of the active texture whose mipmaps will be generated.
 
 	@see `RenderingContext.createTexture`
 	**/
@@ -1853,7 +1851,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	@param pname The information to query.
 
@@ -1990,7 +1988,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param pname The information to query.
 
 	@see `RenderingContext.texParameterf`
@@ -2389,7 +2387,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param internalformat The color components in the texture.
 	@param width The width of the texture.
@@ -2414,7 +2412,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param pname The texture parameter to set.
 	@param param The value for the specified parameter `pname`.
 
@@ -2428,7 +2426,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param pname The texture parameter to set.
 	@param param The value for the specified parameter `pname`.
 
@@ -2442,7 +2440,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texSubImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param xoffset The horizontal offset within the texture image.
 	@param yoffset The vertical offset within the texture image.

@@ -836,7 +836,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@param target The target for the bind operation.
 	@param index The index of the target.
-	@param buffer The buffer to bind to the binding point (target).
+	@param buffer The buffer to bind to the binding point (`target`).
 
 	@see `RenderingContext2.getIndexedParameter`
 	**/
@@ -849,7 +849,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@param target The target for the bind operation.
 	@param index The index of the target.
-	@param buffer The buffer to bind to the binding point (target).
+	@param buffer The buffer to bind to the binding point (`target`).
 	@param offset The starting offset.
 	@param size The amount of data that can be read from the buffer.
 
@@ -938,7 +938,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferSubData>.
 
-	@param target The binding point (target).
+	@param target The binding point.
 	@param offset The element index offset where to start reading the buffer.
 	@param srcData The typed array types that will be copied into the data store.
 	@param dstByteOffset The offset in bytes where the data replacement will start.
@@ -1144,8 +1144,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/copyBufferSubData>.
 
-	@param readTarget The binding point (target) from whose data store should be read.
-	@param writeTarget The binding point (target) from whose data store should be written.
+	@param readTarget The binding point from whose data store should be read.
+	@param writeTarget The binding point from whose data store should be written.
 	@param readOffset The byte offset from which to start reading from the buffer.
 	@param writeOffset The byte offset from which to start writing to the buffer.
 	@param size The size of the data to be copied from `readTarget` to `writeTarget`.
@@ -1161,7 +1161,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param xoffset The x offset within the texture image.
 	@param yoffset The y offset within the texture image.
@@ -1380,7 +1380,7 @@ extern class RenderingContext2 extends RenderingContext
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter>.
 
 	@param program The `Program` containing the active uniform block.
-	@param unifirmBlockIndex The index of the active uniform block within the program.
+	@param uniformBlockIndex The index of the active uniform block within the program.
 	@param pname Which information to query.
 
 	@see `RenderingContext2.getActiveUniforms`
@@ -1393,7 +1393,7 @@ extern class RenderingContext2 extends RenderingContext
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getActiveUniforms>.
 
 	@param program The `Program` containing the active uniforms.
-	@param unifirmIndices The indices of the active uniforms to query.
+	@param uniformIndices The indices of the active uniforms to query.
 	@param pname Which information to query.
 
 	@see `RenderingContext2.getActiveUniformBlockParameter`
@@ -1701,7 +1701,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param internalformat The color components in the texture.
 	@param width The width of the texture.
@@ -1793,7 +1793,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texSubImage2D>.
 
-	@param target The binding point (target) of the active texture.
+	@param target The binding point of the active texture.
 	@param level The level of detail. Level 0 is the base image level and level n is the nth mipmap reduction level.
 	@param xoffset The horizontal offset within the texture image.
 	@param yoffset The vertical offset within the texture image.

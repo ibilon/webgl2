@@ -32,9 +32,14 @@ typedef ContextAttributes =
 	@:optional var stencil : Bool;
 }
 
+/**
+Hit to the user agent indicating what configuration of GPU is suitable.
+
+Can be passed in the `ContextAttributes` when creating the context or when retrieving it with `RenderingContext.getContextAttributes()`.
+**/
 @:enum abstract PowerPreference (String)
 {
-	var default = "default";
+	var defaultPower = "default";
 	var highPerformance = "high-performance";
 	var lowPower = "low-power";
 }
