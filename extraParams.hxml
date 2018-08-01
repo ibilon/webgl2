@@ -1,0 +1,3 @@
+# WebGL support equals typed arrays support, which is supported in 96% of browsers anyway
+# https://caniuse.com/#feat=typedarrays
+--macro haxe.macro.Compiler.exclude("js.html.compat")
