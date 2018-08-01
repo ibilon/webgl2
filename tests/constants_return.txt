@@ -74,16 +74,25 @@ getVertexAttribArrayType
 	gl.UNSIGNED_SHORT
 	gl.FLOAT
 
-getTexWrapFunction / getSamplerWrapFunction
+getTexWrapFunction
 	gl.REPEAT
 	gl.CLAMP_TO_EDGE
 	gl.MIRRORED_REPEAT
 
-getTexMagFilter / getSamplerMagFilter
+getSamplerWrapFunction
+	gl.REPEAT
+	gl.CLAMP_TO_EDGE
+	gl.MIRRORED_REPEAT
+
+getTexMagFilter
 	gl.LINEAR
 	gl.NEAREST
 
-getTexMinFilter / getSamplerMinFilter
+getSamplerMagFilter
+	gl.LINEAR
+	gl.NEAREST
+
+getTexMinFilter
 	gl.LINEAR
 	gl.NEAREST
 	gl.NEAREST_MIPMAP_NEAREST
@@ -91,7 +100,15 @@ getTexMinFilter / getSamplerMinFilter
 	gl.NEAREST_MIPMAP_LINEAR
 	gl.LINEAR_MIPMAP_LINEAR
 
-getTexCompareFunc / getSamplerCompareFunc
+getSamplerMinFilter
+	gl.LINEAR
+	gl.NEAREST
+	gl.NEAREST_MIPMAP_NEAREST
+	gl.LINEAR_MIPMAP_NEAREST
+	gl.NEAREST_MIPMAP_LINEAR
+	gl.LINEAR_MIPMAP_LINEAR
+
+getTexCompareFunc
 	gl.LEQUAL
 	gl.GEQUAL
 	gl.LESS
@@ -101,14 +118,43 @@ getTexCompareFunc / getSamplerCompareFunc
 	gl.ALWAYS
 	gl.NEVER
 
-getTexCompareMode / getSamplerCompareMode
+getSamplerCompareFunc
+	gl.LEQUAL
+	gl.GEQUAL
+	gl.LESS
+	gl.GREATER
+	gl.EQUAL
+	gl.NOTEQUAL
+	gl.ALWAYS
+	gl.NEVER
+
+getTexCompareMode
+	gl.NONE
+	gl.COMPARE_REF_TO_TEXTURE
+
+getSamplerCompareMode
 	gl.NONE
 	gl.COMPARE_REF_TO_TEXTURE
 
 getParameterColorBuffer
 	gl.BACK
 	gl.NONE
-	gl.COLOR_ATTACHMENT{0-15}
+	gl.COLOR_ATTACHMENT0
+	gl.COLOR_ATTACHMENT1
+	gl.COLOR_ATTACHMENT2
+	gl.COLOR_ATTACHMENT3
+	gl.COLOR_ATTACHMENT4
+	gl.COLOR_ATTACHMENT5
+	gl.COLOR_ATTACHMENT6
+	gl.COLOR_ATTACHMENT7
+	gl.COLOR_ATTACHMENT8
+	gl.COLOR_ATTACHMENT9
+	gl.COLOR_ATTACHMENT10
+	gl.COLOR_ATTACHMENT11
+	gl.COLOR_ATTACHMENT12
+	gl.COLOR_ATTACHMENT13
+	gl.COLOR_ATTACHMENT14
+	gl.COLOR_ATTACHMENT15
 
 getParameterHint
 	gl.FASTEST

@@ -5,6 +5,8 @@ import js.html.Int32Array;
 import js.html.Float32Array;
 import js.html.Uint32Array;
 
+import js.webgl2.constants.*;
+
 /**
 Helpers functions not part of the WebGL spec, but giving type safe version of functions returning Any.
 
@@ -258,7 +260,7 @@ class ContextHelpers
 	@param target The target for which to return information.
 	@param index The index of the `target` that is queried.
 	**/
-	public static inline function getIndexedParameterBuffer (gl:RenderingContext2, target:GLenum, index:UInt) : Buffer
+	public static inline function getIndexedParameterBuffer (gl:RenderingContext2, target:IndexedParameterBufferEnum, index:UInt) : Buffer
 	{
 		return cast gl.getIndexedParameter(target, index);
 	}
@@ -273,7 +275,7 @@ class ContextHelpers
 	@param target The target for which to return information.
 	@param index The index of the `target` that is queried.
 	**/
-	public static inline function getIndexedParameterInteger (gl:RenderingContext2, target:GLenum, index:UInt) : Int
+	public static inline function getIndexedParameterInteger (gl:RenderingContext2, target:IndexedParameterIntegerEnum, index:UInt) : Int
 	{
 		return cast gl.getIndexedParameter(target, index);
 	}
@@ -306,7 +308,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:GLenum) : GLenum
+	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:ParameterBlendEquationEnum) : GLenum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -320,7 +322,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:GLenum) : GLenum
+	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:ParameterBlendFuncEnum) : GLenum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -334,7 +336,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBoolean (gl:RenderingContext, pname:GLenum) : Bool
+	public static inline function getParameterBoolean (gl:RenderingContext, pname:ParameterBooleanEnum) : Bool
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -348,7 +350,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBuffer (gl:RenderingContext, pname:GLenum) : Buffer
+	public static inline function getParameterBuffer (gl:RenderingContext, pname:ParameterBufferEnum) : Buffer
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -362,7 +364,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:GLenum) : GLenum
+	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:ParameterColorBufferEnum) : GLenum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -424,7 +426,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterFloat (gl:RenderingContext, pname:GLenum) : Float
+	public static inline function getParameterFloat (gl:RenderingContext, pname:ParameterFloatEnum) : Float
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -438,7 +440,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterFloat32Array (gl:RenderingContext, pname:GLenum) : Float32Array
+	public static inline function getParameterFloat32Array (gl:RenderingContext, pname:ParameterFloat32ArrayEnum) : Float32Array
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -464,7 +466,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterHint (gl:RenderingContext2, param:GLenum) : GLenum
+	public static inline function getParameterHint (gl:RenderingContext2, param:HintEnum) : GLenum
 	{
 		return cast gl.getParameter(param);
 	}
@@ -478,7 +480,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterFramebuffer (gl:RenderingContext, pname:GLenum) : Framebuffer
+	public static inline function getParameterFramebuffer (gl:RenderingContext, pname:ParameterFramebufferEnum) : Framebuffer
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -516,7 +518,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterInteger (gl:RenderingContext, pname:GLenum) : Int
+	public static inline function getParameterInteger (gl:RenderingContext, pname:ParameterIntegerEnum) : Int
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -530,7 +532,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterInt32Array (gl:RenderingContext, pname:GLenum) : Int32Array
+	public static inline function getParameterInt32Array (gl:RenderingContext, pname:ParameterInt32ArrayEnum) : Int32Array
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -568,7 +570,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterStencilFunc(gl:RenderingContext, pname:GLenum) : GLenum
+	public static inline function getParameterStencilFunc(gl:RenderingContext, pname:ParameterStencilFuncEnum) : GLenum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -582,7 +584,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterString (gl:RenderingContext, pname:GLenum) : String
+	public static inline function getParameterString (gl:RenderingContext, pname:ParameterStringEnum) : String
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -596,7 +598,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterTestFunc(gl:RenderingContext, pname:GLenum) : GLenum
+	public static inline function getParameterTestFunc(gl:RenderingContext, pname:ParameterTestFuncEnum) : GLenum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -610,7 +612,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterTexture (gl:RenderingContext, pname:GLenum) : Texture
+	public static inline function getParameterTexture (gl:RenderingContext, pname:ParameterTextureEnum) : Texture
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -648,7 +650,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterUnsignedInt (gl:RenderingContext, pname:GLenum) : UInt
+	public static inline function getParameterUnsignedInt (gl:RenderingContext, pname:ParameterUnsignedIntEnum) : UInt
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -903,7 +905,7 @@ class ContextHelpers
 
 	@param sync The `Sync` object.
 	**/
-	public static inline function getSyncParameter (gl:RenderingContext2, sync:Sync) : GLenum
+	public static inline function getSyncStatus (gl:RenderingContext2, sync:Sync) : GLenum
 	{
 		return cast gl.getSyncParameter(sync, gl.SYNC_STATUS);
 	}
@@ -1091,7 +1093,7 @@ class ContextHelpers
 	@param index The index of the vertex attribute.
 	@param pname The information to query.
 	**/
-	public static inline function getVertexAttribBoolean (gl:RenderingContext, index:UInt, pname:GLenum) : Bool
+	public static inline function getVertexAttribBoolean (gl:RenderingContext, index:UInt, pname:VertexAttribBooleanEnum) : Bool
 	{
 		return cast gl.getVertexAttrib(index, pname);
 	}
@@ -1106,7 +1108,7 @@ class ContextHelpers
 	@param index The index of the vertex attribute.
 	@param pname The information to query.
 	**/
-	public static inline function getVertexAttribInteger (gl:RenderingContext, index:UInt, pname:GLenum) : Int
+	public static inline function getVertexAttribInteger (gl:RenderingContext, index:UInt, pname:VertexAttribIntegerEnum) : Int
 	{
 		return cast gl.getVertexAttrib(index, pname);
 	}

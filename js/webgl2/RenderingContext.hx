@@ -11,6 +11,8 @@ import js.html.Int32Array;
 import js.html.Uint32Array;
 import js.html.VideoElement;
 
+import js.webgl2.constants.*;
+
 /**
 RenderingContext provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML `<canvas>` element.
 
@@ -20,934 +22,934 @@ More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRende
 extern class RenderingContext
 {
 	/** Clear the current depth buffer. **/
-	public var DEPTH_BUFFER_BIT (default, never): GLenum;
+	public var DEPTH_BUFFER_BIT (default, never) : GLenum;
 
 	/** Clear the current stencil buffer. **/
-	public var STENCIL_BUFFER_BIT (default, never): GLenum;
+	public var STENCIL_BUFFER_BIT (default, never) : GLenum;
 
 	/** Clear the current color buffer. **/
-	public var COLOR_BUFFER_BIT (default, never): GLenum;
+	public var COLOR_BUFFER_BIT (default, never) : GLenum;
 
 	/** Draw single points. **/
-	public var POINTS (default, never): GLenum;
+	public var POINTS (default, never) : PrimitiveModeEnum;
 
 	/** Draw lines. Each vertex connects to the one after it. **/
-	public var LINES (default, never): GLenum;
+	public var LINES (default, never) : PrimitiveModeEnum;
 
 	/** Draw lines. Each set of two vertices is treated as a separate line segment. **/
-	public var LINE_LOOP (default, never): GLenum;
+	public var LINE_LOOP (default, never) : ArrayModeEnum;
 
 	/** Draw a connected group of line segments from the first vertex to the last. **/
-	public var LINE_STRIP (default, never): GLenum;
+	public var LINE_STRIP (default, never) : ArrayModeEnum;
 
 	/** Draw triangles. Each set of three vertices creates a separate triangle. **/
-	public var TRIANGLES (default, never): GLenum;
+	public var TRIANGLES (default, never) : PrimitiveModeEnum;
 
 	/** Draw a connected group of triangles. **/
-	public var TRIANGLE_STRIP (default, never): GLenum;
+	public var TRIANGLE_STRIP (default, never) : ArrayModeEnum;
 
 	/** Draw a connected group of triangles. Each vertex connects to the previous and the first vertex in the fan. **/
-	public var TRIANGLE_FAN (default, never): GLenum;
+	public var TRIANGLE_FAN (default, never) : ArrayModeEnum;
 
 	/** When used as blend function: multiplies all colors by 0. When used as stencil op: sets the stencil buffer value to 0. **/
-	public var ZERO (default, never): GLenum;
+	public var ZERO (default, never) : GLenum;
 
 	/** Multiplies all colors by 1. **/
-	public var ONE (default, never): GLenum;
+	public var ONE (default, never) : GLenum;
 
 	/** Multiplies all colors by the source colors. **/
-	public var SRC_COLOR (default, never): GLenum;
+	public var SRC_COLOR (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus each source color. **/
-	public var ONE_MINUS_SRC_COLOR (default, never): GLenum;
+	public var ONE_MINUS_SRC_COLOR (default, never) : GLenum;
 
 	/** Multiplies all colors by the source alpha value. **/
-	public var SRC_ALPHA (default, never): GLenum;
+	public var SRC_ALPHA (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus the source alpha value. **/
-	public var ONE_MINUS_SRC_ALPHA (default, never): GLenum;
+	public var ONE_MINUS_SRC_ALPHA (default, never) : GLenum;
 
 	/** Multiplies all colors by the destination alpha value. **/
-	public var DST_ALPHA (default, never): GLenum;
+	public var DST_ALPHA (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus the destination alpha value. **/
-	public var ONE_MINUS_DST_ALPHA (default, never): GLenum;
+	public var ONE_MINUS_DST_ALPHA (default, never) : GLenum;
 
 	/** Multiplies all colors by the destination color. **/
-	public var DST_COLOR (default, never): GLenum;
+	public var DST_COLOR (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus each destination color. **/
-	public var ONE_MINUS_DST_COLOR (default, never): GLenum;
+	public var ONE_MINUS_DST_COLOR (default, never) : GLenum;
 
 	/** Multiplies the RGB colors by the smaller of either the source alpha value or the value of 1 minus the destination alpha value. The alpha value is multiplied by 1. **/
-	public var SRC_ALPHA_SATURATE (default, never): GLenum;
+	public var SRC_ALPHA_SATURATE (default, never) : GLenum;
 
 	/** Multiplies all colors by a constant color. **/
-	public var CONSTANT_COLOR (default, never): GLenum;
+	public var CONSTANT_COLOR (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus a constant color. **/
-	public var ONE_MINUS_CONSTANT_COLOR (default, never): GLenum;
+	public var ONE_MINUS_CONSTANT_COLOR (default, never) : GLenum;
 
 	/** Multiplies all colors by a constant alpha value. **/
-	public var CONSTANT_ALPHA (default, never): GLenum;
+	public var CONSTANT_ALPHA (default, never) : GLenum;
 
 	/** Multiplies all colors by 1 minus a constant alpha value. **/
-	public var ONE_MINUS_CONSTANT_ALPHA (default, never): GLenum;
+	public var ONE_MINUS_CONSTANT_ALPHA (default, never) : GLenum;
 
 	/** Source + destination. **/
-	public var FUNC_ADD (default, never): GLenum;
+	public var FUNC_ADD (default, never) : GLenum;
 
 	/** Source - destination. **/
-	public var FUNC_SUBTRACT (default, never): GLenum;
+	public var FUNC_SUBTRACT (default, never) : GLenum;
 
 	/** Destination - source. **/
-	public var FUNC_REVERSE_SUBTRACT (default, never): GLenum;
+	public var FUNC_REVERSE_SUBTRACT (default, never) : GLenum;
 
 	/** Get the current RGB blend function. **/
-	public var BLEND_EQUATION (default, never): GLenum;
+	public var BLEND_EQUATION (default, never) : ParameterBlendEquationEnum;
 
 	/** Get the current RGB blend function. Same as BLEND_EQUATION. **/
-	public var BLEND_EQUATION_RGB (default, never): GLenum;
+	public var BLEND_EQUATION_RGB (default, never) : ParameterBlendEquationEnum;
 
 	/** Get the current alpha blend function. Same as BLEND_EQUATION. **/
-	public var BLEND_EQUATION_ALPHA (default, never): GLenum;
+	public var BLEND_EQUATION_ALPHA (default, never) : ParameterBlendEquationEnum;
 
 	/** Get the current destination RGB blend function. **/
-	public var BLEND_DST_RGB (default, never): GLenum;
+	public var BLEND_DST_RGB (default, never) : ParameterBlendFuncEnum;
 
 	/** Get the current destination RGB blend function. **/
-	public var BLEND_SRC_RGB (default, never): GLenum;
+	public var BLEND_SRC_RGB (default, never) : ParameterBlendFuncEnum;
 
 	/** Get the current destination alpha blend function. **/
-	public var BLEND_DST_ALPHA (default, never): GLenum;
+	public var BLEND_DST_ALPHA (default, never) : ParameterBlendFuncEnum;
 
 	/** Get the current source alpha blend function. **/
-	public var BLEND_SRC_ALPHA (default, never): GLenum;
+	public var BLEND_SRC_ALPHA (default, never) : ParameterBlendFuncEnum;
 
 	/** Get the current blend color. **/
-	public var BLEND_COLOR (default, never): GLenum;
+	public var BLEND_COLOR (default, never) : ParameterFloat32ArrayEnum;
 
 	/** Get the array buffer binding. **/
-	public var ARRAY_BUFFER_BINDING (default, never): GLenum;
+	public var ARRAY_BUFFER_BINDING (default, never) : ArrayBufferBindingEnum;
 
 	/** Get the current element array buffer. **/
-	public var ELEMENT_ARRAY_BUFFER_BINDING (default, never): GLenum;
+	public var ELEMENT_ARRAY_BUFFER_BINDING (default, never) : ParameterBufferEnum;
 
 	/** Get the current lineWidth. **/
-	public var LINE_WIDTH (default, never): GLenum;
+	public var LINE_WIDTH (default, never) : ParameterFloatEnum;
 
 	/** Get the current size of a point drawn with `POINTS`. **/
-	public var ALIASED_POINT_SIZE_RANGE (default, never): GLenum;
+	public var ALIASED_POINT_SIZE_RANGE (default, never) : ParameterFloat32ArrayEnum;
 
 	/** Get the range of available widths for a line. Returns a length-2 array with the low value at 0, and high at 1. **/
-	public var ALIASED_LINE_WIDTH_RANGE (default, never): GLenum;
+	public var ALIASED_LINE_WIDTH_RANGE (default, never) : ParameterFloat32ArrayEnum;
 
 	/** Get the current value of cullFace. Should return `FRONT`, `BACK`, or `FRONT_AND_BACK`. **/
-	public var CULL_FACE_MODE (default, never): GLenum;
+	public var CULL_FACE_MODE (default, never) : ParameterEnum;
 
 	/** Get the current value of frontFace. Should return `CW` or `CCW`. **/
-	public var FRONT_FACE (default, never): GLenum;
+	public var FRONT_FACE (default, never) : ParameterEnum;
 
 	/** Returns a length-2 array of floats giving the current depth range. **/
-	public var DEPTH_RANGE (default, never): GLenum;
+	public var DEPTH_RANGE (default, never) : ParameterFloat32ArrayEnum;
 
 	/** Get if the depth write mask is enabled. **/
-	public var DEPTH_WRITEMASK (default, never): GLenum;
+	public var DEPTH_WRITEMASK (default, never) : ParameterBooleanEnum;
 
 	/** Get the current depth clear value. **/
-	public var DEPTH_CLEAR_VALUE (default, never): GLenum;
+	public var DEPTH_CLEAR_VALUE (default, never) : ParameterFloatEnum;
 
 	/** Get the current depth function. Returns `NEVER`, `ALWAYS`, `LESS`, `EQUAL`, `LEQUAL`, `GREATER`, `GEQUAL`, or `NOTEQUAL`. **/
-	public var DEPTH_FUNC (default, never): GLenum;
+	public var DEPTH_FUNC (default, never) : ParameterTestFuncEnum;
 
 	/** Get the value the stencil will be cleared to. **/
-	public var STENCIL_CLEAR_VALUE (default, never): GLenum;
+	public var STENCIL_CLEAR_VALUE (default, never) : ParameterIntegerEnum;
 
 	/** Get the current stencil function. Returns `NEVER`, `ALWAYS`, `LESS`, `EQUAL`, `LEQUAL`, `GREATER`, `GEQUAL`, or `NOTEQUAL`. **/
-	public var STENCIL_FUNC (default, never): GLenum;
+	public var STENCIL_FUNC (default, never) : ParameterTestFuncEnum;
 
 	/** Get the current stencil fail function. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`. **/
-	public var STENCIL_FAIL (default, never): GLenum;
+	public var STENCIL_FAIL (default, never) : ParameterStencilFuncEnum;
 
 	/** Get the current stencil fail function should the depth buffer test fail. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`. **/
-	public var STENCIL_PASS_DEPTH_FAIL (default, never): GLenum;
+	public var STENCIL_PASS_DEPTH_FAIL (default, never) : ParameterStencilFuncEnum;
 
 	/** Get the current stencil fail function should the depth buffer test pass. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`. **/
-	public var STENCIL_PASS_DEPTH_PASS (default, never): GLenum;
+	public var STENCIL_PASS_DEPTH_PASS (default, never) : ParameterStencilFuncEnum;
 
 	/** Get the reference value used for stencil tests. **/
-	public var STENCIL_REF (default, never): GLenum;
+	public var STENCIL_REF (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var STENCIL_VALUE_MASK (default, never): GLenum;
+	public var STENCIL_VALUE_MASK (default, never) : ParameterUnsignedIntEnum;
 
 	/** **/
-	public var STENCIL_WRITEMASK (default, never): GLenum;
+	public var STENCIL_WRITEMASK (default, never) : ParameterUnsignedIntEnum;
 
 	/** **/
-	public var STENCIL_BACK_FUNC (default, never): GLenum;
+	public var STENCIL_BACK_FUNC (default, never) : ParameterTestFuncEnum;
 
 	/** **/
-	public var STENCIL_BACK_FAIL (default, never): GLenum;
+	public var STENCIL_BACK_FAIL (default, never) : ParameterStencilFuncEnum;
 
 	/** **/
-	public var STENCIL_BACK_PASS_DEPTH_FAIL (default, never): GLenum;
+	public var STENCIL_BACK_PASS_DEPTH_FAIL (default, never) : ParameterStencilFuncEnum;
 
 	/** **/
-	public var STENCIL_BACK_PASS_DEPTH_PASS (default, never): GLenum;
+	public var STENCIL_BACK_PASS_DEPTH_PASS (default, never) : ParameterStencilFuncEnum;
 
 	/** **/
-	public var STENCIL_BACK_REF (default, never): GLenum;
+	public var STENCIL_BACK_REF (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var STENCIL_BACK_VALUE_MASK (default, never): GLenum;
+	public var STENCIL_BACK_VALUE_MASK (default, never) : ParameterUnsignedIntEnum;
 
 	/** **/
-	public var STENCIL_BACK_WRITEMASK (default, never): GLenum;
+	public var STENCIL_BACK_WRITEMASK (default, never) : ParameterUnsignedIntEnum;
 
 	/** Returns an `Int32Array` with four elements for the current viewport dimensions. **/
-	public var VIEWPORT (default, never): GLenum;
+	public var VIEWPORT (default, never) : ParameterInt32ArrayEnum;
 
 	/** Returns an `Int32Array` with four elements for the current scissor box dimensions. **/
-	public var SCISSOR_BOX (default, never): GLenum;
+	public var SCISSOR_BOX (default, never) : ParameterInt32ArrayEnum;
 
 	/** **/
-	public var COLOR_CLEAR_VALUE (default, never): GLenum;
+	public var COLOR_CLEAR_VALUE (default, never) : ParameterFloat32ArrayEnum;
 
 	/** **/
-	public var COLOR_WRITEMASK (default, never): GLenum;
+	public var COLOR_WRITEMASK (default, never) : ParameterEnum;
 
 	/** Unpacking of pixel data from memory. Allowed values: 1, 2, 4, 8. Default value: 4. **/
-	public var UNPACK_ALIGNMENT (default, never): GLenum;
+	public var UNPACK_ALIGNMENT (default, never) : PixelStorageIntegerEnum;
 
 	/** Packing of pixel data into memory. Allowed values: 1, 2, 4, 8. Default value: 4. **/
-	public var PACK_ALIGNMENT (default, never): GLenum;
+	public var PACK_ALIGNMENT (default, never) : PixelStorageIntegerEnum;
 
 	/** **/
-	public var MAX_TEXTURE_SIZE (default, never): GLenum;
+	public var MAX_TEXTURE_SIZE (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_VIEWPORT_DIMS (default, never): GLenum;
+	public var MAX_VIEWPORT_DIMS (default, never) : ParameterInt32ArrayEnum;
 
 	/** **/
-	public var SUBPIXEL_BITS (default, never): GLenum;
+	public var SUBPIXEL_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var RED_BITS (default, never): GLenum;
+	public var RED_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var GREEN_BITS (default, never): GLenum;
+	public var GREEN_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var BLUE_BITS (default, never): GLenum;
+	public var BLUE_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var ALPHA_BITS (default, never): GLenum;
+	public var ALPHA_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var DEPTH_BITS (default, never): GLenum;
+	public var DEPTH_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var STENCIL_BITS (default, never): GLenum;
+	public var STENCIL_BITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var POLYGON_OFFSET_UNITS (default, never): GLenum;
+	public var POLYGON_OFFSET_UNITS (default, never) : ParameterFloatEnum;
 
 	/** **/
-	public var POLYGON_OFFSET_FACTOR (default, never): GLenum;
+	public var POLYGON_OFFSET_FACTOR (default, never) : ParameterFloatEnum;
 
 	/** **/
-	public var TEXTURE_BINDING_2D (default, never): GLenum;
+	public var TEXTURE_BINDING_2D (default, never) : ParameterTextureEnum;
 
 	/** **/
-	public var SAMPLE_BUFFERS (default, never): GLenum;
+	public var SAMPLE_BUFFERS (default, never) : ParameterIntegerEnum;
 
 	/** Sample counts supported for an internalformat in descending order. **/
-	public var SAMPLES (default, never): GLenum;
+	public var SAMPLES (default, never) : SamplesEnum;
 
 	/** **/
-	public var SAMPLE_COVERAGE_VALUE (default, never): GLenum;
+	public var SAMPLE_COVERAGE_VALUE (default, never) : ParameterFloatEnum;
 
 	/** **/
-	public var SAMPLE_COVERAGE_INVERT (default, never): GLenum;
+	public var SAMPLE_COVERAGE_INVERT (default, never) : ParameterBooleanEnum;
 
 	/** **/
-	public var COMPRESSED_TEXTURE_FORMATS (default, never): GLenum;
+	public var COMPRESSED_TEXTURE_FORMATS (default, never) : ParameterEnum;
 
 	/** **/
-	public var VENDOR (default, never): GLenum;
+	public var VENDOR (default, never) : ParameterStringEnum;
 
 	/** **/
-	public var RENDERER (default, never): GLenum;
+	public var RENDERER (default, never) : ParameterStringEnum;
 
 	/** **/
-	public var VERSION (default, never): GLenum;
+	public var VERSION (default, never) : ParameterStringEnum;
 
 	/** **/
-	public var IMPLEMENTATION_COLOR_READ_TYPE (default, never): GLenum;
+	public var IMPLEMENTATION_COLOR_READ_TYPE (default, never) : ParameterEnum;
 
 	/** **/
-	public var IMPLEMENTATION_COLOR_READ_FORMAT (default, never): GLenum;
+	public var IMPLEMENTATION_COLOR_READ_FORMAT (default, never) : ParameterEnum;
 
 	/** **/
-	public var BROWSER_DEFAULT_WEBGL (default, never): GLenum;
+	public var BROWSER_DEFAULT_WEBGL (default, never) : GLenum;
 
 	/** Contents of the buffer are likely to be used often and not change often. Contents are written to the buffer, but not read. **/
-	public var STATIC_DRAW (default, never): GLenum;
+	public var STATIC_DRAW (default, never) : GLenum;
 
 	/** Contents of the buffer are likely to not be used often. Contents are written to the buffer, but not read. **/
-	public var STREAM_DRAW (default, never): GLenum;
+	public var STREAM_DRAW (default, never) : GLenum;
 
 	/** ontents of the buffer are likely to be used often and change often. Contents are written to the buffer, but not read. **/
-	public var DYNAMIC_DRAW (default, never): GLenum;
+	public var DYNAMIC_DRAW (default, never) : GLenum;
 
 	/** Buffer containing vertex attributes, such as vertex coordinates, texture coordinate data, or vertex color data. **/
-	public var ARRAY_BUFFER (default, never): GLenum;
+	public var ARRAY_BUFFER (default, never) : GLenum;
 
 	/** Buffer used for element indices. **/
-	public var ELEMENT_ARRAY_BUFFER (default, never): GLenum;
+	public var ELEMENT_ARRAY_BUFFER (default, never) : GLenum;
 
 	/** Get a buffer's size. **/
-	public var BUFFER_SIZE (default, never): GLenum;
+	public var BUFFER_SIZE (default, never) : GLenum;
 
 	/** Get the hint for the buffer passed in when it was created. **/
-	public var BUFFER_USAGE (default, never): GLenum;
+	public var BUFFER_USAGE (default, never) : GLenum;
 
 	/** Get the current vertex attribute. **/
-	public var CURRENT_VERTEX_ATTRIB (default, never): GLenum;
+	public var CURRENT_VERTEX_ATTRIB (default, never) : VertexAttribEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_ENABLED (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_ENABLED (default, never) : VertexAttribBooleanEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_SIZE (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_SIZE (default, never) : VertexAttribIntegerEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_STRIDE (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_STRIDE (default, never) : VertexAttribIntegerEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_TYPE (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_TYPE (default, never) : VertexAttribEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_NORMALIZED (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_NORMALIZED (default, never) : VertexAttribBooleanEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_POINTER (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_POINTER (default, never) : GLenum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_BUFFER_BINDING (default, never): GLenum;
+	public var VERTEX_ATTRIB_ARRAY_BUFFER_BINDING (default, never) : VertexAttribEnum;
 
 	/** The culling of polygons. **/
-	public var CULL_FACE (default, never): GLenum;
+	public var CULL_FACE (default, never) : CapabilityEnum;
 
 	/** Specify that only front faces should be drawn. **/
-	public var FRONT (default, never): GLenum;
+	public var FRONT (default, never) : GLenum;
 
 	/** Specify that only back faces should be drawn. **/
-	public var BACK (default, never): GLenum;
+	public var BACK (default, never) : GLenum;
 
 	/** Specify that front and back faces should be drawn. **/
-	public var FRONT_AND_BACK (default, never): GLenum;
+	public var FRONT_AND_BACK (default, never) : GLenum;
 
 	/** The blending of the computed fragment color values. **/
-	public var BLEND (default, never): GLenum;
+	public var BLEND (default, never) : CapabilityEnum;
 
 	/** The depth comparisons and updates to the depth buffer. **/
-	public var DEPTH_TEST (default, never): GLenum;
+	public var DEPTH_TEST (default, never) : CapabilityEnum;
 
 	/** The dithering of color components before they get written to the color buffer. **/
-	public var DITHER (default, never): GLenum;
+	public var DITHER (default, never) : CapabilityEnum;
 
 	/** The adding of an offset to depth values of polygon's fragments. Useful for rendering hidden-line images, decals, and or solids with highlighted edges. **/
-	public var POLYGON_OFFSET_FILL (default, never): GLenum;
+	public var POLYGON_OFFSET_FILL (default, never) : CapabilityEnum;
 
 	/** The computation of a temporary coverage value determined by the alpha value. Used in multi-sampling alpha channels. **/
-	public var SAMPLE_ALPHA_TO_COVERAGE (default, never): GLenum;
+	public var SAMPLE_ALPHA_TO_COVERAGE (default, never) : CapabilityEnum;
 
 	/** ANDing of the fragment's coverage with the temporary coverage value. Used in multi-sampling. **/
-	public var SAMPLE_COVERAGE (default, never): GLenum;
+	public var SAMPLE_COVERAGE (default, never) : CapabilityEnum;
 
 	/** The scissor test that discards fragments that are outside of the scissor rectangle. See  **/
-	public var SCISSOR_TEST (default, never): GLenum;
+	public var SCISSOR_TEST (default, never) : CapabilityEnum;
 
 	/** The stencil testing and updates to the stencil buffer. **/
-	public var STENCIL_TEST (default, never): GLenum;
+	public var STENCIL_TEST (default, never) : CapabilityEnum;
 
 	/** No error has been recorded. **/
-	public var NO_ERROR (default, never): GLenum;
+	public var NO_ERROR (default, never) : ErrorEnum;
 
 	/** An unacceptable value has been specified for an enumerated argument. The command is ignored and the error flag is set. **/
-	public var INVALID_ENUM (default, never): GLenum;
+	public var INVALID_ENUM (default, never) : ErrorEnum;
 
 	/** A numeric argument is out of range. The command is ignored and the error flag is set. **/
-	public var INVALID_VALUE (default, never): GLenum;
+	public var INVALID_VALUE (default, never) : ErrorEnum;
 
 	/** The specified command is not allowed for the current state. The command is ignored and the error flag is set. **/
-	public var INVALID_OPERATION (default, never): GLenum;
+	public var INVALID_OPERATION (default, never) : ErrorEnum;
 
 	/** Not enough memory is left to execute the command. **/
-	public var OUT_OF_MEMORY (default, never): GLenum;
+	public var OUT_OF_MEMORY (default, never) : ErrorEnum;
 
 	/** If the WebGL context is lost, this error is returned on the first call to `getError`. Afterwards and until the context has been restored, it returns `NO_ERROR`. **/
-	public var CONTEXT_LOST_WEBGL (default, never): GLenum;
+	public var CONTEXT_LOST_WEBGL (default, never) : ErrorEnum;
 
 	/** Specify the front face of a polygon is drawn in the clockwise direction. **/
-	public var CW (default, never): GLenum;
+	public var CW (default, never) : GLenum;
 
 	/** Specify the front face of a polygon is drawn in the counter clockwise direction. **/
-	public var CCW (default, never): GLenum;
+	public var CCW (default, never) : GLenum;
 
 	/** There is no preference for this behavior. **/
-	public var DONT_CARE (default, never): GLenum;
+	public var DONT_CARE (default, never) : GLenum;
 
 	/** The most efficient behavior should be used. **/
-	public var FASTEST (default, never): GLenum;
+	public var FASTEST (default, never) : GLenum;
 
 	/** The most correct or the highest quality option should be used. **/
-	public var NICEST (default, never): GLenum;
+	public var NICEST (default, never) : GLenum;
 
 	/** Hint for the quality of filtering when generating mipmap images with `RenderingContext.generateMipmap()`. **/
-	public var GENERATE_MIPMAP_HINT (default, never): GLenum;
+	public var GENERATE_MIPMAP_HINT (default, never) : HintEnum;
 
 	/** **/
-	public var BYTE (default, never): GLenum;
+	public var BYTE (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_BYTE (default, never): GLenum;
+	public var UNSIGNED_BYTE (default, never) : GLenum;
 
 	/** **/
-	public var SHORT (default, never): GLenum;
+	public var SHORT (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_SHORT (default, never): GLenum;
+	public var UNSIGNED_SHORT (default, never) : GLenum;
 
 	/** **/
-	public var INT (default, never): GLenum;
+	public var INT (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_INT (default, never): GLenum;
+	public var UNSIGNED_INT (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT (default, never): GLenum;
+	public var FLOAT (default, never) : GLenum;
 
 	/** **/
-	public var DEPTH_COMPONENT (default, never): GLenum;
+	public var DEPTH_COMPONENT (default, never) : GLenum;
 
 	/** Discards the red, green and blue components and reads the alpha component. **/
-	public var ALPHA (default, never): GLenum;
+	public var ALPHA (default, never) : GLenum;
 
 	/** Discards the alpha components and reads the red, green and blue components. **/
-	public var RGB (default, never): GLenum;
+	public var RGB (default, never) : GLenum;
 
 	/** Red, green, blue and alpha components are read from the color buffer. **/
-	public var RGBA (default, never): GLenum;
+	public var RGBA (default, never) : GLenum;
 
 	/** Each color component is a luminance component, alpha is 1.0. **/
-	public var LUMINANCE (default, never): GLenum;
+	public var LUMINANCE (default, never) : GLenum;
 
 	/** Each component is a luminance/alpha component. **/
-	public var LUMINANCE_ALPHA (default, never): GLenum;
+	public var LUMINANCE_ALPHA (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_SHORT_4_4_4_4 (default, never): GLenum;
+	public var UNSIGNED_SHORT_4_4_4_4 (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_SHORT_5_5_5_1 (default, never): GLenum;
+	public var UNSIGNED_SHORT_5_5_5_1 (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_SHORT_5_6_5 (default, never): GLenum;
+	public var UNSIGNED_SHORT_5_6_5 (default, never) : GLenum;
 
 	/** A fragment shader. **/
-	public var FRAGMENT_SHADER (default, never): GLenum;
+	public var FRAGMENT_SHADER (default, never) : GLenum;
 
 	/** A vertex shader. **/
-	public var VERTEX_SHADER (default, never): GLenum;
+	public var VERTEX_SHADER (default, never) : GLenum;
 
 	/** Get the status of the compilation. Returns false if the shader was not compiled. You can then query `getShaderInfoLog` to find the exact error. **/
-	public var COMPILE_STATUS (default, never): GLenum;
+	public var COMPILE_STATUS (default, never) : GLenum;
 
 	/** Get if a shader was deleted via `deleteShader`. **/
-	public var DELETE_STATUS (default, never): GLenum;
+	public var DELETE_STATUS (default, never) : GLenum;
 
 	/** Get if a program was linked correctly. Returns false if there were errors. Use `getProgramInfoLog` to find the exact error. **/
-	public var LINK_STATUS (default, never): GLenum;
+	public var LINK_STATUS (default, never) : GLenum;
 
 	/** Get if program is valid. Returns false if errors were found. **/
-	public var VALIDATE_STATUS (default, never): GLenum;
+	public var VALIDATE_STATUS (default, never) : GLenum;
 
 	/** Get if the shader was attached correctly. Returns false if errors occurred. **/
-	public var ATTACHED_SHADERS (default, never): GLenum;
+	public var ATTACHED_SHADERS (default, never) : GLenum;
 
 	/** Get the number of attributes active in a program. **/
-	public var ACTIVE_ATTRIBUTES (default, never): GLenum;
+	public var ACTIVE_ATTRIBUTES (default, never) : GLenum;
 
 	/** Get the number of uniforms active in a program. **/
-	public var ACTIVE_UNIFORMS (default, never): GLenum;
+	public var ACTIVE_UNIFORMS (default, never) : GLenum;
 
 	/** The maximum number of entries possible in the vertex attribute list. **/
-	public var MAX_VERTEX_ATTRIBS (default, never): GLenum;
+	public var MAX_VERTEX_ATTRIBS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_VERTEX_UNIFORM_VECTORS (default, never): GLenum;
+	public var MAX_VERTEX_UNIFORM_VECTORS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_VARYING_VECTORS (default, never): GLenum;
+	public var MAX_VARYING_VECTORS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_COMBINED_TEXTURE_IMAGE_UNITS (default, never): GLenum;
+	public var MAX_COMBINED_TEXTURE_IMAGE_UNITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_VERTEX_TEXTURE_IMAGE_UNITS (default, never): GLenum;
+	public var MAX_VERTEX_TEXTURE_IMAGE_UNITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_TEXTURE_IMAGE_UNITS (default, never): GLenum;
+	public var MAX_TEXTURE_IMAGE_UNITS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var MAX_FRAGMENT_UNIFORM_VECTORS (default, never): GLenum;
+	public var MAX_FRAGMENT_UNIFORM_VECTORS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var SHADER_TYPE (default, never): GLenum;
+	public var SHADER_TYPE (default, never) : GLenum;
 
 	/** **/
-	public var SHADING_LANGUAGE_VERSION (default, never): GLenum;
+	public var SHADING_LANGUAGE_VERSION (default, never) : ParameterStringEnum;
 
 	/** **/
-	public var CURRENT_PROGRAM (default, never): GLenum;
+	public var CURRENT_PROGRAM (default, never) : ParameterEnum;
 
 	/** Specify depth or stencil tests will never pass. i.e. Nothing will be drawn. **/
-	public var NEVER (default, never): GLenum;
+	public var NEVER (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will always pass. i.e. Pixels will be drawn in the order they are drawn. **/
-	public var ALWAYS (default, never): GLenum;
+	public var ALWAYS (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is less than the stored value. **/
-	public var LESS (default, never): GLenum;
+	public var LESS (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is equals to the stored value. **/
-	public var EQUAL (default, never): GLenum;
+	public var EQUAL (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is less than or equal to the stored value. **/
-	public var LEQUAL (default, never): GLenum;
+	public var LEQUAL (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is greater than the stored value. **/
-	public var GREATER (default, never): GLenum;
+	public var GREATER (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is greater than or equal to the stored value. **/
-	public var GEQUAL (default, never): GLenum;
+	public var GEQUAL (default, never) : GLenum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is not equal to the stored value.**/
-	public var NOTEQUAL (default, never): GLenum;
+	public var NOTEQUAL (default, never) : GLenum;
 
 	/** Keeps the current value. **/
-	public var KEEP (default, never): GLenum;
+	public var KEEP (default, never) : GLenum;
 
 	/** Sets the stencil buffer value to the reference value as specified by `stencilFunc`. **/
-	public var REPLACE (default, never): GLenum;
+	public var REPLACE (default, never) : GLenum;
 
 	/** Increments the current stencil buffer value. Clamps to the maximum representable unsigned value. **/
-	public var INCR (default, never): GLenum;
+	public var INCR (default, never) : GLenum;
 
 	/** Decrements the current stencil buffer value. Clamps to 0. **/
-	public var DECR (default, never): GLenum;
+	public var DECR (default, never) : GLenum;
 
 	/** Inverts the current stencil buffer value bitwise. **/
-	public var INVERT (default, never): GLenum;
+	public var INVERT (default, never) : GLenum;
 
 	/** Increments the current stencil buffer value. Wraps stencil buffer value to zero when incrementing the maximum representable unsigned value. **/
-	public var INCR_WRAP (default, never): GLenum;
+	public var INCR_WRAP (default, never) : GLenum;
 
 	/** Decrements the current stencil buffer value. Wraps stencil buffer value to the maximum representable unsigned value when decrementing a stencil buffer value of 0. **/
-	public var DECR_WRAP (default, never): GLenum;
+	public var DECR_WRAP (default, never) : GLenum;
 
 	/** **/
-	public var NEAREST (default, never): GLenum;
+	public var NEAREST (default, never) : GLenum;
 
 	/** **/
-	public var LINEAR (default, never): GLenum;
+	public var LINEAR (default, never) : GLenum;
 
 	/** **/
-	public var NEAREST_MIPMAP_NEAREST (default, never): GLenum;
+	public var NEAREST_MIPMAP_NEAREST (default, never) : GLenum;
 
 	/** **/
-	public var LINEAR_MIPMAP_NEAREST (default, never): GLenum;
+	public var LINEAR_MIPMAP_NEAREST (default, never) : GLenum;
 
 	/** **/
-	public var NEAREST_MIPMAP_LINEAR (default, never): GLenum;
+	public var NEAREST_MIPMAP_LINEAR (default, never) : GLenum;
 
 	/** **/
-	public var LINEAR_MIPMAP_LINEAR (default, never): GLenum;
+	public var LINEAR_MIPMAP_LINEAR (default, never) : GLenum;
 
 	/** Texture magnification filter. Available values: `LINEAR`, `NEAREST`. Default value: `LINEAR`. **/
-	public var TEXTURE_MAG_FILTER (default, never): GLenum;
+	public var TEXTURE_MAG_FILTER (default, never) : GLenum;
 
 	/** Texture minification filter. Available values: `LINEAR`, `NEAREST`, `NEAREST_MIPMAP_NEAREST`, `LINEAR_MIPMAP_NEAREST`, `NEAREST_MIPMAP_LINEAR`. Default value: `NEAREST_MIPMAP_LINEAR`. **/
-	public var TEXTURE_MIN_FILTER (default, never): GLenum;
+	public var TEXTURE_MIN_FILTER (default, never) : GLenum;
 
 	/** Wrapping function for texture coordinate s. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
-	public var TEXTURE_WRAP_S (default, never): GLenum;
+	public var TEXTURE_WRAP_S (default, never) : GLenum;
 
 	/** Wrapping function for texture coordinate t. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
-	public var TEXTURE_WRAP_T (default, never): GLenum;
+	public var TEXTURE_WRAP_T (default, never) : GLenum;
 
 	/** A two-dimensional texture. **/
-	public var TEXTURE_2D (default, never): GLenum;
+	public var TEXTURE_2D (default, never) : GLenum;
 
 	/** **/
-	public var TEXTURE (default, never): GLenum;
+	public var TEXTURE (default, never) : GLenum;
 
 	/** A cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP (default, never) : GLenum;
 
 	/** **/
-	public var TEXTURE_BINDING_CUBE_MAP (default, never): GLenum;
+	public var TEXTURE_BINDING_CUBE_MAP (default, never) : ParameterTextureEnum;
 
 	/** Positive X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never) : GLenum;
 
 	/** Negative X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never) : GLenum;
 
 	/** Positive Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never) : GLenum;
 
 	/** Negative Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never) : GLenum;
 
 	/** Positive Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never) : GLenum;
 
 	/** Negative Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never): GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never) : GLenum;
 
 	/** **/
-	public var MAX_CUBE_MAP_TEXTURE_SIZE (default, never): GLenum;
+	public var MAX_CUBE_MAP_TEXTURE_SIZE (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var TEXTURE0 (default, never): GLenum;
+	public var TEXTURE0 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE1 (default, never): GLenum;
+	public var TEXTURE1 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE2 (default, never): GLenum;
+	public var TEXTURE2 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE3 (default, never): GLenum;
+	public var TEXTURE3 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE4 (default, never): GLenum;
+	public var TEXTURE4 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE5 (default, never): GLenum;
+	public var TEXTURE5 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE6 (default, never): GLenum;
+	public var TEXTURE6 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE7 (default, never): GLenum;
+	public var TEXTURE7 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE8 (default, never): GLenum;
+	public var TEXTURE8 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE9 (default, never): GLenum;
+	public var TEXTURE9 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE10 (default, never): GLenum;
+	public var TEXTURE10 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE11 (default, never): GLenum;
+	public var TEXTURE11 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE12 (default, never): GLenum;
+	public var TEXTURE12 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE13 (default, never): GLenum;
+	public var TEXTURE13 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE14 (default, never): GLenum;
+	public var TEXTURE14 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE15 (default, never): GLenum;
+	public var TEXTURE15 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE16 (default, never): GLenum;
+	public var TEXTURE16 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE17 (default, never): GLenum;
+	public var TEXTURE17 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE18 (default, never): GLenum;
+	public var TEXTURE18 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE19 (default, never): GLenum;
+	public var TEXTURE19 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE20 (default, never): GLenum;
+	public var TEXTURE20 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE21 (default, never): GLenum;
+	public var TEXTURE21 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE22 (default, never): GLenum;
+	public var TEXTURE22 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE23 (default, never): GLenum;
+	public var TEXTURE23 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE24 (default, never): GLenum;
+	public var TEXTURE24 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE25 (default, never): GLenum;
+	public var TEXTURE25 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE26 (default, never): GLenum;
+	public var TEXTURE26 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE27 (default, never): GLenum;
+	public var TEXTURE27 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE28 (default, never): GLenum;
+	public var TEXTURE28 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE29 (default, never): GLenum;
+	public var TEXTURE29 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE30 (default, never): GLenum;
+	public var TEXTURE30 (default, never) : TextureEnum;
 
 	/** **/
-	public var TEXTURE31 (default, never): GLenum;
+	public var TEXTURE31 (default, never) : TextureEnum;
 
 	/** **/
-	public var ACTIVE_TEXTURE (default, never): GLenum;
+	public var ACTIVE_TEXTURE (default, never) : ParameterEnum;
 
 	/** **/
-	public var REPEAT (default, never): GLenum;
+	public var REPEAT (default, never) : GLenum;
 
 	/** **/
-	public var CLAMP_TO_EDGE (default, never): GLenum;
+	public var CLAMP_TO_EDGE (default, never) : GLenum;
 
 	/** **/
-	public var MIRRORED_REPEAT (default, never): GLenum;
+	public var MIRRORED_REPEAT (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_VEC2 (default, never): GLenum;
+	public var FLOAT_VEC2 (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_VEC3 (default, never): GLenum;
+	public var FLOAT_VEC3 (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_VEC4 (default, never): GLenum;
+	public var FLOAT_VEC4 (default, never) : GLenum;
 
 	/** **/
-	public var INT_VEC2 (default, never): GLenum;
+	public var INT_VEC2 (default, never) : GLenum;
 
 	/** **/
-	public var INT_VEC3 (default, never): GLenum;
+	public var INT_VEC3 (default, never) : GLenum;
 
 	/** **/
-	public var INT_VEC4 (default, never): GLenum;
+	public var INT_VEC4 (default, never) : GLenum;
 
 	/** **/
-	public var BOOL (default, never): GLenum;
+	public var BOOL (default, never) : GLenum;
 
 	/** **/
-	public var BOOL_VEC2 (default, never): GLenum;
+	public var BOOL_VEC2 (default, never) : GLenum;
 
 	/** **/
-	public var BOOL_VEC3 (default, never): GLenum;
+	public var BOOL_VEC3 (default, never) : GLenum;
 
 	/** **/
-	public var BOOL_VEC4 (default, never): GLenum;
+	public var BOOL_VEC4 (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_MAT2 (default, never): GLenum;
+	public var FLOAT_MAT2 (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_MAT3 (default, never): GLenum;
+	public var FLOAT_MAT3 (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_MAT4 (default, never): GLenum;
+	public var FLOAT_MAT4 (default, never) : GLenum;
 
 	/** **/
-	public var SAMPLER_2D (default, never): GLenum;
+	public var SAMPLER_2D (default, never) : GLenum;
 
 	/** **/
-	public var SAMPLER_CUBE (default, never): GLenum;
+	public var SAMPLER_CUBE (default, never) : GLenum;
 
 	/** **/
-	public var LOW_FLOAT (default, never): GLenum;
+	public var LOW_FLOAT (default, never) : ShaderPrecisionEnum;
 
 	/** **/
-	public var MEDIUM_FLOAT (default, never): GLenum;
+	public var MEDIUM_FLOAT (default, never) : ShaderPrecisionEnum;
 
 	/** **/
-	public var HIGH_FLOAT (default, never): GLenum;
+	public var HIGH_FLOAT (default, never) : ShaderPrecisionEnum;
 
 	/** **/
-	public var LOW_INT (default, never): GLenum;
+	public var LOW_INT (default, never) : ShaderPrecisionEnum;
 
 	/** **/
-	public var MEDIUM_INT (default, never): GLenum;
+	public var MEDIUM_INT (default, never) : ShaderPrecisionEnum;
 
 	/** **/
-	public var HIGH_INT (default, never): GLenum;
+	public var HIGH_INT (default, never) : ShaderPrecisionEnum;
 
 	/** Collection buffer data storage of color, alpha, depth and stencil buffers used to render an image. **/
-	public var FRAMEBUFFER (default, never): GLenum;
+	public var FRAMEBUFFER (default, never) : GLenum;
 
 	/** Buffer data storage for single images in a renderable internal format. **/
-	public var RENDERBUFFER (default, never): GLenum;
+	public var RENDERBUFFER (default, never) : GLenum;
 
 	/** Internal format of 4 red bits, 4 green bits, 4 blue bits 4 alpha bits. **/
-	public var RGBA4 (default, never): GLenum;
+	public var RGBA4 (default, never) : GLenum;
 
 	/** Internal format of 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit. **/
-	public var RGB5_A1 (default, never): GLenum;
+	public var RGB5_A1 (default, never) : GLenum;
 
 	/** Internal format of 5 red bits, 6 green bits, 5 blue bits. **/
-	public var RGB565 (default, never): GLenum;
+	public var RGB565 (default, never) : GLenum;
 
 	/** Internal format of 16 depth bits. **/
-	public var DEPTH_COMPONENT16 (default, never): GLenum;
+	public var DEPTH_COMPONENT16 (default, never) : GLenum;
 
 	/** **/
-	public var STENCIL_INDEX (default, never): GLenum;
+	public var STENCIL_INDEX (default, never) : GLenum;
 
 	/** Internal format of 8 stencil bits. **/
-	public var STENCIL_INDEX8 (default, never): GLenum;
+	public var STENCIL_INDEX8 (default, never) : GLenum;
 
 	/** **/
-	public var DEPTH_STENCIL (default, never): GLenum;
+	public var DEPTH_STENCIL (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_WIDTH (default, never): GLenum;
+	public var RENDERBUFFER_WIDTH (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_HEIGHT (default, never): GLenum;
+	public var RENDERBUFFER_HEIGHT (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_INTERNAL_FORMAT (default, never): GLenum;
+	public var RENDERBUFFER_INTERNAL_FORMAT (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_RED_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_RED_SIZE (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_GREEN_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_GREEN_SIZE (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_BLUE_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_BLUE_SIZE (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_ALPHA_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_ALPHA_SIZE (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_DEPTH_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_DEPTH_SIZE (default, never) : GLenum;
 
 	/** **/
-	public var RENDERBUFFER_STENCIL_SIZE (default, never): GLenum;
+	public var RENDERBUFFER_STENCIL_SIZE (default, never) : GLenum;
 
 	/** The type which contains the attached image. **/
-	public var FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE (default, never): GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE (default, never) : GLenum;
 
 	/** The texture or renderbuffer of the attached image. **/
-	public var FRAMEBUFFER_ATTACHMENT_OBJECT_NAME (default, never): GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_OBJECT_NAME (default, never) : GLenum;
 
 	/** Mipmap level. Default value: 0. **/
-	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL (default, never): GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL (default, never) : GLenum;
 
 	/** The name of cube-map face of the texture. **/
-	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE (default, never): GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE (default, never) : GLenum;
 
 	/** Color buffer. **/
-	public var COLOR_ATTACHMENT0 (default, never): GLenum;
+	public var COLOR_ATTACHMENT0 (default, never) : GLenum;
 
 	/** Depth buffer. **/
-	public var DEPTH_ATTACHMENT (default, never): GLenum;
+	public var DEPTH_ATTACHMENT (default, never) : GLenum;
 
 	/** Stencil buffer. **/
-	public var STENCIL_ATTACHMENT (default, never): GLenum;
+	public var STENCIL_ATTACHMENT (default, never) : GLenum;
 
 	/** Depth and stencil buffer. **/
-	public var DEPTH_STENCIL_ATTACHMENT (default, never): GLenum;
+	public var DEPTH_STENCIL_ATTACHMENT (default, never) : GLenum;
 
 	/** **/
-	public var NONE (default, never): GLenum;
+	public var NONE (default, never) : GLenum;
 
 	/** The framebuffer is ready to display. **/
-	public var FRAMEBUFFER_COMPLETE (default, never): GLenum;
+	public var FRAMEBUFFER_COMPLETE (default, never) : GLenum;
 
 	/** The attachment types are mismatched or not all framebuffer attachment points are framebuffer attachment complete. **/
-	public var FRAMEBUFFER_INCOMPLETE_ATTACHMENT (default, never): GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_ATTACHMENT (default, never) : GLenum;
 
 	/** There is no attachment. **/
-	public var FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT (default, never): GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT (default, never) : GLenum;
 
 	/** Height and width of the attachment are not the same. **/
-	public var FRAMEBUFFER_INCOMPLETE_DIMENSIONS (default, never): GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_DIMENSIONS (default, never) : GLenum;
 
 	/** The format of the attachment is not supported or if depth and stencil attachments are not the same renderbuffer. **/
-	public var FRAMEBUFFER_UNSUPPORTED (default, never): GLenum;
+	public var FRAMEBUFFER_UNSUPPORTED (default, never) : GLenum;
 
 	/** **/
-	public var FRAMEBUFFER_BINDING (default, never): GLenum;
+	public var FRAMEBUFFER_BINDING (default, never) : ParameterFramebufferEnum;
 
 	/** **/
-	public var RENDERBUFFER_BINDING (default, never): GLenum;
+	public var RENDERBUFFER_BINDING (default, never) : ParameterEnum;
 
 	/** **/
-	public var MAX_RENDERBUFFER_SIZE (default, never): GLenum;
+	public var MAX_RENDERBUFFER_SIZE (default, never) : ParameterIntegerEnum;
 
 	/** The currently bound framebuffer is not framebuffer complete when trying to render to or to read from it. **/
-	public var INVALID_FRAMEBUFFER_OPERATION (default, never): GLenum;
+	public var INVALID_FRAMEBUFFER_OPERATION (default, never) : ErrorEnum;
 
 	/** Flips the source data along its vertical axis if true. Default: false. **/
-	public var UNPACK_FLIP_Y_WEBGL (default, never): GLenum;
+	public var UNPACK_FLIP_Y_WEBGL (default, never) : PixelStorageBooleanEnum;
 
 	/** Multiplies the alpha channel into the other color channels. Default: false. **/
-	public var UNPACK_PREMULTIPLY_ALPHA_WEBGL (default, never): GLenum;
+	public var UNPACK_PREMULTIPLY_ALPHA_WEBGL (default, never) : PixelStorageBooleanEnum;
 
 	/** Default color space conversion or no color space conversion. Allowed values: `BROWSER_DEFAULT_WEBGL`, `NONE`. Default: `BROWSER_DEFAULT_WEBGL`. **/
-	public var UNPACK_COLORSPACE_CONVERSION_WEBGL (default, never): GLenum;
+	public var UNPACK_COLORSPACE_CONVERSION_WEBGL (default, never) : PixelStorageEnum;
 
 	/** One-channel (red) unsigned format compression. **/
-	public var COMPRESSED_R11_EAC (default, never): GLenum;
+	public var COMPRESSED_R11_EAC (default, never) : GLenum;
 
 	/** One-channel (red) signed format compression. **/
-	public var COMPRESSED_SIGNED_R11_EAC (default, never): GLenum;
+	public var COMPRESSED_SIGNED_R11_EAC (default, never) : GLenum;
 
 	/** Two-channel (red and green) unsigned format compression. **/
-	public var COMPRESSED_RG11_EAC (default, never): GLenum;
+	public var COMPRESSED_RG11_EAC (default, never) : GLenum;
 
 	/** Two-channel (red and green) signed format compression. **/
-	public var COMPRESSED_SIGNED_RG11_EAC (default, never): GLenum;
+	public var COMPRESSED_SIGNED_RG11_EAC (default, never) : GLenum;
 
 	/** Compresses RGB8 data with no alpha channel. **/
-	public var COMPRESSED_RGB8_ETC2 (default, never): GLenum;
+	public var COMPRESSED_RGB8_ETC2 (default, never) : GLenum;
 
 	/** Compresses RGBA8 data. The RGB part is encoded the same as RGB_ETC2, but the alpha part is encoded separately. **/
-	public var COMPRESSED_RGBA8_ETC2_EAC (default, never): GLenum;
+	public var COMPRESSED_RGBA8_ETC2_EAC (default, never) : GLenum;
 
 	/** Compresses sRGB8 data with no alpha channel. **/
-	public var COMPRESSED_SRGB8_ETC2 (default, never): GLenum;
+	public var COMPRESSED_SRGB8_ETC2 (default, never) : GLenum;
 
 	/** Compresses sRGBA8 data. The sRGB part is encoded the same as SRGB_ETC2, but the alpha part is encoded separately. **/
-	public var COMPRESSED_SRGB8_ALPHA8_ETC2_EAC (default, never): GLenum;
+	public var COMPRESSED_SRGB8_ALPHA8_ETC2_EAC (default, never) : GLenum;
 
 	/** Similar to RGB8_ETC, but with ability to punch through the alpha channel, which means to make it completely opaque or transparent. **/
-	public var COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never): GLenum;
+	public var COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : GLenum;
 
 	/** Similar to SRGB8_ETC, but with ability to punch through the alpha channel, which means to make it completely opaque or transparent. **/
-	public var COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never): GLenum;
+	public var COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : GLenum;
 
 	/** A read-only back-reference to the CanvasElement. Might be null if it is not associated with a `<canvas>` element. **/
 	public var canvas (default, never) : CanvasElement;
 
 	/** The width of the current drawing buffer. Should match the width of the canvas element associated with this context, but might differ if the implementation is not able to provide the requested width. **/
-	public var drawingBufferWidth (default, never): Int;
+	public var drawingBufferWidth (default, never) : Int;
 
 	/** The height of the current drawing buffer. Should match the height of the canvas element associated with this context, but might differ if the implementation is not able to provide the requested height. **/
-	public var drawingBufferHeight (default, never): Int;
+	public var drawingBufferHeight (default, never) : Int;
 
 	/**
 	Specify which texture unit to make active.
@@ -958,7 +960,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.getParameter`
 	**/
-	public function activeTexture (texture:GLenum) : Void;
+	public function activeTexture (texture:TextureEnum) : Void;
 
 	/**
 	Attach either a fragment or vertex `Shader` to a `Program`.
@@ -1588,7 +1590,7 @@ extern class RenderingContext
 	@see `RenderingContext.enable`
 	@see `RenderingContext.isEnabled`
 	**/
-	public function disable (cap:GLenum) : Void;
+	public function disable (cap:CapabilityEnum) : Void;
 
 	/**
 	Turn the generic vertex attribute array off at a given index position.
@@ -1614,7 +1616,7 @@ extern class RenderingContext
 	@see `RenderingContext.drawElements`
 	@see `RenderingContext.drawElementsInstanced`
 	**/
-	public function drawArrays (mode:GLenum, first:Int, count:Int) : Void;
+	public function drawArrays (mode:ArrayModeEnum, first:Int, count:Int) : Void;
 
 	/**
 	Render primitives from array data.
@@ -1633,7 +1635,7 @@ extern class RenderingContext
 	@see `RenderingContext.drawArraysInstanced`
 	@see `RenderingContext.drawElementsInstanced`
 	**/
-	public function drawElements (mode:GLenum, count:Int, type:GLenum, offset:Int) : Void;
+	public function drawElements (mode:ArrayModeEnum, count:Int, type:GLenum, offset:Int) : Void;
 
 	/**
 	Enable specific WebGL capabilities for this context.
@@ -1645,7 +1647,7 @@ extern class RenderingContext
 	@see `RenderingContext.disable`
 	@see `RenderingContext.isEnabled`
 	**/
-	public function enable (cap:GLenum) : Void;
+	public function enable (cap:CapabilityEnum) : Void;
 
 	/**
 	Turn on the generic vertex attribute array at the specified index into the list of attribute arrays.
@@ -1872,7 +1874,7 @@ extern class RenderingContext
 	@see `RenderingContext.enable`
 	@see `RenderingContext.disable`
 	**/
-	public function getParameter (pname:GLenum) : Any;
+	public function getParameter (pname:ParameterEnum) : Any;
 
 	/**
 	Return the information log for the specified `Program` object.
@@ -1952,12 +1954,12 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat>.
 
-	@param shadertype
-	@param precisiontype
+	@param shadertype A type of shader.
+	@param precisiontype A precision value of shader.
 
 	@throws INVALID_OPERATION If the shader compiler isn't supported.
 	**/
-	public function getShaderPrecisionFormat (shadertype:GLenum, precisiontype:GLenum) : ShaderPrecisionFormat;
+	public function getShaderPrecisionFormat (shadertype:GLenum, precisiontype:ShaderPrecisionEnum) : ShaderPrecisionFormat;
 
 	/**
 	Return the source code of a `Shader`.
@@ -2036,7 +2038,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.getVertexAttribOffset`
 	**/
-	public function getVertexAttrib (index:UInt, pname:GLenum) : Any;
+	public function getVertexAttrib (index:UInt, pname:VertexAttribEnum) : Any;
 
 	/**
 	Return the address of a specified vertex attribute.
@@ -2062,7 +2064,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.generateMipmap`
 	**/
-	public function hint (target:GLenum, mode:GLenum) : Void;
+	public function hint (target:HintEnum, mode:GLenum) : Void;
 
 	/**
 	If the passed `Buffer` is valid.
@@ -2096,7 +2098,7 @@ extern class RenderingContext
 	@see `RenderingContext.disable`
 	@see `RenderingContext.enable`
 	**/
-	public function isEnabled (cap:GLenum) : Bool;
+	public function isEnabled (cap:CapabilityEnum) : Bool;
 
 	/**
 	If the passed `Framebuffer` is valid.
@@ -2192,7 +2194,7 @@ extern class RenderingContext
 	@see `RenderingContext.texImage2D`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	public function pixelStorei (pname:GLenum, param:Int) : Void;
+	public function pixelStorei (pname:PixelStorageEnum, param:Int) : Void;
 
 	/**
 	Specify the scale factors and units to calculate depth values.
