@@ -1035,7 +1035,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.createSync`
 	**/
-	public function clientWaitSync (sync:Sync, flags:GLenum, timeout:Int) : GLenum; //TODO return type
+	public function clientWaitSync (sync:Sync, flags:GLenum, timeout:Int) : GLenum;
 
 	/**
 	Specify a two-dimensional texture image in a compressed format.
@@ -1377,6 +1377,8 @@ extern class RenderingContext2 extends RenderingContext
 	/**
 	Retrieve information about an active uniform block within a `Program`.
 
+	The return value's type depends on `pname`.
+
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter>.
 
 	@param program The `Program` containing the active uniform block.
@@ -1389,6 +1391,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	/**
 	Retrieve information about active uniforms within a `Program`.
+
+	The return value's type depends on `pname`.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getActiveUniforms>.
 
@@ -1438,6 +1442,8 @@ extern class RenderingContext2 extends RenderingContext
 	/**
 	Return indexed information about a given target.
 
+	The return value's type depends on `target`.
+
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getIndexedParameter>.
 
 	@param target The target for which to return information.
@@ -1449,6 +1455,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	/**
 	Return information about implementation-dependent support for internal formats.
+
+	The return value's type depends on `pname`.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter>.
 
@@ -1473,6 +1481,8 @@ extern class RenderingContext2 extends RenderingContext
 	/**
 	Return parameter information of a `Query` object.
 
+	The return value's type depends on `pname`.
+
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getQueryParameter>.
 
 	@param query The `Query` object.
@@ -1483,6 +1493,8 @@ extern class RenderingContext2 extends RenderingContext
 	/**
 	Return parameter information of a `Sampler` object.
 
+	The return value's type depends on `pname`.
+
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
 
 	@param sampler The `Sampler` object.
@@ -1492,6 +1504,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	/**
 	Returns parameter information of a `Sync` object.
+
+	The return value's type depends on `pname`.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSyncParameter>.
 

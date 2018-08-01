@@ -497,6 +497,7 @@ class ConstantsTest
 		gl.getParameter(gl.BLUE_BITS);
 		gl.getParameter(gl.COLOR_CLEAR_VALUE);
 		gl.getParameter(gl.COLOR_WRITEMASK);
+		gl.getParameter(gl.COMPRESSED_TEXTURE_FORMATS);
 		gl.getParameter(gl.CULL_FACE);
 		gl.getParameter(gl.CULL_FACE_MODE);
 		gl.getParameter(gl.CURRENT_PROGRAM);

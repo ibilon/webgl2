@@ -1,5 +1,187 @@
-Return from RenderingContext2.clientWaitSync
-    gl.ALREADY_SIGNALED
-    gl.TIMEOUT_EXPIRED
-    gl.CONDITION_SATISFIED
-    gl.WAIT_FAILED
+clientWaitSync
+	gl.ALREADY_SIGNALED
+	gl.TIMEOUT_EXPIRED
+	gl.CONDITION_SATISFIED
+	gl.WAIT_FAILED
+
+getError
+	gl.NO_ERROR
+	gl.INVALID_ENUM
+	gl.INVALID_VALUE
+	gl.INVALID_OPERATION
+	gl.INVALID_FRAMEBUFFER_OPERATION
+	gl.OUT_OF_MEMORY
+	gl.CONTEXT_LOST_WEBGL
+
+getBufferUsage
+	gl.STATIC_DRAW
+	gl.DYNAMIC_DRAW
+	gl.STREAM_DRAW
+	gl.STATIC_READ
+	gl.DYNAMIC_READ
+	gl.STREAM_READ
+	gl.STATIC_COPY
+	gl.DYNAMIC_COPY
+	gl.STREAM_COPY
+
+getFramebufferAttachmentColorEncoding
+	gl.LINEAR
+	gl.SRGB
+
+getFramebufferAttachmentComponentType
+	gl.FLOAT
+	gl.INT
+	gl.UNSIGNED_INT
+	gl.SIGNED_NORMALIZED
+	gl.UNSIGNED_NORMALIZED
+
+getFramebufferAttachmentObjectType
+	gl.RENDERBUFFER
+	gl.TEXTURE
+	gl.NONE
+
+getFramebufferAttachmentTextureCubeMapFace
+	gl.TEXTURE_CUBE_MAP_POSITIVE_X
+	gl.TEXTURE_CUBE_MAP_NEGATIVE_X
+	gl.TEXTURE_CUBE_MAP_POSITIVE_Y
+	gl.TEXTURE_CUBE_MAP_NEGATIVE_Y
+	gl.TEXTURE_CUBE_MAP_POSITIVE_Z
+	gl.TEXTURE_CUBE_MAP_NEGATIVE_Z
+
+getProgramParameterTransformFeedbackBufferMode
+	gl.SEPARATE_ATTRIBS
+	gl.INTERLEAVED_ATTRIBS
+
+getRenderbufferInternalFormat
+	gl.RGBA4
+	gl.RGB565
+	gl.RGB5_A1
+	gl.DEPTH_COMPONENT16
+	gl.STENCIL_INDEX8
+
+getShaderType
+	gl.VERTEX_SHADER
+	gl.FRAGMENT_SHADER
+
+getSyncParameter
+	gl.SIGNALED
+	gl.UNSIGNALED
+
+getVertexAttribArrayType
+	gl.BYTE
+	gl.UNSIGNED_BYTE
+	gl.SHORT
+	gl.UNSIGNED_SHORT
+	gl.FLOAT
+
+getTexWrapFunction / getSamplerWrapFunction
+	gl.REPEAT
+	gl.CLAMP_TO_EDGE
+	gl.MIRRORED_REPEAT
+
+getTexMagFilter / getSamplerMagFilter
+	gl.LINEAR
+	gl.NEAREST
+
+getTexMinFilter / getSamplerMinFilter
+	gl.LINEAR
+	gl.NEAREST
+	gl.NEAREST_MIPMAP_NEAREST
+	gl.LINEAR_MIPMAP_NEAREST
+	gl.NEAREST_MIPMAP_LINEAR
+	gl.LINEAR_MIPMAP_LINEAR
+
+getTexCompareFunc / getSamplerCompareFunc
+	gl.LEQUAL
+	gl.GEQUAL
+	gl.LESS
+	gl.GREATER
+	gl.EQUAL
+	gl.NOTEQUAL
+	gl.ALWAYS
+	gl.NEVER
+
+getTexCompareMode / getSamplerCompareMode
+	gl.NONE
+	gl.COMPARE_REF_TO_TEXTURE
+
+getParameterColorBuffer
+	gl.BACK
+	gl.NONE
+	gl.COLOR_ATTACHMENT{0-15}
+
+getParameterHint
+	gl.FASTEST
+	gl.NICEST
+	gl.DONT_CARE
+
+getParameterFrontFace
+	gl.CW
+	gl.CCW
+
+getParameterCullFaceMode
+	gl.FRONT
+	gl.BACK
+	gl.FRONT_AND_BACK
+
+getParameterBlend
+	gl.ZERO
+	gl.SRC_COLOR
+	gl.ONE_MINUS_SRC_COLOR
+	gl.DST_COLOR
+	gl.ONE_MINUS_DST_COLOR
+	gl.SRC_ALPHA
+	gl.ONE_MINUS_SRC_ALPHA
+	gl.DST_ALPHA
+	gl.ONE_MINUS_DST_ALPHA
+	gl.CONSTANT_COLOR
+	gl.ONE_MINUS_CONSTANT_COLOR
+	gl.CONSTANT_ALPHA
+	gl.ONE_MINUS_CONSTANT_ALPHA
+	gl.SRC_ALPHA_SATURATE
+
+getParameterBlendEquation
+	gl.FUNC_ADD
+	gl.FUNC_SUBTRACT
+	gl.FUNC_REVERSE_SUBTRACT
+	gl.MIN
+	gl.MAX
+
+getParameterUnpackColorspaceConversion
+	gl.BROWSER_DEFAULT_WEBGL
+	gl.NONE
+
+getParameterImplementationColorReadFormat
+	same type as readPixels#format
+
+getParameterImplementationColorReadType
+	same type as readPixels#type
+
+getActiveUniformsType
+	gl.BOOL
+	gl.BOOL_VEC2
+	gl.BOOL_VEC3
+	gl.BOOL_VEC4
+	gl.INT
+	gl.INT_VEC2
+	gl.INT_VEC3
+	gl.INT_VEC4
+	gl.FLOAT
+	gl.FLOAT_VEC2
+	gl.FLOAT_VEC3
+	gl.FLOAT_VEC4
+	gl.FLOAT_MAT2
+	gl.FLOAT_MAT3
+	gl.FLOAT_MAT4
+	gl.SAMPLER_2D
+	gl.SAMPLER_CUBE
+	gl.UNSIGNED_INT
+	gl.UNSIGNED_INT_VEC2
+	gl.UNSIGNED_INT_VEC3
+	gl.UNSIGNED_INT_VEC4
+	gl.FLOAT_MAT2x3
+	gl.FLOAT_MAT2x4
+	gl.FLOAT_MAT3x2
+	gl.FLOAT_MAT3x4
+	gl.FLOAT_MAT4x2
+	gl.FLOAT_MAT4x3

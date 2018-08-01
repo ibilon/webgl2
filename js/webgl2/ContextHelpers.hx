@@ -2,6 +2,8 @@ package js.webgl2;
 
 import haxe.extern.EitherType;
 import js.html.Int32Array;
+import js.html.Float32Array;
+import js.html.Uint32Array;
 
 /**
 Helpers functions not part of the WebGL spec, but giving type safe version of functions returning Any.
@@ -116,7 +118,7 @@ class ContextHelpers
 	@param program The `Program` containing the active uniforms.
 	@param uniformIndices The indices of the active uniforms to query.
 	**/
-	public static inline function getActiveUniformsType (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>) : Array<GLenum> //TODO
+	public static inline function getActiveUniformsType (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>) : Array<GLenum>
 	{
 		return cast gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_TYPE);
 	}
@@ -146,7 +148,7 @@ class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferUsage (gl:RenderingContext, target:GLenum) : GLenum //TODO
+	public static inline function getBufferUsage (gl:RenderingContext, target:GLenum) : GLenum
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_USAGE);
 	}
@@ -163,7 +165,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum //TODO
+	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
 	}
@@ -178,7 +180,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum //TODO
+	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
 	}
@@ -208,7 +210,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum //TODO
+	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 	}
@@ -239,7 +241,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum //TODO
+	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 	}
@@ -293,7 +295,375 @@ class ContextHelpers
 		return cast gl.getInternalformatParameter(target, internalformat, gl.SAMPLES);
 	}
 
-// getParameter //TODO
+// getParameter
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the blend equation for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:GLenum) : GLenum
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the blend function for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:GLenum) : GLenum
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a boolean value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterBoolean (gl:RenderingContext, pname:GLenum) : Bool
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a `Buffer` value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterBuffer (gl:RenderingContext, pname:GLenum) : Buffer
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the color buffer value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:GLenum) : GLenum
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the color write mask.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterColorWriteMask (gl:RenderingContext) : Array<Bool>
+	{
+		return cast gl.getParameter(gl.COLOR_WRITEMASK);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the compressed texture formats.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterCompressedTextureFormats (gl:RenderingContext) : Uint32Array
+	{
+		return cast gl.getParameter(gl.COMPRESSED_TEXTURE_FORMATS);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the cull face mode.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterCullFaceMode (gl:RenderingContext) : GLenum
+	{
+		return cast gl.getParameter(gl.CULL_FACE_MODE);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the `Program`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterCurrentProgram (gl:RenderingContext) : Program
+	{
+		return cast gl.getParameter(gl.CURRENT_PROGRAM);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a float value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterFloat (gl:RenderingContext, pname:GLenum) : Float
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a Float32Array value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterFloat32Array (gl:RenderingContext, pname:GLenum) : Float32Array
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the front face mode.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterFrontFace (gl:RenderingContext) : GLenum
+	{
+		return cast gl.getParameter(gl.FRONT_FACE);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the fragment shader hint.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterHint (gl:RenderingContext2, param:GLenum) : GLenum
+	{
+		return cast gl.getParameter(param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a `Framebuffer` value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterFramebuffer (gl:RenderingContext, pname:GLenum) : Framebuffer
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the color space conversion mode.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterImplementationColorReadFormat (gl:RenderingContext) : GLenum
+	{
+		return cast gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_FORMAT);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the color space conversion mode.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterImplementationColorReadType (gl:RenderingContext) : GLenum
+	{
+		return cast gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_TYPE);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns an integer value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterInteger (gl:RenderingContext, pname:GLenum) : Int
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a Int32Array value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterInt32Array (gl:RenderingContext, pname:GLenum) : Int32Array
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the `Renderbuffer`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterRenderbufferBinding (gl:RenderingContext) : Renderbuffer
+	{
+		return cast gl.getParameter(gl.RENDERBUFFER_BINDING);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the `Sampler`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterSamplerBinding (gl:RenderingContext2) : Sampler
+	{
+		return cast gl.getParameter(gl.SAMPLER_BINDING);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the stencil function for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterStencilFunc(gl:RenderingContext, pname:GLenum) : GLenum
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a string value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterString (gl:RenderingContext, pname:GLenum) : String
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the test function for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterTestFunc(gl:RenderingContext, pname:GLenum) : GLenum
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a `Texture` value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterTexture (gl:RenderingContext, pname:GLenum) : Texture
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the `TransformFeedback`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterTransformFeedbackBinding (gl:RenderingContext2) : TransformFeedback
+	{
+		return cast gl.getParameter(gl.TRANSFORM_FEEDBACK_BINDING);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the color space conversion mode.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterUnpackColorspaceConversion (gl:RenderingContext) : GLenum
+	{
+		return cast gl.getParameter(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns a unsigned integer value for the passed parameter name.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+
+	@param pname Which parameter value to return.
+	**/
+	public static inline function getParameterUnsignedInt (gl:RenderingContext, pname:GLenum) : UInt
+	{
+		return cast gl.getParameter(pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getParameter`, this isn't part of the WebGL spec.
+
+	Returns the `VertexArrayObject`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
+	**/
+	public static inline function getParameterVertexArrayBinding (gl:RenderingContext2) : VertexArrayObject
+	{
+		return cast gl.getParameter(gl.VERTEX_ARRAY_BINDING);
+	}
 
 // getProgramParameter
 
@@ -322,7 +692,7 @@ class ContextHelpers
 	@param program The program to get parameter information from.
 	@param pname The information to query.
 	**/
-	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : GLenum //TODO
+	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : GLenum
 	{
 		return cast gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
 	}
@@ -383,7 +753,7 @@ class ContextHelpers
 
 	@param targe The target renderbuffer object
 	**/
-	public static inline function getRenderbufferInternalFormat (gl:RenderingContext, target:GLenum) : GLenum //TODO
+	public static inline function getRenderbufferInternalFormat (gl:RenderingContext, target:GLenum) : GLenum
 	{
 		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
 	}
@@ -403,7 +773,93 @@ class ContextHelpers
 		return cast gl.getRenderbufferParameter(target, pname);
 	}
 
-// getSamplerParameter //TODO
+// getSamplerParameter
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return the comparison function of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	**/
+	public static inline function getSamplerCompareFunc (gl:RenderingContext2, sampler:Sampler) : GLenum
+	{
+		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_FUNC);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return the comparison mode of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	**/
+	public static inline function getSamplerCompareMode (gl:RenderingContext2, sampler:Sampler) : GLenum
+	{
+		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_MODE);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return level of detail information of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param pname Which information to return.
+	**/
+	public static inline function getSamplerLOD (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : Float
+	{
+		return cast gl.getSamplerParameter(sampler, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return the magnification filter of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	**/
+	public static inline function getSamplerMagFilter (gl:RenderingContext2, sampler:Sampler) : GLenum
+	{
+		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MAG_FILTER);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return the minification filter of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	**/
+	public static inline function getSamplerMinFilter (gl:RenderingContext2, sampler:Sampler) : GLenum
+	{
+		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MIN_FILTER);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.getSamplerParameter`, this isn't part of the WebGL spec.
+
+	Return the texture wrapping function of a `Sampler` object.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getSamplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param pname Which information to return.
+	**/
+	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : GLenum
+	{
+		return cast gl.getSamplerParameter(sampler, pname);
+	}
 
 // getShaderParameter
 
@@ -431,7 +887,7 @@ class ContextHelpers
 
 	@param shader The shader to get parameter information from.
 	**/
-	public static inline function getShaderType (gl:RenderingContext, shader:Shader) : GLenum //TODO
+	public static inline function getShaderType (gl:RenderingContext, shader:Shader) : GLenum
 	{
 		return cast gl.getShaderParameter(shader, gl.SHADER_TYPE);
 	}
@@ -447,12 +903,211 @@ class ContextHelpers
 
 	@param sync The `Sync` object.
 	**/
-	public static inline function getSyncParameter (gl:RenderingContext2, sync:Sync) : GLenum //TODO
+	public static inline function getSyncParameter (gl:RenderingContext2, sync:Sync) : GLenum
 	{
 		return cast gl.getSyncParameter(sync, gl.SYNC_STATUS);
 	}
 
-// getTexParameter //TODO
+// getTexParameter
 
-// getVertexAttrib //TODO
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return the comparison function of the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexCompareFunc (gl:RenderingContext2, target:GLenum) : GLenum
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_FUNC);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return the comparison mode of the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexCompareMode (gl:RenderingContext2, target:GLenum) : GLenum
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_MODE);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return the immutability of the format and size of the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexImmutableFormat (gl:RenderingContext2, target:GLenum) : Bool
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_FORMAT);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexImmutableLevels (gl:RenderingContext2, target:GLenum) : UInt
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_LEVELS);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return level of detail information about the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	@param pname The information to query.
+	**/
+	public static inline function getTexLOD (gl:RenderingContext, target:GLenum, pname:GLenum) : Float
+	{
+		return cast gl.getTexParameter(target, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return the texture magnification filter of the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexMagFilter (gl:RenderingContext, target:GLenum) : GLenum
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_MAG_FILTER);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return the texture minification filter of the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	**/
+	public static inline function getTexMinFilter (gl:RenderingContext, target:GLenum) : GLenum
+	{
+		return cast gl.getTexParameter(target, gl.TEXTURE_MIN_FILTER);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return mimap level information about the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	@param pname The information to query.
+	**/
+	public static inline function getTexMipmapLevel (gl:RenderingContext, target:GLenum, pname:GLenum) : Int
+	{
+		return cast gl.getTexParameter(target, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getTexParameter`, this isn't part of the WebGL spec.
+
+	Return wrap function information about the given texture.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getTexParameter>.
+
+	@param target The binding point.
+	@param pname The information to query.
+	**/
+	public static inline function getTexWrapFunction (gl:RenderingContext, target:GLenum, pname:GLenum) : GLenum
+	{
+		return cast gl.getTexParameter(target, pname);
+	}
+
+// getVertexAttrib
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return the current value of a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	**/
+	public static inline function getCurrentVertexAttrib (gl:RenderingContext, index:UInt) : Float32Array
+	{
+		return cast gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return the currently bound `Buffer` of a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	**/
+	public static inline function getVertexAttribArrayBufferBinding (gl:RenderingContext, index:UInt) : Buffer
+	{
+		return cast gl.getVertexAttrib(index, gl.ARRAY_BUFFER_BINDING);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return the array type of a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	**/
+	public static inline function getVertexAttribArrayType (gl:RenderingContext, index:UInt) : GLenum
+	{
+		return cast gl.getVertexAttrib(index, gl.VERTEX_ATTRIB_ARRAY_TYPE);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return boolean information about a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	@param pname The information to query.
+	**/
+	public static inline function getVertexAttribBoolean (gl:RenderingContext, index:UInt, pname:GLenum) : Bool
+	{
+		return cast gl.getVertexAttrib(index, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return integer information about a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	@param pname The information to query.
+	**/
+	public static inline function getVertexAttribInteger (gl:RenderingContext, index:UInt, pname:GLenum) : Int
+	{
+		return cast gl.getVertexAttrib(index, pname);
+	}
 }

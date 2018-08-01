@@ -1805,7 +1805,6 @@ extern class RenderingContext
 	Return information about the buffer.
 
 	The return value's type depends on `pname`.
-	Use helper functions `getBufferSize` and `getBufferUsage` for a type safe version.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getBufferParameter>.
 
@@ -1831,7 +1830,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError>.
 	**/
-	public function getError () : GLenum; //TODO
+	public function getError () : GLenum;
 
 	/**
 	Enable and return a WebGL extension.
