@@ -42,7 +42,7 @@ class ContextHelpers
 	@param uniformBlockIndex The index of the active uniform block within the program.
 	@param pname Which information to query.
 	**/
-	public static inline function getActiveUniformBlockParameterBoolean (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:GLenum) : Bool
+	public static inline function getActiveUniformBlockParameterBoolean (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterBooleanEnum) : Bool
 	{
 		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
 	}
@@ -58,7 +58,7 @@ class ContextHelpers
 	@param uniformBlockIndex The index of the active uniform block within the program.
 	@param pname Which information to query.
 	**/
-	public static inline function getActiveUniformBlockParameterInteger (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:GLenum) : UInt
+	public static inline function getActiveUniformBlockParameterInteger (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterIntegerEnum) : UInt
 	{
 		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
 	}
@@ -75,7 +75,7 @@ class ContextHelpers
 	@param program The `Program` containing the active uniforms.
 	@param uniformIndices The indices of the active uniforms to query.
 	**/
-	public static inline function getActiveUniformsInteger (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>, pname:GLenum) : Array<Int>
+	public static inline function getActiveUniformsInteger (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>, pname:UniformsIntegerEnum) : Array<Int>
 	{
 		return cast gl.getActiveUniforms(program, uniformIndices, pname);
 	}
@@ -136,7 +136,7 @@ class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferSize (gl:RenderingContext, target:GLenum) : Int
+	public static inline function getBufferSize (gl:RenderingContext, target:BufferEnum) : Int
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_SIZE);
 	}
@@ -150,7 +150,7 @@ class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferUsage (gl:RenderingContext, target:GLenum) : GLenum
+	public static inline function getBufferUsage (gl:RenderingContext, target:BufferEnum) : GLenum
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_USAGE);
 	}
@@ -167,7 +167,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum
+	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:GLenum, attachment:BufferAttachementEnum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
 	}
@@ -182,7 +182,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:GLenum, attachment:GLenum) : GLenum
+	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:GLenum, attachment:BufferAttachementEnum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
 	}
@@ -197,7 +197,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectName (gl:RenderingContext, target:GLenum, attachment:GLenum) : EitherType<Texture, Renderbuffer>
+	public static inline function getFramebufferAttachmentObjectName (gl:RenderingContext, target:GLenum, attachment:BufferAttachementEnum) : EitherType<Texture, Renderbuffer>
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME);
 	}
@@ -212,7 +212,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum
+	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:GLenum, attachment:BufferAttachementEnum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 	}
@@ -228,7 +228,7 @@ class ContextHelpers
 	@param attachment The attachment point for the texture.
 	@param pname The information to query.
 	**/
-	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:GLenum, attachment:GLenum, pname:GLenum) : Int
+	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:GLenum, attachment:BufferAttachementEnum, pname:GLenum) : Int
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, pname);
 	}
@@ -243,7 +243,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:GLenum, attachment:GLenum) : GLenum
+	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:GLenum, attachment:BufferAttachementEnum) : GLenum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 	}

@@ -20,10 +20,6 @@
 			"type": "ArrayLiteral"
 		},
 		{
-			"props": {},
-			"type": "AvoidStarImport"
-		},
-		{
 			"props": {
 				"format": "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$"
 			},

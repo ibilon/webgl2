@@ -391,49 +391,49 @@ extern class RenderingContext2 extends RenderingContext
 	public var MAX_COLOR_ATTACHMENTS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT1 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT1 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT2 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT2 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT3 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT3 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT4 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT4 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT5 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT5 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT6 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT6 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT7 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT7 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT8 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT8 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT9 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT9 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT10 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT10 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT11 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT11 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT12 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT12 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT13 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT13 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT14 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT14 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var COLOR_ATTACHMENT15 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT15 (default, never) : ColorAttachementEnum;
 
 	/** **/
 	public var SAMPLER_3D (default, never) : GLenum;
@@ -481,10 +481,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var SAMPLER_BINDING (default, never) : ParameterEnum;
 
 	/** Buffer used for pixel transfer operations. **/
-	public var PIXEL_PACK_BUFFER (default, never) : GLenum;
+	public var PIXEL_PACK_BUFFER (default, never) : BufferEnum;
 
 	/** Buffer used for pixel transfer operations. **/
-	public var PIXEL_UNPACK_BUFFER (default, never) : GLenum;
+	public var PIXEL_UNPACK_BUFFER (default, never) : BufferEnum;
 
 	/** **/
 	public var PIXEL_PACK_BUFFER_BINDING (default, never) : ParameterBufferEnum;
@@ -493,10 +493,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var PIXEL_UNPACK_BUFFER_BINDING (default, never) : ParameterBufferEnum;
 
 	/** Buffer for copying from one buffer object to another. **/
-	public var COPY_READ_BUFFER (default, never) : GLenum;
+	public var COPY_READ_BUFFER (default, never) : BufferEnum;
 
 	/** Buffer for copying from one buffer object to another. **/
-	public var COPY_WRITE_BUFFER (default, never) : GLenum;
+	public var COPY_WRITE_BUFFER (default, never) : BufferEnum;
 
 	/** **/
 	public var COPY_READ_BUFFER_BINDING (default, never) : ParameterBufferEnum;
@@ -574,7 +574,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var SEPARATE_ATTRIBS (default, never) : GLenum;
 
 	/** Buffer for transform feedback operations. **/
-	public var TRANSFORM_FEEDBACK_BUFFER (default, never) : GLenum;
+	public var TRANSFORM_FEEDBACK_BUFFER (default, never) : BufferBaseEnum;
 
 	/** **/
 	public var TRANSFORM_FEEDBACK_BUFFER_BINDING (default, never) : IndexedParameterBufferEnum;
@@ -643,7 +643,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var FRAMEBUFFER_INCOMPLETE_MULTISAMPLE (default, never) : GLenum;
 
 	/** Buffer used for storing uniform blocks. **/
-	public var UNIFORM_BUFFER (default, never) : GLenum;
+	public var UNIFORM_BUFFER (default, never) : BufferBaseEnum;
 
 	/** **/
 	public var UNIFORM_BUFFER_BINDING (default, never) : IndexedParameterBufferEnum;
@@ -682,43 +682,43 @@ extern class RenderingContext2 extends RenderingContext
 	public var ACTIVE_UNIFORM_BLOCKS (default, never) : GLenum;
 
 	/** The types of the uniforms. **/
-	public var UNIFORM_TYPE (default, never) : GLenum;
+	public var UNIFORM_TYPE (default, never) : UniformsEnum;
 
 	/** The sizes of the uniforms. **/
-	public var UNIFORM_SIZE (default, never) : GLenum;
+	public var UNIFORM_SIZE (default, never) : UniformsEnum;
 
 	/** The block indices of the uniforms. **/
-	public var UNIFORM_BLOCK_INDEX (default, never) : GLenum;
+	public var UNIFORM_BLOCK_INDEX (default, never) : UniformsIntegerEnum;
 
 	/** The uniform buffer offsets. **/
-	public var UNIFORM_OFFSET (default, never) : GLenum;
+	public var UNIFORM_OFFSET (default, never) : UniformsIntegerEnum;
 
 	/** The strides between the elements. **/
-	public var UNIFORM_ARRAY_STRIDE (default, never) : GLenum;
+	public var UNIFORM_ARRAY_STRIDE (default, never) : UniformsIntegerEnum;
 
 	/** The strides between columns of a column-major matrix or a row-major matrix. **/
-	public var UNIFORM_MATRIX_STRIDE (default, never) : GLenum;
+	public var UNIFORM_MATRIX_STRIDE (default, never) : UniformsIntegerEnum;
 
 	/** Whether each of the uniforms is a row-major matrix or not. **/
-	public var UNIFORM_IS_ROW_MAJOR (default, never) : GLenum;
+	public var UNIFORM_IS_ROW_MAJOR (default, never) : UniformsEnum;
 
 	/** The uniform buffer binding point. **/
-	public var UNIFORM_BLOCK_BINDING (default, never) : GLenum;
+	public var UNIFORM_BLOCK_BINDING (default, never) : UniformBlockParameterIntegerEnum;
 
 	/** The minimum total buffer object size. **/
-	public var UNIFORM_BLOCK_DATA_SIZE (default, never) : GLenum;
+	public var UNIFORM_BLOCK_DATA_SIZE (default, never) : UniformBlockParameterIntegerEnum;
 
 	/** The number of active uniforms in the uniform block. **/
-	public var UNIFORM_BLOCK_ACTIVE_UNIFORMS (default, never) : GLenum;
+	public var UNIFORM_BLOCK_ACTIVE_UNIFORMS (default, never) : UniformBlockParameterIntegerEnum;
 
 	/** The list of active uniforms in the uniform block. **/
-	public var UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES (default, never) : GLenum;
+	public var UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES (default, never) : UniformBlockParameterEnum;
 
 	/** Whether the uniform block is referenced by the vertex shader. **/
-	public var UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER (default, never) : GLenum;
+	public var UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER (default, never) : UniformBlockParameterBooleanEnum;
 
 	/** Whether the uniform block is referenced by the fragment shader. **/
-	public var UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER (default, never) : GLenum;
+	public var UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER (default, never) : UniformBlockParameterBooleanEnum;
 
 	/** The type of the sync object (always `SYNC_FENCE`). **/
 	public var OBJECT_TYPE (default, never) : SyncParameterEnum;
@@ -757,16 +757,16 @@ extern class RenderingContext2 extends RenderingContext
 	public var WAIT_FAILED (default, never) : WaitSyncResponseEnum;
 
 	/** **/
-	public var SYNC_FLUSH_COMMANDS_BIT (default, never) : GLenum;
+	public var SYNC_FLUSH_COMMANDS_BIT (default, never) : WaitSyncEnum;
 
 	/** **/
-	public var COLOR (default, never) : GLenum;
+	public var COLOR (default, never) : BufferTypeEnum;
 
 	/** **/
-	public var DEPTH (default, never) : GLenum;
+	public var DEPTH (default, never) : BufferTypeEnum;
 
 	/** **/
-	public var STENCIL (default, never) : GLenum;
+	public var STENCIL (default, never) : BufferTypeEnum;
 
 	/** Minimum of source and destination. **/
 	public var MIN (default, never) : GLenum;
@@ -842,7 +842,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.getIndexedParameter`
 	**/
-	public function bindBufferBase (target:GLenum, index:UInt, buffer:Buffer) : Void;
+	public function bindBufferBase (target:BufferBaseEnum, index:UInt, buffer:Buffer) : Void;
 
 	/**
 	Bind a range of the given `Buffer` to a given binding point (`target`) at a given `index`.
@@ -857,7 +857,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.bindBufferBase`
 	**/
-	public function bindBufferRange (target:GLenum, index:UInt, buffer:Buffer, offset:Int, size:Int) : Void;
+	public function bindBufferRange (target:BufferBaseEnum, index:UInt, buffer:Buffer, offset:Int, size:Int) : Void;
 
 	/**
 	Bind the passed `Sampler` object to the texture unit at the passed index.
@@ -912,7 +912,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.getRenderbufferParameter`
 	**/
-	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:GLenum, filter:GLenum) : Void;
+	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:BufferMaskEnum, filter:GLenum) : Void;
 
 	/**
 	Initialize and create the buffer object's data store.
@@ -932,8 +932,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bufferSubData`
 	@see `RenderingContext.createBuffer`
 	**/
-	@:overload(function (target:GLenum, srcData:ArrayBufferView, usage:GLenum, srcOffset:Int, length:Int = 0) : Void {})
-	override public function bufferData (target:GLenum, srcData:ArrayBufferView, usage:GLenum) : Void;
+	@:overload(function (target:BufferEnum, srcData:ArrayBufferView, usage:GLenum, srcOffset:Int, length:Int = 0) : Void {})
+	override public function bufferData (target:BufferEnum, srcData:ArrayBufferView, usage:GLenum) : Void;
 
 	/**
 	Updates a subset of a buffer object's data store.
@@ -952,8 +952,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bufferData`
 	@see `RenderingContext.createBuffer`
 	**/
-	@:overload(function (target:GLenum, dstByteOffset:Int, srcData:ArrayBufferView, offset:UInt, length:UInt = 0) : Void {})
-	override public function bufferSubData (target:GLenum, offset:UInt, srcData:ArrayBuffer) : Void;
+	@:overload(function (target:BufferEnum, dstByteOffset:Int, srcData:ArrayBufferView, offset:UInt, length:UInt = 0) : Void {})
+	override public function bufferSubData (target:BufferEnum, offset:UInt, srcData:ArrayBuffer) : Void;
 
 	/**
 	Clear buffer from the currently bound framebuffer.
@@ -987,8 +987,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.clearBufferfi`
 	@see `RenderingContext2.drawBuffers`
 	**/
-	@:overload(function (buffer:GLenum, drawbuffer:Int, values:Array<Float>, ?srcOffset:Int) : Void {})
-	public function clearBufferfv (buffer:GLenum, drawbuffer:Int, values:Float32Array, ?srcOffset:Int) : Void;
+	@:overload(function (buffer:BufferTypeEnum, drawbuffer:Int, values:Array<Float>, ?srcOffset:Int) : Void {})
+	public function clearBufferfv (buffer:BufferTypeEnum, drawbuffer:Int, values:Float32Array, ?srcOffset:Int) : Void;
 
 	/**
 	Clear buffer from the currently bound framebuffer.
@@ -1005,8 +1005,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.clearBufferfi`
 	@see `RenderingContext2.drawBuffers`
 	**/
-	@:overload(function (buffer:GLenum, drawbuffer:Int, values:Array<Int>, ?srcOffset:Int) : Void {})
-	public function clearBufferiv (buffer:GLenum, drawbuffer:Int, values:Int32Array, ?srcOffset:Int) : Void;
+	@:overload(function (buffer:BufferTypeEnum, drawbuffer:Int, values:Array<Int>, ?srcOffset:Int) : Void {})
+	public function clearBufferiv (buffer:BufferTypeEnum, drawbuffer:Int, values:Int32Array, ?srcOffset:Int) : Void;
 
 	/**
 	Clear buffer from the currently bound framebuffer.
@@ -1023,8 +1023,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.clearBufferfi`
 	@see `RenderingContext2.drawBuffers`
 	**/
-	@:overload(function (buffer:GLenum, drawbuffer:Int, values:Array<UInt>, ?srcOffset:Int) : Void {})
-	public function clearBufferuiv (buffer:GLenum, drawbuffer:Int, values:Uint32Array, ?srcOffset:Int) : Void;
+	@:overload(function (buffer:BufferTypeEnum, drawbuffer:Int, values:Array<UInt>, ?srcOffset:Int) : Void {})
+	public function clearBufferuiv (buffer:BufferTypeEnum, drawbuffer:Int, values:Uint32Array, ?srcOffset:Int) : Void;
 
 	/**
 	Block and wait for a `Sync` object to become signaled or a given `timeout` to be passed.
@@ -1037,7 +1037,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.createSync`
 	**/
-	public function clientWaitSync (sync:Sync, flags:GLenum, timeout:Int) : WaitSyncResponseEnum;
+	public function clientWaitSync (sync:Sync, flags:WaitSyncEnum, timeout:Int) : WaitSyncResponseEnum;
 
 	/**
 	Specify a two-dimensional texture image in a compressed format.
@@ -1156,7 +1156,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bufferSubData`
 	@see `RenderingContext2.getBufferSubData`
 	**/
-	public function copyBufferSubData(readTarget:GLenum, writeTarget:GLenum, readOffset:Int, writeOffset:Int, size:Int) : Void;
+	public function copyBufferSubData(readTarget:BufferEnum, writeTarget:BufferEnum, readOffset:Int, writeOffset:Int, size:Int) : Void;
 
 	/**
 	Copy pixels from the current `Framebuffer` into an existing 3D texture sub-image.
@@ -1279,7 +1279,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.clearBufferiv`
 	@see `RenderingContext2.clearBufferuiv`
 	**/
-	public function drawBuffers (buffers:Array<GLenum>) : Void;
+	public function drawBuffers (buffers:Array<AttachementEnum>) : Void;
 
 	/**
 	Render primitives from array data like the `drawElements` method. In addition, it can execute multiple instances of a set of elements.
@@ -1362,7 +1362,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.framebufferTexture2D`
 	**/
-	public function framebufferTextureLayer (target:GLenum, attachment:GLenum, texture:Texture, level:Int, layer:Int) : Void;
+	public function framebufferTextureLayer (target:GLenum, attachment:BufferAttachementEnum, texture:Texture, level:Int, layer:Int) : Void;
 
 	/**
 	Retrieve the name of the active uniform block at a given index within a `Program`.
@@ -1389,7 +1389,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.getActiveUniforms`
 	**/
-	public function getActiveUniformBlockParameter (program:Program, uniformBlockIndex:UInt, pname:GLenum) : Any;
+	public function getActiveUniformBlockParameter (program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterEnum) : Any;
 
 	/**
 	Retrieve information about active uniforms within a `Program`.
@@ -1404,7 +1404,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.getActiveUniformBlockParameter`
 	**/
-	public function getActiveUniforms (program:Program, uniformIndices:Array<UInt>, pname:GLenum) : Any;
+	public function getActiveUniforms (program:Program, uniformIndices:Array<UInt>, pname:UniformsEnum) : Any;
 
 	/**
 	Read data from a buffer binding point and writes them to an `ArrayBuffer` or `SharedArrayBuffer`.
@@ -1425,7 +1425,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.getBufferParameter`
 	@see `RenderingContext2.copyBufferSubData`
 	**/
-	public function getBufferSubData (target:GLenum, srcByteOffset:Int, dstData:ArrayBufferView, ?dstOffset:UInt, ?length:UInt) : Void;
+	public function getBufferSubData (target:BufferEnum, srcByteOffset:Int, dstData:ArrayBufferView, ?dstOffset:UInt, ?length:UInt) : Void;
 
 	/**
 	Return the binding of color numbers to user-defined varying out variables.
@@ -1560,7 +1560,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.invalidateSubFramebuffer`
 	**/
-	public function invalidateFramebuffer (target:GLenum, attachments:Array<GLenum>) : Void;
+	public function invalidateFramebuffer (target:GLenum, attachments:Array<BufferAttachementEnum>) : Void;
 
 	/**
 	Invalidate portions of the contents of attachments in a framebuffer.
@@ -1576,7 +1576,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.invalidateFramebuffer`
 	**/
-	public function invalidateSubFramebuffer (target:GLenum, attachments:Array<GLenum>, x:Int, y:Int, width:Int, height:Int) : Void;
+	public function invalidateSubFramebuffer (target:GLenum, attachments:Array<BufferAttachementEnum>, x:Int, y:Int, width:Int, height:Int) : Void;
 
 	/**
 	Return true if the passed object is a valid `Query` object.
@@ -1642,7 +1642,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.copyTexSubImage3D`
 	@see `RenderingContext.readPixels`
 	**/
-	public function readBuffer (src:GLenum) : Void;
+	public function readBuffer (src:AttachementEnum) : Void;
 
 	/**
 	Read a block of pixels from a specified rectangle of the current color framebuffer into an `ArrayBufferView` object.

@@ -191,7 +191,8 @@ class ConstantsTest
 
 		gl.copyBufferSubData(gl.ARRAY_BUFFER, gl.ARRAY_BUFFER, 0, 0, 0);
 		gl.copyBufferSubData(gl.ELEMENT_ARRAY_BUFFER, gl.ELEMENT_ARRAY_BUFFER, 0, 0, 0);
-		gl.copyBufferSubData(gl.COPY_READ_BUFFER, gl.COPY_WRITE_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.COPY_READ_BUFFER, gl.COPY_READ_BUFFER, 0, 0, 0);
+		gl.copyBufferSubData(gl.COPY_WRITE_BUFFER, gl.COPY_WRITE_BUFFER, 0, 0, 0);
 		gl.copyBufferSubData(gl.TRANSFORM_FEEDBACK_BUFFER, gl.TRANSFORM_FEEDBACK_BUFFER, 0, 0, 0);
 		gl.copyBufferSubData(gl.UNIFORM_BUFFER, gl.UNIFORM_BUFFER, 0, 0, 0);
 		gl.copyBufferSubData(gl.PIXEL_PACK_BUFFER, gl.PIXEL_PACK_BUFFER, 0, 0, 0);

@@ -22,13 +22,13 @@ More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRende
 extern class RenderingContext
 {
 	/** Clear the current depth buffer. **/
-	public var DEPTH_BUFFER_BIT (default, never) : GLenum;
+	public var DEPTH_BUFFER_BIT (default, never) : BufferMaskEnum;
 
 	/** Clear the current stencil buffer. **/
-	public var STENCIL_BUFFER_BIT (default, never) : GLenum;
+	public var STENCIL_BUFFER_BIT (default, never) : BufferMaskEnum;
 
 	/** Clear the current color buffer. **/
-	public var COLOR_BUFFER_BIT (default, never) : GLenum;
+	public var COLOR_BUFFER_BIT (default, never) : BufferMaskEnum;
 
 	/** Draw single points. **/
 	public var POINTS (default, never) : PrimitiveModeEnum;
@@ -52,49 +52,49 @@ extern class RenderingContext
 	public var TRIANGLE_FAN (default, never) : ArrayModeEnum;
 
 	/** When used as blend function: multiplies all colors by 0. When used as stencil op: sets the stencil buffer value to 0. **/
-	public var ZERO (default, never) : GLenum;
+	public var ZERO (default, never) : ZeroEnum;
 
 	/** Multiplies all colors by 1. **/
-	public var ONE (default, never) : GLenum;
+	public var ONE (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by the source colors. **/
-	public var SRC_COLOR (default, never) : GLenum;
+	public var SRC_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus each source color. **/
-	public var ONE_MINUS_SRC_COLOR (default, never) : GLenum;
+	public var ONE_MINUS_SRC_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by the source alpha value. **/
-	public var SRC_ALPHA (default, never) : GLenum;
+	public var SRC_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus the source alpha value. **/
-	public var ONE_MINUS_SRC_ALPHA (default, never) : GLenum;
+	public var ONE_MINUS_SRC_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by the destination alpha value. **/
-	public var DST_ALPHA (default, never) : GLenum;
+	public var DST_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus the destination alpha value. **/
-	public var ONE_MINUS_DST_ALPHA (default, never) : GLenum;
+	public var ONE_MINUS_DST_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by the destination color. **/
-	public var DST_COLOR (default, never) : GLenum;
+	public var DST_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus each destination color. **/
-	public var ONE_MINUS_DST_COLOR (default, never) : GLenum;
+	public var ONE_MINUS_DST_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies the RGB colors by the smaller of either the source alpha value or the value of 1 minus the destination alpha value. The alpha value is multiplied by 1. **/
-	public var SRC_ALPHA_SATURATE (default, never) : GLenum;
+	public var SRC_ALPHA_SATURATE (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by a constant color. **/
-	public var CONSTANT_COLOR (default, never) : GLenum;
+	public var CONSTANT_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus a constant color. **/
-	public var ONE_MINUS_CONSTANT_COLOR (default, never) : GLenum;
+	public var ONE_MINUS_CONSTANT_COLOR (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by a constant alpha value. **/
-	public var CONSTANT_ALPHA (default, never) : GLenum;
+	public var CONSTANT_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Multiplies all colors by 1 minus a constant alpha value. **/
-	public var ONE_MINUS_CONSTANT_ALPHA (default, never) : GLenum;
+	public var ONE_MINUS_CONSTANT_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Source + destination. **/
 	public var FUNC_ADD (default, never) : GLenum;
@@ -304,10 +304,10 @@ extern class RenderingContext
 	public var DYNAMIC_DRAW (default, never) : GLenum;
 
 	/** Buffer containing vertex attributes, such as vertex coordinates, texture coordinate data, or vertex color data. **/
-	public var ARRAY_BUFFER (default, never) : GLenum;
+	public var ARRAY_BUFFER (default, never) : BufferEnum;
 
 	/** Buffer used for element indices. **/
-	public var ELEMENT_ARRAY_BUFFER (default, never) : GLenum;
+	public var ELEMENT_ARRAY_BUFFER (default, never) : BufferEnum;
 
 	/** Get a buffer's size. **/
 	public var BUFFER_SIZE (default, never) : GLenum;
@@ -343,13 +343,13 @@ extern class RenderingContext
 	public var CULL_FACE (default, never) : CapabilityEnum;
 
 	/** Specify that only front faces should be drawn. **/
-	public var FRONT (default, never) : GLenum;
+	public var FRONT (default, never) : CullFaceModeEnum;
 
 	/** Specify that only back faces should be drawn. **/
-	public var BACK (default, never) : GLenum;
+	public var BACK (default, never) : BackEnum;
 
 	/** Specify that front and back faces should be drawn. **/
-	public var FRONT_AND_BACK (default, never) : GLenum;
+	public var FRONT_AND_BACK (default, never) : CullFaceModeEnum;
 
 	/** The blending of the computed fragment color values. **/
 	public var BLEND (default, never) : CapabilityEnum;
@@ -400,13 +400,13 @@ extern class RenderingContext
 	public var CCW (default, never) : GLenum;
 
 	/** There is no preference for this behavior. **/
-	public var DONT_CARE (default, never) : GLenum;
+	public var DONT_CARE (default, never) : HintModeEnum;
 
 	/** The most efficient behavior should be used. **/
-	public var FASTEST (default, never) : GLenum;
+	public var FASTEST (default, never) : HintModeEnum;
 
 	/** The most correct or the highest quality option should be used. **/
-	public var NICEST (default, never) : GLenum;
+	public var NICEST (default, never) : HintModeEnum;
 
 	/** Hint for the quality of filtering when generating mipmap images with `RenderingContext.generateMipmap()`. **/
 	public var GENERATE_MIPMAP_HINT (default, never) : HintEnum;
@@ -460,10 +460,10 @@ extern class RenderingContext
 	public var UNSIGNED_SHORT_5_6_5 (default, never) : GLenum;
 
 	/** A fragment shader. **/
-	public var FRAGMENT_SHADER (default, never) : GLenum;
+	public var FRAGMENT_SHADER (default, never) : ShaderTypeEnum;
 
 	/** A vertex shader. **/
-	public var VERTEX_SHADER (default, never) : GLenum;
+	public var VERTEX_SHADER (default, never) : ShaderTypeEnum;
 
 	/** Get the status of the compilation. Returns false if the shader was not compiled. You can then query `getShaderInfoLog` to find the exact error. **/
 	public var COMPILE_STATUS (default, never) : GLenum;
@@ -517,49 +517,49 @@ extern class RenderingContext
 	public var CURRENT_PROGRAM (default, never) : ParameterEnum;
 
 	/** Specify depth or stencil tests will never pass. i.e. Nothing will be drawn. **/
-	public var NEVER (default, never) : GLenum;
+	public var NEVER (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will always pass. i.e. Pixels will be drawn in the order they are drawn. **/
-	public var ALWAYS (default, never) : GLenum;
+	public var ALWAYS (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is less than the stored value. **/
-	public var LESS (default, never) : GLenum;
+	public var LESS (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is equals to the stored value. **/
-	public var EQUAL (default, never) : GLenum;
+	public var EQUAL (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is less than or equal to the stored value. **/
-	public var LEQUAL (default, never) : GLenum;
+	public var LEQUAL (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is greater than the stored value. **/
-	public var GREATER (default, never) : GLenum;
+	public var GREATER (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is greater than or equal to the stored value. **/
-	public var GEQUAL (default, never) : GLenum;
+	public var GEQUAL (default, never) : CompFuncEnum;
 
 	/** Specify depth or stencil tests will pass if the new depth value is not equal to the stored value.**/
-	public var NOTEQUAL (default, never) : GLenum;
+	public var NOTEQUAL (default, never) : CompFuncEnum;
 
 	/** Keeps the current value. **/
-	public var KEEP (default, never) : GLenum;
+	public var KEEP (default, never) : StencilOpEnum;
 
 	/** Sets the stencil buffer value to the reference value as specified by `stencilFunc`. **/
-	public var REPLACE (default, never) : GLenum;
+	public var REPLACE (default, never) : StencilOpEnum;
 
 	/** Increments the current stencil buffer value. Clamps to the maximum representable unsigned value. **/
-	public var INCR (default, never) : GLenum;
+	public var INCR (default, never) : StencilOpEnum;
 
 	/** Decrements the current stencil buffer value. Clamps to 0. **/
-	public var DECR (default, never) : GLenum;
+	public var DECR (default, never) : StencilOpEnum;
 
 	/** Inverts the current stencil buffer value bitwise. **/
-	public var INVERT (default, never) : GLenum;
+	public var INVERT (default, never) : StencilOpEnum;
 
 	/** Increments the current stencil buffer value. Wraps stencil buffer value to zero when incrementing the maximum representable unsigned value. **/
-	public var INCR_WRAP (default, never) : GLenum;
+	public var INCR_WRAP (default, never) : StencilOpEnum;
 
 	/** Decrements the current stencil buffer value. Wraps stencil buffer value to the maximum representable unsigned value when decrementing a stencil buffer value of 0. **/
-	public var DECR_WRAP (default, never) : GLenum;
+	public var DECR_WRAP (default, never) : StencilOpEnum;
 
 	/** **/
 	public var NEAREST (default, never) : GLenum;
@@ -862,19 +862,19 @@ extern class RenderingContext
 	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE (default, never) : GLenum;
 
 	/** Color buffer. **/
-	public var COLOR_ATTACHMENT0 (default, never) : GLenum;
+	public var COLOR_ATTACHMENT0 (default, never) : ColorAttachementEnum;
 
 	/** Depth buffer. **/
-	public var DEPTH_ATTACHMENT (default, never) : GLenum;
+	public var DEPTH_ATTACHMENT (default, never) : BufferAttachementEnum;
 
 	/** Stencil buffer. **/
-	public var STENCIL_ATTACHMENT (default, never) : GLenum;
+	public var STENCIL_ATTACHMENT (default, never) : BufferAttachementEnum;
 
 	/** Depth and stencil buffer. **/
-	public var DEPTH_STENCIL_ATTACHMENT (default, never) : GLenum;
+	public var DEPTH_STENCIL_ATTACHMENT (default, never) : BufferAttachementEnum;
 
 	/** **/
-	public var NONE (default, never) : GLenum;
+	public var NONE (default, never) : AttachementEnum;
 
 	/** The framebuffer is ready to display. **/
 	public var FRAMEBUFFER_COMPLETE (default, never) : GLenum;
@@ -1003,7 +1003,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.createBuffer`
 	**/
-	public function bindBuffer (target:GLenum, buffer:Buffer) : Void;
+	public function bindBuffer (target:BufferEnum, buffer:Buffer) : Void;
 
 	/**
 	Bind a given `Framebuffer` to a target.
@@ -1106,7 +1106,7 @@ extern class RenderingContext
 	@see `RenderingContext.blendColor`
 	@see `RenderingContext.blendEquation`
 	**/
-	public function blendFunc (sfactor:GLenum, dfactor:GLenum) : Void;
+	public function blendFunc (sfactor:BlendFuncEnum, dfactor:BlendFuncEnum) : Void;
 
 	/**
 	Defines which function is used for blending pixel arithmetic for RGB and alpha components separately.
@@ -1127,7 +1127,7 @@ extern class RenderingContext
 	@see `RenderingContext.blendColor`
 	@see `RenderingContext.blendEquation`
 	**/
-	public function blendFuncSeparate (srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) : Void;
+	public function blendFuncSeparate (srcRGB:BlendFuncEnum, dstRGB:BlendFuncEnum, srcAlpha:BlendFuncEnum, dstAlpha:BlendFuncEnum) : Void;
 
 	/**
 	Initialize and create the buffer object's data store.
@@ -1193,7 +1193,7 @@ extern class RenderingContext
 	@see `RenderingContext.clearDepth`
 	@see `RenderingContext.clearStencil`
 	**/
-	public function clear (mask:GLenum) : Void;
+	public function clear (mask:BufferMaskEnum) : Void;
 
 	/**
 	Specify the color values used when clearing color buffers.
@@ -1411,7 +1411,7 @@ extern class RenderingContext
 	@see `RenderingContext.deleteShader`
 	@see `RenderingContext.shaderSource`
 	**/
-	public function createShader (type:GLenum) : Shader;
+	public function createShader (type:ShaderTypeEnum) : Shader;
 
 	/**
 	Create and initialize a `Texture` object.
@@ -1435,7 +1435,7 @@ extern class RenderingContext
 	@see `RenderingContext.enable`
 	@see `RenderingContext.frontFace`
 	**/
-	public function cullFace (mode:GLenum) : Void;
+	public function cullFace (mode:CullFaceModeEnum) : Void;
 
 	/**
 	Delete a given `Buffer`.
@@ -1539,7 +1539,7 @@ extern class RenderingContext
 	@see `RenderingContext.colorMask`
 	@see `RenderingContext.stencilMask`
 	**/
-	public function depthFunc (func:GLenum) : Void;
+	public function depthFunc (func:CompFuncEnum) : Void;
 
 	/**
 	Set whether writing into the depth buffer is enabled or disabled.
@@ -1701,7 +1701,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.createRenderbuffer`
 	**/
-	public function framebufferRenderbuffer (target:GLenum, attachment:GLenum, renderbuffertarget:GLenum, renderbuffer:Renderbuffer) : Void;
+	public function framebufferRenderbuffer (target:GLenum, attachment:BufferAttachementEnum, renderbuffertarget:GLenum, renderbuffer:Renderbuffer) : Void;
 
 	/**
 	Attach a texture to a `Framebuffer`.
@@ -1719,7 +1719,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.createTexture`
 	**/
-	public function framebufferTexture2D (target:GLenum, attachment:GLenum, textarget:GLenum, texture:Texture, level:Int) : Void;
+	public function framebufferTexture2D (target:GLenum, attachment:BufferAttachementEnum, textarget:GLenum, texture:Texture, level:Int) : Void;
 
 	/**
 	Specify whether polygons are front- or back-facing by setting a winding orientation.
@@ -1816,7 +1816,7 @@ extern class RenderingContext
 	@see `RenderingContext.bindBuffer`
 	@see `RenderingContext.createBuffer`
 	**/
-	public function getBufferParameter (target:GLenum, pname:GLenum) : Any;
+	public function getBufferParameter (target:BufferEnum, pname:GLenum) : Any;
 
 	/**
 	Return a `ContextAttributes` object that contains the actual context parameters.
@@ -1860,7 +1860,7 @@ extern class RenderingContext
 	@see `RenderingContext.deleteFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function getFramebufferAttachmentParameter (target:GLenum, attachment:GLenum, pname:GLenum) : Any;
+	public function getFramebufferAttachmentParameter (target:GLenum, attachment:BufferAttachementEnum, pname:GLenum) : Any;
 
 	/**
 	Returns a value for the passed parameter name.
@@ -1959,7 +1959,7 @@ extern class RenderingContext
 
 	@throws INVALID_OPERATION If the shader compiler isn't supported.
 	**/
-	public function getShaderPrecisionFormat (shadertype:GLenum, precisiontype:ShaderPrecisionEnum) : ShaderPrecisionFormat;
+	public function getShaderPrecisionFormat (shadertype:ShaderTypeEnum, precisiontype:ShaderPrecisionEnum) : ShaderPrecisionFormat;
 
 	/**
 	Return the source code of a `Shader`.
@@ -2064,7 +2064,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.generateMipmap`
 	**/
-	public function hint (target:HintEnum, mode:GLenum) : Void;
+	public function hint (target:HintEnum, mode:HintModeEnum) : Void;
 
 	/**
 	If the passed `Buffer` is valid.
@@ -2301,7 +2301,7 @@ extern class RenderingContext
 	@see `RenderingContext.stencilMask`
 	@see `RenderingContext.stencilOp`
 	**/
-	public function stencilFunc (func:GLenum, ref:Int, mask:UInt) : Void;
+	public function stencilFunc (func:CompFuncEnum, ref:Int, mask:UInt) : Void;
 
 	/**
 	Set the front and/or back function and reference value for stencil testing.
@@ -2319,7 +2319,7 @@ extern class RenderingContext
 	@see `RenderingContext.stencilMask`
 	@see `RenderingContext.stencilOp`
 	**/
-	public function stencilFuncSeparate (face:GLenum, func:GLenum, ref:Int, mask:UInt) : Void;
+	public function stencilFuncSeparate (face:CullFaceModeEnum, func:CompFuncEnum, ref:Int, mask:UInt) : Void;
 
 	/**
 	Control enabling and disabling of both the front and back writing of individual bits in the stencil planes.
@@ -2350,7 +2350,7 @@ extern class RenderingContext
 	@see `RenderingContext.depthMask`
 	@see `RenderingContext.stencilMask`
 	**/
-	public function stencilMaskSeparate (face:GLenum, mask:UInt) : Void;
+	public function stencilMaskSeparate (face:CullFaceModeEnum, mask:UInt) : Void;
 
 	/**
 	Set both the front and back-facing stencil test actions.
@@ -2365,7 +2365,7 @@ extern class RenderingContext
 	@see `RenderingContext.stencilMask`
 	@see `RenderingContext.stencilOpSeparate`
 	**/
-	public function stencilOp (fail:GLenum, zfail:GLenum, zpass:GLenum) : Void;
+	public function stencilOp (fail:StencilOpEnum, zfail:StencilOpEnum, zpass:StencilOpEnum) : Void;
 
 	/**
 	Sets the front and/or back-facing stencil test actions.
@@ -2381,7 +2381,7 @@ extern class RenderingContext
 	@see `RenderingContext.stencilMask`
 	@see `RenderingContext.stencilOp`
 	**/
-	public function stencilOpSeparate (face:GLenum, fail:GLenum, zfail:GLenum, zpass:GLenum) : Void;
+	public function stencilOpSeparate (face:CullFaceModeEnum, fail:StencilOpEnum, zfail:StencilOpEnum, zpass:StencilOpEnum) : Void;
 
 	/**
 	Specify a two-dimensional texture image.

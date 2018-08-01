@@ -1,6 +1,8 @@
 package js.webgl2;
 
+/**
+Base type for the WebGL constants.
+**/
 abstract GLenum (UInt)
 {
-	@:op(A | B) static function bit(a:GLenum, b:GLenum) : GLenum;
 }
