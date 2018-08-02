@@ -20,13 +20,13 @@ Constants in `RenderingContext` and `RenderingContext2` don't have the Int type,
 Some functions have type safe helpers when the return type depends on a parameter value, if possible. For instance:
 * `gl.getBufferParameter(target, gl.BUFFER_SIZE) : Any` => `gl.getBufferSize(target) : Int`
 * `gl.getBufferParameter(target, gl.BUFFER_USAGE) : Any` => `gl.getBufferUsage(target) : BufferDrawHint`
-* `getActiveUniforms(program, uniformIndices, pname) : Any;` => `gl.getActiveUniformsInteger(program:Program, uniformIndices, pname) : Array<Int>`
+* `getActiveUniforms(program, uniformIndices, pname) : Any` => `gl.getActiveUniformsInteger(program:Program, uniformIndices, pname) : Array<Int>`
 
 These can be used by adding a `using js.webgl2.ContextHelpers;`.
 
 ## License
 
-The code is released under the MIT license, see <LICENSE.MD>.
+The code is released under the MIT license, see [LICENSE.MD](LICENSE.MD).
 
 The documentation is licensed under [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) by [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
 
