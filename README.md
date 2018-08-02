@@ -26,7 +26,7 @@ These can be used by adding a `using js.webgl2.ContextHelpers;`.
 
 ## License
 
-The code is released under the MIT license, see [LICENSE.MD](LICENSE.MD).
+The code is released under the MIT license, see [LICENSE.md](LICENSE.md).
 
 The documentation is licensed under [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) by [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
 
