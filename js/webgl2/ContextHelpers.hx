@@ -228,7 +228,7 @@ class ContextHelpers
 	@param attachment The attachment point for the texture.
 	@param pname The information to query.
 	**/
-	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum, pname:GLenum) : Int
+	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterIntegerEnum) : Int
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, pname);
 	}
@@ -694,7 +694,7 @@ class ContextHelpers
 	@param program The program to get parameter information from.
 	@param pname The information to query.
 	**/
-	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : GLenum
+	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : TransformFeedbackBufferModeEnum
 	{
 		return cast gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
 	}
@@ -770,7 +770,7 @@ class ContextHelpers
 	@param targe The target renderbuffer object
 	@param pname The information to query.
 	**/
-	public static inline function getRenderbufferParameterInteger (gl:RenderingContext, target:RenderbufferEnum, pname:GLenum) : Int
+	public static inline function getRenderbufferParameterInteger (gl:RenderingContext, target:RenderbufferEnum, pname:RenderbufferParameterIntegerEnum) : Int
 	{
 		return cast gl.getRenderbufferParameter(target, pname);
 	}
@@ -815,7 +815,7 @@ class ContextHelpers
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public static inline function getSamplerLOD (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : Float
+	public static inline function getSamplerLOD (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterLODEnum) : Float
 	{
 		return cast gl.getSamplerParameter(sampler, pname);
 	}
@@ -858,7 +858,7 @@ class ContextHelpers
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : WrapFunctionEnum
+	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
 		return cast gl.getSamplerParameter(sampler, pname);
 	}
@@ -976,7 +976,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexLOD (gl:RenderingContext, target:TextureBindingTypeEnum, pname:GLenum) : Float
+	public static inline function getTexLOD (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum) : Float
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -1019,7 +1019,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexMipmapLevel (gl:RenderingContext, target:TextureBindingTypeEnum, pname:GLenum) : Int
+	public static inline function getTexMipmapLevel (gl:RenderingContext, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum) : Int
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -1034,7 +1034,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:GLenum) : WrapFunctionEnum
+	public static inline function getTexWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
 		return cast gl.getTexParameter(target, pname);
 	}

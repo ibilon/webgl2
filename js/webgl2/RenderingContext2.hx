@@ -118,25 +118,25 @@ extern class RenderingContext2 extends RenderingContext
 	public var TEXTURE_3D (default, never) : Texture3DBindingTypeEnum;
 
 	/** Wrapping function for texture coordinate r. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
-	public var TEXTURE_WRAP_R (default, never) : GLenum;
+	public var TEXTURE_WRAP_R (default, never) : SamplerParameterWrapEnum;
 
 	/** Texture minimum level-of-detail value. Available values: any float value. **/
-	public var TEXTURE_MIN_LOD (default, never) : GLenum;
+	public var TEXTURE_MIN_LOD (default, never) : SamplerParameterLODEnum;
 
 	/** Texture maximum level-of-detail value. Available values:  any float value. **/
-	public var TEXTURE_MAX_LOD (default, never) : GLenum;
+	public var TEXTURE_MAX_LOD (default, never) : SamplerParameterLODEnum;
 
 	/** Texture mipmap level. Available values: any int value. **/
-	public var TEXTURE_BASE_LEVEL (default, never) : GLenum;
+	public var TEXTURE_BASE_LEVEL (default, never) : TextureParameterLevelEnum;
 
 	/** Maximum texture mipmap array level. Available values: any int value. **/
-	public var TEXTURE_MAX_LEVEL (default, never) : GLenum;
+	public var TEXTURE_MAX_LEVEL (default, never) : TextureParameterLevelEnum;
 
 	/** Texture comparison mode. Available values: `NONE`, `COMPARE_REF_TO_TEXTURE`. Default value: `NONE`. **/
-	public var TEXTURE_COMPARE_MODE (default, never) : GLenum;
+	public var TEXTURE_COMPARE_MODE (default, never) : SamplerParameterEnum;
 
 	/** Texture Comparison function. Available values: `LEQUAL`, `GEQUAL`, `LESS`, `GREATER`, `EQUAL`, `NOTEQUAL`, `ALWAYS`, `NEVER`. Default value: `LEQUAL`. **/
-	public var TEXTURE_COMPARE_FUNC (default, never) : GLenum;
+	public var TEXTURE_COMPARE_FUNC (default, never) : SamplerParameterEnum;
 
 	/** **/
 	public var SRGB (default, never) : ColorEncodingEnum;
@@ -289,10 +289,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var RGB10_A2UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var TEXTURE_IMMUTABLE_FORMAT (default, never) : GLenum;
+	public var TEXTURE_IMMUTABLE_FORMAT (default, never) : TextureParameterEnum;
 
 	/** **/
-	public var TEXTURE_IMMUTABLE_LEVELS (default, never) : GLenum;
+	public var TEXTURE_IMMUTABLE_LEVELS (default, never) : TextureParameterEnum;
 
 	/** **/
 	public var UNSIGNED_INT_2_10_10_10_REV (default, never) : TextureTypeEnum;
@@ -316,13 +316,13 @@ extern class RenderingContext2 extends RenderingContext
 	public var RG (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG_INTEGER (default, never) : GLenum;
+	public var RG_INTEGER (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var INT_2_10_10_10_REV (default, never) : GLenum;
+	public var INT_2_10_10_10_REV (default, never) : GLenum; //TODO can't find any use for it on the spec
 
 	/** **/
-	public var CURRENT_QUERY (default, never) : GLenum;
+	public var CURRENT_QUERY (default, never) : CurrentQueryEnum;
 
 	/** The query result. **/
 	public var QUERY_RESULT (default, never) : QueryParameterEnum;
@@ -436,43 +436,43 @@ extern class RenderingContext2 extends RenderingContext
 	public var COLOR_ATTACHMENT15 (default, never) : ColorAttachementEnum;
 
 	/** **/
-	public var SAMPLER_3D (default, never) : GLenum;
+	public var SAMPLER_3D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_2D_SHADOW (default, never) : GLenum;
+	public var SAMPLER_2D_SHADOW (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_2D_ARRAY (default, never) : GLenum;
+	public var SAMPLER_2D_ARRAY (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_2D_ARRAY_SHADOW (default, never) : GLenum;
+	public var SAMPLER_2D_ARRAY_SHADOW (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_CUBE_SHADOW (default, never) : GLenum;
+	public var SAMPLER_CUBE_SHADOW (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_SAMPLER_2D (default, never) : GLenum;
+	public var INT_SAMPLER_2D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_SAMPLER_3D (default, never) : GLenum;
+	public var INT_SAMPLER_3D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_SAMPLER_CUBE (default, never) : GLenum;
+	public var INT_SAMPLER_CUBE (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_SAMPLER_2D_ARRAY (default, never) : GLenum;
+	public var INT_SAMPLER_2D_ARRAY (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_SAMPLER_2D (default, never) : GLenum;
+	public var UNSIGNED_INT_SAMPLER_2D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_SAMPLER_3D (default, never) : GLenum;
+	public var UNSIGNED_INT_SAMPLER_3D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_SAMPLER_CUBE (default, never) : GLenum;
+	public var UNSIGNED_INT_SAMPLER_CUBE (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_SAMPLER_2D_ARRAY (default, never) : GLenum;
+	public var UNSIGNED_INT_SAMPLER_2D_ARRAY (default, never) : UniformsTypeEnum;
 
 	/** **/
 	public var MAX_SAMPLES (default, never) : ParameterIntegerEnum;
@@ -568,10 +568,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var INTERLEAVED_ATTRIBS (default, never) : GLenum;
+	public var INTERLEAVED_ATTRIBS (default, never) : TransformFeedbackBufferModeEnum;
 
 	/** **/
-	public var SEPARATE_ATTRIBS (default, never) : GLenum;
+	public var SEPARATE_ATTRIBS (default, never) : TransformFeedbackBufferModeEnum;
 
 	/** Buffer for transform feedback operations. **/
 	public var TRANSFORM_FEEDBACK_BUFFER (default, never) : BufferBaseEnum;
@@ -580,7 +580,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var TRANSFORM_FEEDBACK_BUFFER_BINDING (default, never) : IndexedParameterBufferEnum;
 
 	/** **/
-	public var TRANSFORM_FEEDBACK (default, never) : GLenum;
+	public var TRANSFORM_FEEDBACK (default, never) : TransformFeedbackEnum;
 
 	/** **/
 	public var TRANSFORM_FEEDBACK_PAUSED (default, never) : ParameterBooleanEnum;
@@ -592,31 +592,31 @@ extern class RenderingContext2 extends RenderingContext
 	public var TRANSFORM_FEEDBACK_BINDING (default, never) : ParameterEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING (default, never) : AttachementParameterEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE (default, never) : AttachementParameterEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_RED_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_RED_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_GREEN_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_GREEN_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_BLUE_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_BLUE_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE (default, never) : AttachementParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_DEFAULT (default, never) : GLenum;
+	public var FRAMEBUFFER_DEFAULT (default, never) : ObjectType;
 
 	/** **/
 	public var DEPTH24_STENCIL8 (default, never) : InternalFormatEnum;
@@ -634,13 +634,13 @@ extern class RenderingContext2 extends RenderingContext
 	public var READ_FRAMEBUFFER_BINDING (default, never) : ParameterFramebufferEnum;
 
 	/** **/
-	public var RENDERBUFFER_SAMPLES (default, never) : GLenum;
+	public var RENDERBUFFER_SAMPLES (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER (default, never) : AttachementParameterIntegerEnum;
 
 	/** The values of `RENDERBUFFER_SAMPLES` are different among attached renderbuffers, or are non-zero if the attached images are a mix of renderbuffers and textures. **/
-	public var FRAMEBUFFER_INCOMPLETE_MULTISAMPLE (default, never) : GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_MULTISAMPLE (default, never) : FramebufferStatusEnum;
 
 	/** Buffer used for storing uniform blocks. **/
 	public var UNIFORM_BUFFER (default, never) : BufferBaseEnum;
@@ -733,16 +733,16 @@ extern class RenderingContext2 extends RenderingContext
 	public var SYNC_FLAGS (default, never) : SyncParameterEnum;
 
 	/** **/
-	public var SYNC_FENCE (default, never) : GLenum;
+	public var SYNC_FENCE (default, never) : SyncParameterValueEnum;
 
 	/** **/
 	public var SYNC_GPU_COMMANDS_COMPLETE (default, never) : SyncConditionEnum;
 
 	/** **/
-	public var UNSIGNALED (default, never) : SyncParameterValueEnum;
+	public var UNSIGNALED (default, never) : SyncStatusEnum;
 
 	/** **/
-	public var SIGNALED (default, never) : SyncParameterValueEnum;
+	public var SIGNALED (default, never) : SyncStatusEnum;
 
 	/** Indicates that the sync object was signaled when this method was called. **/
 	public var ALREADY_SIGNALED (default, never) : WaitSyncResponseEnum;
@@ -801,8 +801,8 @@ extern class RenderingContext2 extends RenderingContext
 	/** **/
 	public var DEPTH32F_STENCIL8 (default, never) : InternalFormatEnum;
 
-	/** **/
-	public var INVALID_INDEX (default, never) : GLenum;
+	/** Returned by `RenderingContext2.getUniformBlockIndex` if the uniform block asked doesn't exist. **/
+	public var INVALID_INDEX (default, never) : UInt;
 
 	/** **/
 	public var TIMEOUT_IGNORED (default, never) : SyncFlushEnum;
@@ -881,7 +881,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.createTransformFeedback`
 	**/
-	public function bindTransformFeedback (target:GLenum, transformFeedback:TransformFeedback) : Void;
+	public function bindTransformFeedback (target:TransformFeedbackEnum, transformFeedback:TransformFeedback) : Void;
 
 	/**
 	Bind the passed `VertexArrayObject` object to the buffer.
@@ -1061,9 +1061,9 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.getExtension`
 	@see `RenderingContext.compressTexSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, imageSize:Int, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
-	public function compressedTexImage2D (target:GLenum, internalformat:GLenum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, imageSize:Int, offset:Int) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	public function compressedTexImage2D (target:TextureBindingEnum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional texture image in a compressed format.
@@ -1087,8 +1087,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.getExtension`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
-	public function compressedTexImage3D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, imageSize:Int, offset:Int) : Void;
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	public function compressedTexImage3D (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, imageSize:Int, offset:Int) : Void;
 
 	/**
 	Specify a two-dimensional sub-rectangle for a texture image in a compressed format.
@@ -1113,9 +1113,9 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.getExtension`
 	@see `RenderingContext.compressTexImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, imageSize:Int, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
-	override public function compressedTexSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, imageSize:Int, offset:Int) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	override public function compressedTexSubImage2D (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional sub-rectangle for a texture image in a compressed format.
@@ -1156,7 +1156,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bufferSubData`
 	@see `RenderingContext2.getBufferSubData`
 	**/
-	public function copyBufferSubData(readTarget:BufferEnum, writeTarget:BufferEnum, readOffset:Int, writeOffset:Int, size:Int) : Void;
+	public function copyBufferSubData (readTarget:BufferEnum, writeTarget:BufferEnum, readOffset:Int, writeOffset:Int, size:Int) : Void;
 
 	/**
 	Copy pixels from the current `Framebuffer` into an existing 3D texture sub-image.
@@ -1178,7 +1178,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.texSubImage2D`
 	@see `RenderingContext.compressTexImage2D`
 	**/
-	public function copyTexSubImage3D(target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, x:Int, y:Int, width:Int, height:Int) : Void;
+	public function copyTexSubImage3D (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, x:Int, y:Int, width:Int, height:Int) : Void;
 
 	/**
 	Create and initialize `Query` objects, which provide ways to asynchronously query for information.
@@ -1478,7 +1478,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param target The target of the query.
 	@param pname The query object target. Must be `CURRENT_QUERY`.
 	**/
-	public function getQuery (target:QueryTargetEnum, pname:GLenum) : Query;
+	public function getQuery (target:QueryTargetEnum, pname:CurrentQueryEnum) : Query;
 
 	/**
 	Return parameter information of a `Query` object.
@@ -1502,7 +1502,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public function getSamplerParameter (sampler:Sampler, pname:GLenum) : Any;
+	public function getSamplerParameter (sampler:Sampler, pname:SamplerParameterEnum) : Any;
 
 	/**
 	Returns parameter information of a `Sync` object.
@@ -1528,6 +1528,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	/**
 	Retrieve the index of a uniform block within a `Program`.
+
+	If `uniformBlockName` does not identify an active uniform block of `program`, `RenderingContext2.INVALID_INDEX` is returned.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex>.
 
@@ -1699,7 +1701,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which parameter to set.
 	@param param The value to set.
 	**/
-	public function samplerParameterf (sampler:Sampler, pname:GLenum, param:Float) : Void;
+	public function samplerParameterf (sampler:Sampler, pname:SamplerParameterEnum, param:Float) : Void;
 
 	/**
 	Set `Sampler` parameters.
@@ -1710,7 +1712,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which parameter to set.
 	@param param The value to set.
 	**/
-	public function samplerParameteri (sampler:Sampler, pname:GLenum, param:Int) : Void;
+	public function samplerParameteri (sampler:Sampler, pname:SamplerParameterEnum, param:Int) : Void;
 
 	/**
 	Specify a two-dimensional texture image.
@@ -1823,7 +1825,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texImage2D`
 	**/
-	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:GLenum, offset:Int) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, offset:Int) : Void {})
 	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
 	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
 	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
@@ -1874,7 +1876,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param varyings The the names of the varying variables to use.
 	@param bufferMode The mode to use when capturing the varying variables.
 	**/
-	public function transformFeedbackVaryings (program:Program, varyings:Array<String>, bufferMode:GLenum) : Void;
+	public function transformFeedbackVaryings (program:Program, varyings:Array<String>, bufferMode:TransformFeedbackBufferModeEnum) : Void;
 
 	/**
 	Specify values of uniform variables.

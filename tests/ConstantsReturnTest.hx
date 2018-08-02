@@ -11,23 +11,73 @@ class ConstantsReturnTest
 	{
 		var gl : js.webgl2.RenderingContext2 = null;
 
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_COMPLETE);
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_INCOMPLETE_ATTACHMENT);
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT);
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_INCOMPLETE_DIMENSIONS);
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_UNSUPPORTED);
+		t(gl.checkFramebufferStatus(null) == gl.FRAMEBUFFER_INCOMPLETE_MULTISAMPLE);
+
 		t(gl.clientWaitSync(null, null, 0) == gl.ALREADY_SIGNALED);
 		t(gl.clientWaitSync(null, null, 0) == gl.TIMEOUT_EXPIRED);
 		t(gl.clientWaitSync(null, null, 0) == gl.CONDITION_SATISFIED);
 		t(gl.clientWaitSync(null, null, 0) == gl.WAIT_FAILED);
 
-		t(gl.getActiveUniformsType(null, []) == [gl.BOOL]);
-		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC2]);
-		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC3]);
-		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC4]);
-		t(gl.getActiveUniformsType(null, []) == [gl.INT]);
-		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC2]);
-		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC3]);
-		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC4]);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_VEC2);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_VEC3);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_VEC4);
+		t(gl.getActiveUniform(null, 0).type == gl.INT);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_VEC2);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_VEC3);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_VEC4);
+		t(gl.getActiveUniform(null, 0).type == gl.BOOL);
+		t(gl.getActiveUniform(null, 0).type == gl.BOOL_VEC2);
+		t(gl.getActiveUniform(null, 0).type == gl.BOOL_VEC3);
+		t(gl.getActiveUniform(null, 0).type == gl.BOOL_VEC4);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT2);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT3);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT4);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_2D);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_CUBE);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_VEC2);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_VEC3);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_VEC4);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT2x3);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT2x4);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT3x2);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT3x4);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT4x2);
+		t(gl.getActiveUniform(null, 0).type == gl.FLOAT_MAT4x3);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_2D);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_3D);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_CUBE);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_2D_SHADOW);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_2D_ARRAY);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_2D_ARRAY_SHADOW);
+		t(gl.getActiveUniform(null, 0).type == gl.SAMPLER_CUBE_SHADOW);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_SAMPLER_2D);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_SAMPLER_3D);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_SAMPLER_CUBE);
+		t(gl.getActiveUniform(null, 0).type == gl.INT_SAMPLER_2D_ARRAY);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_SAMPLER_2D);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_SAMPLER_3D);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_SAMPLER_CUBE);
+		t(gl.getActiveUniform(null, 0).type == gl.UNSIGNED_INT_SAMPLER_2D_ARRAY);
+
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_VEC2]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_VEC3]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_VEC4]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC2]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC3]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_VEC4]);
+		t(gl.getActiveUniformsType(null, []) == [gl.BOOL]);
+		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC2]);
+		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC3]);
+		t(gl.getActiveUniformsType(null, []) == [gl.BOOL_VEC4]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT2]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT3]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT4]);
@@ -43,6 +93,21 @@ class ConstantsReturnTest
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT3x4]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT4x2]);
 		t(gl.getActiveUniformsType(null, []) == [gl.FLOAT_MAT4x3]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_2D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_3D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_CUBE]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_2D_SHADOW]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_2D_ARRAY]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_2D_ARRAY_SHADOW]);
+		t(gl.getActiveUniformsType(null, []) == [gl.SAMPLER_CUBE_SHADOW]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_SAMPLER_2D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_SAMPLER_3D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_SAMPLER_CUBE]);
+		t(gl.getActiveUniformsType(null, []) == [gl.INT_SAMPLER_2D_ARRAY]);
+		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_2D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_3D]);
+		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_CUBE]);
+		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_2D_ARRAY]);
 
 		t(gl.getBufferUsage(null) == gl.STATIC_DRAW);
 		t(gl.getBufferUsage(null) == gl.DYNAMIC_DRAW);
@@ -73,6 +138,7 @@ class ConstantsReturnTest
 
 		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.RENDERBUFFER);
 		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.TEXTURE);
+		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.FRAMEBUFFER_DEFAULT);
 		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.NONE);
 
 		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_X);
@@ -192,8 +258,11 @@ class ConstantsReturnTest
 		t(gl.getShaderType(null) == gl.VERTEX_SHADER);
 		t(gl.getShaderType(null) == gl.FRAGMENT_SHADER);
 
+		t(gl.getSyncParameter(null, null) == gl.SYNC_FENCE);
 		t(gl.getSyncParameter(null, null) == gl.SIGNALED);
 		t(gl.getSyncParameter(null, null) == gl.UNSIGNALED);
+		t(gl.getSyncParameter(null, null) == gl.SYNC_GPU_COMMANDS_COMPLETE);
+		t(gl.getSyncParameter(null, null) == gl.ZERO);
 
 		t(gl.getSyncStatus(null) == gl.SIGNALED);
 		t(gl.getSyncStatus(null) == gl.UNSIGNALED);

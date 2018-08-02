@@ -1,5 +1,7 @@
 package js.webgl2;
 
+import js.webgl2.constants.UniformsTypeEnum;
+
 /**
 ActiveInfo represents the information returned by calling the `RenderingContext.getActiveAttrib()`,
 `RenderingContext.getActiveUniform()` and `RenderingContext.getTransformFeedbackVarying()` methods.
@@ -13,7 +15,7 @@ extern class ActiveInfo
 	public var size (default, never) : Int;
 
 	/** The type of the requested variable. **/
-	public var type (default, never) : Int;
+	public var type (default, never) : UniformsTypeEnum;
 
 	/** The name of the requested variable. **/
 	public var name (default, never) : String;

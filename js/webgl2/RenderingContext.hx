@@ -310,10 +310,10 @@ extern class RenderingContext
 	public var ELEMENT_ARRAY_BUFFER (default, never) : BufferEnum;
 
 	/** Get a buffer's size. **/
-	public var BUFFER_SIZE (default, never) : GLenum;
+	public var BUFFER_SIZE (default, never) : BufferParameterEnum;
 
 	/** Get the hint for the buffer passed in when it was created. **/
-	public var BUFFER_USAGE (default, never) : GLenum;
+	public var BUFFER_USAGE (default, never) : BufferParameterEnum;
 
 	/** Get the current vertex attribute. **/
 	public var CURRENT_VERTEX_ATTRIB (default, never) : VertexAttribEnum;
@@ -334,7 +334,7 @@ extern class RenderingContext
 	public var VERTEX_ATTRIB_ARRAY_NORMALIZED (default, never) : VertexAttribBooleanEnum;
 
 	/** **/
-	public var VERTEX_ATTRIB_ARRAY_POINTER (default, never) : GLenum;
+	public var VERTEX_ATTRIB_ARRAY_POINTER (default, never) : VertexAttribOffsetParameterEnum;
 
 	/** **/
 	public var VERTEX_ATTRIB_ARRAY_BUFFER_BINDING (default, never) : VertexAttribEnum;
@@ -580,16 +580,16 @@ extern class RenderingContext
 	public var LINEAR_MIPMAP_LINEAR (default, never) : TexMinFilterEnum;
 
 	/** Texture magnification filter. Available values: `LINEAR`, `NEAREST`. Default value: `LINEAR`. **/
-	public var TEXTURE_MAG_FILTER (default, never) : GLenum;
+	public var TEXTURE_MAG_FILTER (default, never) : SamplerParameterEnum;
 
 	/** Texture minification filter. Available values: `LINEAR`, `NEAREST`, `NEAREST_MIPMAP_NEAREST`, `LINEAR_MIPMAP_NEAREST`, `NEAREST_MIPMAP_LINEAR`. Default value: `NEAREST_MIPMAP_LINEAR`. **/
-	public var TEXTURE_MIN_FILTER (default, never) : GLenum;
+	public var TEXTURE_MIN_FILTER (default, never) : SamplerParameterEnum;
 
 	/** Wrapping function for texture coordinate s. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
-	public var TEXTURE_WRAP_S (default, never) : GLenum;
+	public var TEXTURE_WRAP_S (default, never) : SamplerParameterWrapEnum;
 
 	/** Wrapping function for texture coordinate t. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
-	public var TEXTURE_WRAP_T (default, never) : GLenum;
+	public var TEXTURE_WRAP_T (default, never) : SamplerParameterWrapEnum;
 
 	/** A two-dimensional texture. **/
 	public var TEXTURE_2D (default, never) : Texture2DEnum;
@@ -813,9 +813,6 @@ extern class RenderingContext
 	/** Internal format of 16 depth bits. **/
 	public var DEPTH_COMPONENT16 (default, never) : RenderbufferInternalFormatEnum;
 
-	/** **/
-	public var STENCIL_INDEX (default, never) : GLenum;
-
 	/** Internal format of 8 stencil bits. **/
 	public var STENCIL_INDEX8 (default, never) : RenderbufferInternalFormatEnum;
 
@@ -823,43 +820,43 @@ extern class RenderingContext
 	public var DEPTH_STENCIL (default, never) : DepthStencilEnum;
 
 	/** **/
-	public var RENDERBUFFER_WIDTH (default, never) : GLenum;
+	public var RENDERBUFFER_WIDTH (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_HEIGHT (default, never) : GLenum;
+	public var RENDERBUFFER_HEIGHT (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_INTERNAL_FORMAT (default, never) : GLenum;
+	public var RENDERBUFFER_INTERNAL_FORMAT (default, never) : RenderbufferParameterEnum;
 
 	/** **/
-	public var RENDERBUFFER_RED_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_RED_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_GREEN_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_GREEN_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_BLUE_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_BLUE_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_ALPHA_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_ALPHA_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_DEPTH_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_DEPTH_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** **/
-	public var RENDERBUFFER_STENCIL_SIZE (default, never) : GLenum;
+	public var RENDERBUFFER_STENCIL_SIZE (default, never) : RenderbufferParameterIntegerEnum;
 
 	/** The type which contains the attached image. **/
-	public var FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE (default, never) : AttachementParameterEnum;
 
 	/** The texture or renderbuffer of the attached image. **/
-	public var FRAMEBUFFER_ATTACHMENT_OBJECT_NAME (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_OBJECT_NAME (default, never) : AttachementParameterEnum;
 
 	/** Mipmap level. Default value: 0. **/
-	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL (default, never) : AttachementParameterIntegerEnum;
 
 	/** The name of cube-map face of the texture. **/
-	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE (default, never) : GLenum;
+	public var FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE (default, never) : AttachementParameterEnum;
 
 	/** Color buffer. **/
 	public var COLOR_ATTACHMENT0 (default, never) : ColorAttachementEnum;
@@ -877,19 +874,19 @@ extern class RenderingContext
 	public var NONE (default, never) : NoneEnum;
 
 	/** The framebuffer is ready to display. **/
-	public var FRAMEBUFFER_COMPLETE (default, never) : GLenum;
+	public var FRAMEBUFFER_COMPLETE (default, never) : FramebufferStatusEnum;
 
 	/** The attachment types are mismatched or not all framebuffer attachment points are framebuffer attachment complete. **/
-	public var FRAMEBUFFER_INCOMPLETE_ATTACHMENT (default, never) : GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_ATTACHMENT (default, never) : FramebufferStatusEnum;
 
 	/** There is no attachment. **/
-	public var FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT (default, never) : GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT (default, never) : FramebufferStatusEnum;
 
 	/** Height and width of the attachment are not the same. **/
-	public var FRAMEBUFFER_INCOMPLETE_DIMENSIONS (default, never) : GLenum;
+	public var FRAMEBUFFER_INCOMPLETE_DIMENSIONS (default, never) : FramebufferStatusEnum;
 
 	/** The format of the attachment is not supported or if depth and stencil attachments are not the same renderbuffer. **/
-	public var FRAMEBUFFER_UNSUPPORTED (default, never) : GLenum;
+	public var FRAMEBUFFER_UNSUPPORTED (default, never) : FramebufferStatusEnum;
 
 	/** **/
 	public var FRAMEBUFFER_BINDING (default, never) : ParameterFramebufferEnum;
@@ -1177,7 +1174,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function checkFramebufferStatus (target:FramebufferEnum) : Int;
+	public function checkFramebufferStatus (target:FramebufferEnum) : FramebufferStatusEnum;
 
 	/**
 	Clear buffers to preset values.
@@ -1291,7 +1288,7 @@ extern class RenderingContext
 	@see `RenderingContext.getExtension`
 	@see `RenderingContext.compressTexSubImage2D`
 	**/
-	public function compressedTexImage2D (target:GLenum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
+	public function compressedTexImage2D (target:TextureBindingEnum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a two-dimensional sub-rectangle for a texture image in a compressed format.
@@ -1312,7 +1309,7 @@ extern class RenderingContext
 	@see `RenderingContext.getExtension`
 	@see `RenderingContext.compressTexImage2D`
 	**/
-	public function compressedTexSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, pixels:ArrayBufferView) : Void;
+	public function compressedTexSubImage2D (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Copy pixels from the current `Framebuffer` into a 2D texture image.
@@ -1816,7 +1813,7 @@ extern class RenderingContext
 	@see `RenderingContext.bindBuffer`
 	@see `RenderingContext.createBuffer`
 	**/
-	public function getBufferParameter (target:BufferEnum, pname:GLenum) : Any;
+	public function getBufferParameter (target:BufferEnum, pname:BufferParameterEnum) : Any;
 
 	/**
 	Return a `ContextAttributes` object that contains the actual context parameters.
@@ -1860,7 +1857,7 @@ extern class RenderingContext
 	@see `RenderingContext.deleteFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function getFramebufferAttachmentParameter (target:FramebufferEnum, attachment:BufferAttachementEnum, pname:GLenum) : Any;
+	public function getFramebufferAttachmentParameter (target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterEnum) : Any;
 
 	/**
 	Returns a value for the passed parameter name.
@@ -1918,7 +1915,7 @@ extern class RenderingContext
 	@see `RenderingContext.createRenderbuffer`
 	@see `RenderingContext.deleteRenderbuffer`
 	**/
-	public function getRenderbufferParameter (target:RenderbufferEnum, pname:GLenum) : Any;
+	public function getRenderbufferParameter (target:RenderbufferEnum, pname:RenderbufferParameterEnum) : Any;
 
 	/**
 	Return the information log for the specified `Shader` object.
@@ -1995,7 +1992,7 @@ extern class RenderingContext
 	@see `RenderingContext.texParameterf`
 	@see `RenderingContext.texParameteri`
 	**/
-	public function getTexParameter (target:TextureBindingTypeEnum, pname:GLenum) : Any;
+	public function getTexParameter (target:TextureBindingTypeEnum, pname:TextureParameterEnum) : Any;
 
 	/**
 	Returns the value of a uniform variable at a given location.
@@ -2050,7 +2047,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.vertexAttribPointer`
 	**/
-	public function getVertexAttribOffset (index:UInt, pname:GLenum) : Int;
+	public function getVertexAttribOffset (index:UInt, pname:VertexAttribOffsetParameterEnum) : Int;
 
 	/**
 	Specify hints for certain behaviors.
@@ -2420,7 +2417,7 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameteri`
 	**/
-	public function texParameterf (target:TextureBindingTypeEnum, pname:GLenum, param:Float) : Void;
+	public function texParameterf (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:Float) : Void;
 
 	/**
 	Set texture int parameter.
@@ -2434,7 +2431,7 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameterf`
 	**/
-	public function texParameteri (target:TextureBindingTypeEnum, pname:GLenum, param:Int) : Void;
+	public function texParameteri (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:Int) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
