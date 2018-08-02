@@ -412,25 +412,25 @@ extern class RenderingContext
 	public var GENERATE_MIPMAP_HINT (default, never) : HintEnum;
 
 	/** **/
-	public var BYTE (default, never) : GLenum;
+	public var BYTE (default, never) : VertexAttribTypeEnum;
 
 	/** **/
-	public var UNSIGNED_BYTE (default, never) : GLenum;
+	public var UNSIGNED_BYTE (default, never) : UnsignedByteTypeEnum;
 
 	/** **/
-	public var SHORT (default, never) : GLenum;
+	public var SHORT (default, never) : VertexAttribTypeEnum;
 
 	/** **/
-	public var UNSIGNED_SHORT (default, never) : GLenum;
+	public var UNSIGNED_SHORT (default, never) : UnsignedShortTypeEnum;
 
 	/** **/
-	public var INT (default, never) : GLenum;
+	public var INT (default, never) : VertexAttribIntegerTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT (default, never) : GLenum;
+	public var UNSIGNED_INT (default, never) : DrawTypeEnum;
 
 	/** **/
-	public var FLOAT (default, never) : GLenum;
+	public var FLOAT (default, never) : FloatTypeEnum;
 
 	/** **/
 	public var DEPTH_COMPONENT (default, never) : GLenum;
@@ -451,13 +451,13 @@ extern class RenderingContext
 	public var LUMINANCE_ALPHA (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_SHORT_4_4_4_4 (default, never) : GLenum;
+	public var UNSIGNED_SHORT_4_4_4_4 (default, never) : PixelsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_SHORT_5_5_5_1 (default, never) : GLenum;
+	public var UNSIGNED_SHORT_5_5_5_1 (default, never) : PixelsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_SHORT_5_6_5 (default, never) : GLenum;
+	public var UNSIGNED_SHORT_5_6_5 (default, never) : PixelsTypeEnum;
 
 	/** A fragment shader. **/
 	public var FRAGMENT_SHADER (default, never) : ShaderTypeEnum;
@@ -1635,7 +1635,7 @@ extern class RenderingContext
 	@see `RenderingContext.drawArraysInstanced`
 	@see `RenderingContext.drawElementsInstanced`
 	**/
-	public function drawElements (mode:ArrayModeEnum, count:Int, type:GLenum, offset:Int) : Void;
+	public function drawElements (mode:ArrayModeEnum, count:Int, type:DrawTypeEnum, offset:Int) : Void;
 
 	/**
 	Enable specific WebGL capabilities for this context.
@@ -2902,7 +2902,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.vertexAttribIPointer`
 	**/
-	public function vertexAttribPointer (index:UInt, size:Int, type:GLenum, normalized:Bool, stride:Int, offset:Int) : Void;
+	public function vertexAttribPointer (index:UInt, size:Int, type:VertexAttribFloatTypeEnum, normalized:Bool, stride:Int, offset:Int) : Void;
 
 	/**
 	Set the viewport, which specifies the affine transformation of x and y from normalized device coordinates to window coordinates.

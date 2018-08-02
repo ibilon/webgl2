@@ -295,22 +295,22 @@ extern class RenderingContext2 extends RenderingContext
 	public var TEXTURE_IMMUTABLE_LEVELS (default, never) : GLenum;
 
 	/** **/
-	public var UNSIGNED_INT_2_10_10_10_REV (default, never) : GLenum;
+	public var UNSIGNED_INT_2_10_10_10_REV (default, never) : TextureTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_10F_11F_11F_REV (default, never) : GLenum;
+	public var UNSIGNED_INT_10F_11F_11F_REV (default, never) : TextureTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_5_9_9_9_REV (default, never) : GLenum;
+	public var UNSIGNED_INT_5_9_9_9_REV (default, never) : TextureTypeEnum;
 
 	/** **/
-	public var FLOAT_32_UNSIGNED_INT_24_8_REV (default, never) : GLenum;
+	public var FLOAT_32_UNSIGNED_INT_24_8_REV (default, never) : TextureTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_24_8 (default, never) : GLenum;
+	public var UNSIGNED_INT_24_8 (default, never) : TextureTypeEnum;
 
 	/** **/
-	public var HALF_FLOAT (default, never) : GLenum;
+	public var HALF_FLOAT (default, never) : VertexAttribFloatTypeEnum;
 
 	/** **/
 	public var RG (default, never) : GLenum;
@@ -1300,7 +1300,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.drawArraysInstances`
 	@see `RenderingContext2.vertexAttribDivisor`
 	**/
-	public function drawElementsInstanced (mode:ArrayModeEnum, count:Int, type:GLenum, offset:Int, instanceCount:Int) : Void;
+	public function drawElementsInstanced (mode:ArrayModeEnum, count:Int, type:DrawTypeEnum, offset:Int, instanceCount:Int) : Void;
 
 	/**
 	Render primitives from array data in a given range.
@@ -1319,7 +1319,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.drawElements`
 	**/
-	public function drawRangeElements (mode:ArrayModeEnum, start:UInt, end:UInt, count:Int, type:GLenum, offset:Int) : Void;
+	public function drawRangeElements (mode:ArrayModeEnum, start:UInt, end:UInt, count:Int, type:DrawTypeEnum, offset:Int) : Void;
 
 	/**
 	Mark the end of a given query target.
@@ -1662,9 +1662,9 @@ extern class RenderingContext2 extends RenderingContext
 	@throws INVALID_OPERATION If `type` does not match the typed array type of pixels.
 	@throws INVALID_FRAMEBUFFER_OPERATION If the currently bound framebuffer is not framebuffer complete.
 	**/
-	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
-	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, dstOffset:UInt) : Void {})
-	override public function readPixels (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, offset:Int) : Void {})
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, pixels:ArrayBufferView, dstOffset:UInt) : Void {})
+	override public function readPixels (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Create and initialize a renderbuffer object's data store and allows specifying a number of samples to be used.
@@ -1731,14 +1731,14 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, srcOffset:Int) : Void {})
-	override public function texImage2D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView, srcOffset:Int) : Void {})
+	override public function texImage2D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional texture image.
@@ -1763,14 +1763,14 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bindTexture`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, source:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, source:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, source:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, source:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, source:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, srcData:ArrayBufferView) : Void {})
-	public function texImage3D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:GLenum, srcData:ArrayBufferView, srcOffset:Int) : Void;
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:VideoElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView) : Void {})
+	public function texImage3D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView, srcOffset:Int) : Void;
 
 	/**
 	Specify all levels of two-dimensional texture storage.
@@ -1824,13 +1824,13 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.texImage2D`
 	**/
 	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView, offset:Int) : Void {})
-	override public function texSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView, offset:Int) : Void {})
+	override public function texSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
@@ -1857,13 +1857,13 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContextcompressedTexImage2D`
 	@see `RenderingContextcopyTexImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, srcData:ArrayBufferView, ?srcOffset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
-	public function texSubImage3D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:GLenum, offset:Int) : Void;
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView, ?srcOffset:Int) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	public function texSubImage3D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void;
 
 	/**
 	Specify values to record in `TransformFeedback` buffers.
@@ -2336,7 +2336,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.vertexAttribPointer`
 	**/
-	public function vertexAttribIPointer (index:UInt, size:Int, type:GLenum, stride:Int, offset:Int) : Void;
+	public function vertexAttribIPointer (index:UInt, size:Int, type:VertexAttribIntegerTypeEnum, stride:Int, offset:Int) : Void;
 
 	/**
 	Return immediately, but wait on the GL server until the given `Sync` object is signaled.
