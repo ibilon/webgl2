@@ -139,7 +139,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var TEXTURE_COMPARE_FUNC (default, never) : GLenum;
 
 	/** **/
-	public var SRGB (default, never) : GLenum;
+	public var SRGB (default, never) : ColorEncodingEnum;
 
 	/** **/
 	public var SRGB8 (default, never) : InternalFormatEnum;
@@ -148,7 +148,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var SRGB8_ALPHA8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var COMPARE_REF_TO_TEXTURE (default, never) : GLenum;
+	public var COMPARE_REF_TO_TEXTURE (default, never) : TextureCompareModeEnum;
 
 	/** **/
 	public var RGBA32F (default, never) : InternalFormatEnum;
@@ -532,10 +532,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var UNSIGNED_INT_VEC4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_NORMALIZED (default, never) : GLenum;
+	public var UNSIGNED_NORMALIZED (default, never) : ComponentTypeEnum;
 
 	/** **/
-	public var SIGNED_NORMALIZED (default, never) : GLenum;
+	public var SIGNED_NORMALIZED (default, never) : ComponentTypeEnum;
 
 	/** **/
 	public var VERTEX_ATTRIB_ARRAY_INTEGER (default, never) : VertexAttribBooleanEnum;
@@ -912,7 +912,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.getRenderbufferParameter`
 	**/
-	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:BufferMaskEnum, filter:GLenum) : Void;
+	public function blitFramebuffer (srcX0:Int, srcY0:Int, srcX1:Int, srcY1:Int, dstX0:Int, dstY0:Int, dstX1:Int, dstY1:Int, mask:BufferMaskEnum, filter:TexMagFilterEnum) : Void;
 
 	/**
 	Initialize and create the buffer object's data store.

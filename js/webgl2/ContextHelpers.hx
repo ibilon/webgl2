@@ -150,7 +150,7 @@ class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferUsage (gl:RenderingContext, target:BufferEnum) : GLenum
+	public static inline function getBufferUsage (gl:RenderingContext, target:BufferEnum) : BufferUsageEnum
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_USAGE);
 	}
@@ -167,7 +167,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : GLenum
+	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ColorEncodingEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
 	}
@@ -182,7 +182,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : GLenum
+	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ComponentTypeEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
 	}
@@ -212,7 +212,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : GLenum
+	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : ObjectType
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 	}
@@ -243,7 +243,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : GLenum
+	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : CubeMapEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 	}
@@ -308,7 +308,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:ParameterBlendEquationEnum) : GLenum
+	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:ParameterBlendEquationEnum) : BlendEquationEnum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -322,7 +322,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:ParameterBlendFuncEnum) : GLenum
+	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:ParameterBlendFuncEnum) : BlendFuncEnum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -364,7 +364,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:ParameterColorBufferEnum) : GLenum
+	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:ParameterColorBufferEnum) : AttachementEnum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -400,7 +400,7 @@ class ContextHelpers
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getParameter>.
 	**/
-	public static inline function getParameterCullFaceMode (gl:RenderingContext) : GLenum
+	public static inline function getParameterCullFaceMode (gl:RenderingContext) : CullFaceModeEnum
 	{
 		return cast gl.getParameter(gl.CULL_FACE_MODE);
 	}
@@ -466,7 +466,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterHint (gl:RenderingContext2, param:HintEnum) : GLenum
+	public static inline function getParameterHint (gl:RenderingContext2, param:HintEnum) : HintModeEnum
 	{
 		return cast gl.getParameter(param);
 	}
@@ -570,7 +570,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterStencilFunc(gl:RenderingContext, pname:ParameterStencilFuncEnum) : GLenum
+	public static inline function getParameterStencilFunc (gl:RenderingContext, pname:ParameterStencilFuncEnum) : CompFuncEnum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -598,7 +598,7 @@ class ContextHelpers
 
 	@param pname Which parameter value to return.
 	**/
-	public static inline function getParameterTestFunc(gl:RenderingContext, pname:ParameterTestFuncEnum) : GLenum
+	public static inline function getParameterTestFunc(gl:RenderingContext, pname:ParameterTestFuncEnum) : CompFuncEnum
 	{
 		return cast gl.getParameter(pname);
 	}
@@ -755,7 +755,7 @@ class ContextHelpers
 
 	@param targe The target renderbuffer object
 	**/
-	public static inline function getRenderbufferInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : GLenum
+	public static inline function getRenderbufferInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
 	{
 		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
 	}
@@ -786,7 +786,7 @@ class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerCompareFunc (gl:RenderingContext2, sampler:Sampler) : GLenum
+	public static inline function getSamplerCompareFunc (gl:RenderingContext2, sampler:Sampler) : CompFuncEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_FUNC);
 	}
@@ -800,7 +800,7 @@ class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerCompareMode (gl:RenderingContext2, sampler:Sampler) : GLenum
+	public static inline function getSamplerCompareMode (gl:RenderingContext2, sampler:Sampler) : TextureCompareModeEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_MODE);
 	}
@@ -829,7 +829,7 @@ class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerMagFilter (gl:RenderingContext2, sampler:Sampler) : GLenum
+	public static inline function getSamplerMagFilter (gl:RenderingContext2, sampler:Sampler) : TexMagFilterEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MAG_FILTER);
 	}
@@ -843,7 +843,7 @@ class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerMinFilter (gl:RenderingContext2, sampler:Sampler) : GLenum
+	public static inline function getSamplerMinFilter (gl:RenderingContext2, sampler:Sampler) : TexMinFilterEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MIN_FILTER);
 	}
@@ -858,7 +858,7 @@ class ContextHelpers
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : GLenum
+	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:GLenum) : WrapFunctionEnum
 	{
 		return cast gl.getSamplerParameter(sampler, pname);
 	}
@@ -889,7 +889,7 @@ class ContextHelpers
 
 	@param shader The shader to get parameter information from.
 	**/
-	public static inline function getShaderType (gl:RenderingContext, shader:Shader) : GLenum
+	public static inline function getShaderType (gl:RenderingContext, shader:Shader) : ShaderTypeEnum
 	{
 		return cast gl.getShaderParameter(shader, gl.SHADER_TYPE);
 	}
@@ -905,7 +905,7 @@ class ContextHelpers
 
 	@param sync The `Sync` object.
 	**/
-	public static inline function getSyncStatus (gl:RenderingContext2, sync:Sync) : GLenum
+	public static inline function getSyncStatus (gl:RenderingContext2, sync:Sync) : SyncParameterValueEnum
 	{
 		return cast gl.getSyncParameter(sync, gl.SYNC_STATUS);
 	}
@@ -921,7 +921,7 @@ class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum) : GLenum
+	public static inline function getTexCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum) : CompFuncEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_FUNC);
 	}
@@ -935,7 +935,7 @@ class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum) : GLenum
+	public static inline function getTexCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum) : TextureCompareModeEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_MODE);
 	}
@@ -990,7 +990,7 @@ class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : GLenum
+	public static inline function getTexMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMagFilterEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_MAG_FILTER);
 	}
@@ -1004,7 +1004,7 @@ class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : GLenum
+	public static inline function getTexMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMinFilterEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_MIN_FILTER);
 	}
@@ -1034,7 +1034,7 @@ class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:GLenum) : GLenum
+	public static inline function getTexWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:GLenum) : WrapFunctionEnum
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -1078,7 +1078,7 @@ class ContextHelpers
 
 	@param index The index of the vertex attribute.
 	**/
-	public static inline function getVertexAttribArrayType (gl:RenderingContext, index:UInt) : GLenum
+	public static inline function getVertexAttribArrayType (gl:RenderingContext, index:UInt) : VertexAttribFloatTypeEnum
 	{
 		return cast gl.getVertexAttrib(index, gl.VERTEX_ATTRIB_ARRAY_TYPE);
 	}

@@ -424,7 +424,7 @@ extern class RenderingContext
 	public var UNSIGNED_SHORT (default, never) : UnsignedShortTypeEnum;
 
 	/** **/
-	public var INT (default, never) : VertexAttribIntegerTypeEnum;
+	public var INT (default, never) : IntEnum;
 
 	/** **/
 	public var UNSIGNED_INT (default, never) : DrawTypeEnum;
@@ -562,22 +562,22 @@ extern class RenderingContext
 	public var DECR_WRAP (default, never) : StencilOpEnum;
 
 	/** **/
-	public var NEAREST (default, never) : GLenum;
+	public var NEAREST (default, never) : TexMagFilterEnum;
 
 	/** **/
-	public var LINEAR (default, never) : GLenum;
+	public var LINEAR (default, never) : LinearEnum;
 
 	/** **/
-	public var NEAREST_MIPMAP_NEAREST (default, never) : GLenum;
+	public var NEAREST_MIPMAP_NEAREST (default, never) : TexMinFilterEnum;
 
 	/** **/
-	public var LINEAR_MIPMAP_NEAREST (default, never) : GLenum;
+	public var LINEAR_MIPMAP_NEAREST (default, never) : TexMinFilterEnum;
 
 	/** **/
-	public var NEAREST_MIPMAP_LINEAR (default, never) : GLenum;
+	public var NEAREST_MIPMAP_LINEAR (default, never) : TexMinFilterEnum;
 
 	/** **/
-	public var LINEAR_MIPMAP_LINEAR (default, never) : GLenum;
+	public var LINEAR_MIPMAP_LINEAR (default, never) : TexMinFilterEnum;
 
 	/** Texture magnification filter. Available values: `LINEAR`, `NEAREST`. Default value: `LINEAR`. **/
 	public var TEXTURE_MAG_FILTER (default, never) : GLenum;
@@ -595,7 +595,7 @@ extern class RenderingContext
 	public var TEXTURE_2D (default, never) : Texture2DEnum;
 
 	/** **/
-	public var TEXTURE (default, never) : GLenum;
+	public var TEXTURE (default, never) : ObjectType;
 
 	/** A cube-mapped texture. **/
 	public var TEXTURE_CUBE_MAP (default, never) : Texture2DBindingTypeEnum;
@@ -604,22 +604,22 @@ extern class RenderingContext
 	public var TEXTURE_BINDING_CUBE_MAP (default, never) : ParameterTextureEnum;
 
 	/** Positive X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never) : CubeMapEnum;
 
 	/** Negative X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never) : CubeMapEnum;
 
 	/** Positive Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never) : CubeMapEnum;
 
 	/** Negative Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never) : CubeMapEnum;
 
 	/** Positive Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never) : CubeMapEnum;
 
 	/** Negative Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never) : TextureBindingEnum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never) : CubeMapEnum;
 
 	/** **/
 	public var MAX_CUBE_MAP_TEXTURE_SIZE (default, never) : ParameterIntegerEnum;
@@ -724,13 +724,13 @@ extern class RenderingContext
 	public var ACTIVE_TEXTURE (default, never) : ParameterEnum;
 
 	/** **/
-	public var REPEAT (default, never) : GLenum;
+	public var REPEAT (default, never) : WrapFunctionEnum;
 
 	/** **/
-	public var CLAMP_TO_EDGE (default, never) : GLenum;
+	public var CLAMP_TO_EDGE (default, never) : WrapFunctionEnum;
 
 	/** **/
-	public var MIRRORED_REPEAT (default, never) : GLenum;
+	public var MIRRORED_REPEAT (default, never) : WrapFunctionEnum;
 
 	/** **/
 	public var FLOAT_VEC2 (default, never) : UniformsTypeEnum;
@@ -802,22 +802,22 @@ extern class RenderingContext
 	public var RENDERBUFFER (default, never) : RenderbufferEnum;
 
 	/** Internal format of 4 red bits, 4 green bits, 4 blue bits 4 alpha bits. **/
-	public var RGBA4 (default, never) : InternalFormatEnum;
+	public var RGBA4 (default, never) : RenderbufferInternalFormatEnum;
 
 	/** Internal format of 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit. **/
-	public var RGB5_A1 (default, never) : InternalFormatEnum;
+	public var RGB5_A1 (default, never) : RenderbufferInternalFormatEnum;
 
 	/** Internal format of 5 red bits, 6 green bits, 5 blue bits. **/
-	public var RGB565 (default, never) : InternalFormatEnum;
+	public var RGB565 (default, never) : RenderbufferInternalFormatEnum;
 
 	/** Internal format of 16 depth bits. **/
-	public var DEPTH_COMPONENT16 (default, never) : InternalFormatEnum;
+	public var DEPTH_COMPONENT16 (default, never) : RenderbufferInternalFormatEnum;
 
 	/** **/
 	public var STENCIL_INDEX (default, never) : GLenum;
 
 	/** Internal format of 8 stencil bits. **/
-	public var STENCIL_INDEX8 (default, never) : InternalFormatEnum;
+	public var STENCIL_INDEX8 (default, never) : RenderbufferInternalFormatEnum;
 
 	/** **/
 	public var DEPTH_STENCIL (default, never) : DepthStencilEnum;
@@ -1832,7 +1832,7 @@ extern class RenderingContext
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError>.
 	**/
-	public function getError () : GLenum;
+	public function getError () : ErrorEnum;
 
 	/**
 	Enable and return a WebGL extension.
