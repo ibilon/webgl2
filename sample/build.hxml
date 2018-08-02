@@ -1,0 +1,4 @@
+../extraParams.hxml
+-cp ..
+-js webgl.js
+-main Main
