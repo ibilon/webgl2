@@ -103,19 +103,19 @@ extern class RenderingContext2 extends RenderingContext
 	public var MAX_ELEMENT_INDEX (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var RED (default, never) : GLenum;
+	public var RED (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB8 (default, never) : GLenum;
+	public var RGB8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA8 (default, never) : GLenum;
+	public var RGBA8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB10_A2 (default, never) : GLenum;
+	public var RGB10_A2 (default, never) : InternalFormatEnum;
 
 	/** A three-dimensional texture. **/
-	public var TEXTURE_3D (default, never) : GLenum;
+	public var TEXTURE_3D (default, never) : Texture3DBindingTypeEnum;
 
 	/** Wrapping function for texture coordinate r. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
 	public var TEXTURE_WRAP_R (default, never) : GLenum;
@@ -142,151 +142,151 @@ extern class RenderingContext2 extends RenderingContext
 	public var SRGB (default, never) : GLenum;
 
 	/** **/
-	public var SRGB8 (default, never) : GLenum;
+	public var SRGB8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var SRGB8_ALPHA8 (default, never) : GLenum;
+	public var SRGB8_ALPHA8 (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var COMPARE_REF_TO_TEXTURE (default, never) : GLenum;
 
 	/** **/
-	public var RGBA32F (default, never) : GLenum;
+	public var RGBA32F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB32F (default, never) : GLenum;
+	public var RGB32F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA16F (default, never) : GLenum;
+	public var RGBA16F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB16F (default, never) : GLenum;
+	public var RGB16F (default, never) : InternalFormatEnum;
 
 	/** A two-dimensional array texture. **/
-	public var TEXTURE_2D_ARRAY (default, never) : GLenum;
+	public var TEXTURE_2D_ARRAY (default, never) : Texture3DBindingTypeEnum;
 
 	/** **/
 	public var TEXTURE_BINDING_2D_ARRAY (default, never) : ParameterTextureEnum;
 
 	/** **/
-	public var R11F_G11F_B10F (default, never) : GLenum;
+	public var R11F_G11F_B10F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB9_E5 (default, never) : GLenum;
+	public var RGB9_E5 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA32UI (default, never) : GLenum;
+	public var RGBA32UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB32UI (default, never) : GLenum;
+	public var RGB32UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA16UI (default, never) : GLenum;
+	public var RGBA16UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB16UI (default, never) : GLenum;
+	public var RGB16UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA8UI (default, never) : GLenum;
+	public var RGBA8UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB8UI (default, never) : GLenum;
+	public var RGB8UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA32I (default, never) : GLenum;
+	public var RGBA32I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB32I (default, never) : GLenum;
+	public var RGB32I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA16I (default, never) : GLenum;
+	public var RGBA16I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB16I (default, never) : GLenum;
+	public var RGB16I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA8I (default, never) : GLenum;
+	public var RGBA8I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB8I (default, never) : GLenum;
+	public var RGB8I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RED_INTEGER (default, never) : GLenum;
+	public var RED_INTEGER (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB_INTEGER (default, never) : GLenum;
+	public var RGB_INTEGER (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA_INTEGER (default, never) : GLenum;
+	public var RGBA_INTEGER (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R8 (default, never) : GLenum;
+	public var R8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG8 (default, never) : GLenum;
+	public var RG8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R16F (default, never) : GLenum;
+	public var R16F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R32F (default, never) : GLenum;
+	public var R32F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG16F (default, never) : GLenum;
+	public var RG16F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG32F (default, never) : GLenum;
+	public var RG32F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R8I (default, never) : GLenum;
+	public var R8I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R8UI (default, never) : GLenum;
+	public var R8UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R16I (default, never) : GLenum;
+	public var R16I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R16UI (default, never) : GLenum;
+	public var R16UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R32I (default, never) : GLenum;
+	public var R32I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R32UI (default, never) : GLenum;
+	public var R32UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG8I (default, never) : GLenum;
+	public var RG8I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG8UI (default, never) : GLenum;
+	public var RG8UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG16I (default, never) : GLenum;
+	public var RG16I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG16UI (default, never) : GLenum;
+	public var RG16UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG32I (default, never) : GLenum;
+	public var RG32I (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG32UI (default, never) : GLenum;
+	public var RG32UI (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var R8_SNORM (default, never) : GLenum;
+	public var R8_SNORM (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RG8_SNORM (default, never) : GLenum;
+	public var RG8_SNORM (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB8_SNORM (default, never) : GLenum;
+	public var RGB8_SNORM (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGBA8_SNORM (default, never) : GLenum;
+	public var RGBA8_SNORM (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var RGB10_A2UI (default, never) : GLenum;
+	public var RGB10_A2UI (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var TEXTURE_IMMUTABLE_FORMAT (default, never) : GLenum;
@@ -313,7 +313,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var HALF_FLOAT (default, never) : VertexAttribFloatTypeEnum;
 
 	/** **/
-	public var RG (default, never) : GLenum;
+	public var RG (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var RG_INTEGER (default, never) : GLenum;
@@ -331,10 +331,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var QUERY_RESULT_AVAILABLE (default, never) : QueryParameterEnum;
 
 	/** Specifies an occlusion query: these queries detect whether an object is visible (whether the scoped drawing commands pass the depth test and if so, how many samples pass). **/
-	public var ANY_SAMPLES_PASSED (default, never) : GLenum;
+	public var ANY_SAMPLES_PASSED (default, never) : QueryTargetEnum;
 
 	/** Same as `ANY_SAMPLES_PASSED`, but less accurate and faster version.  **/
-	public var ANY_SAMPLES_PASSED_CONSERVATIVE (default, never) : GLenum;
+	public var ANY_SAMPLES_PASSED_CONSERVATIVE (default, never) : QueryTargetEnum;
 
 	/** **/
 	public var MAX_DRAW_BUFFERS (default, never) : ParameterIntegerEnum;
@@ -505,31 +505,31 @@ extern class RenderingContext2 extends RenderingContext
 	public var COPY_WRITE_BUFFER_BINDING (default, never) : ParameterBufferEnum;
 
 	/** **/
-	public var FLOAT_MAT2x3 (default, never) : GLenum;
+	public var FLOAT_MAT2x3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT2x4 (default, never) : GLenum;
+	public var FLOAT_MAT2x4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT3x2 (default, never) : GLenum;
+	public var FLOAT_MAT3x2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT3x4 (default, never) : GLenum;
+	public var FLOAT_MAT3x4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT4x2 (default, never) : GLenum;
+	public var FLOAT_MAT4x2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT4x3 (default, never) : GLenum;
+	public var FLOAT_MAT4x3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_VEC2 (default, never) : GLenum;
+	public var UNSIGNED_INT_VEC2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_VEC3 (default, never) : GLenum;
+	public var UNSIGNED_INT_VEC3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var UNSIGNED_INT_VEC4 (default, never) : GLenum;
+	public var UNSIGNED_INT_VEC4 (default, never) : UniformsTypeEnum;
 
 	/** **/
 	public var UNSIGNED_NORMALIZED (default, never) : GLenum;
@@ -544,13 +544,13 @@ extern class RenderingContext2 extends RenderingContext
 	public var VERTEX_ATTRIB_ARRAY_DIVISOR (default, never) : VertexAttribIntegerEnum;
 
 	/** **/
-	public var TRANSFORM_FEEDBACK_BUFFER_MODE (default, never) : GLenum;
+	public var TRANSFORM_FEEDBACK_BUFFER_MODE (default, never) : ProgramParameterEnum;
 
 	/** **/
 	public var MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var TRANSFORM_FEEDBACK_VARYINGS (default, never) : GLenum;
+	public var TRANSFORM_FEEDBACK_VARYINGS (default, never) : ProgramParameterIntegerEnum;
 
 	/** **/
 	public var TRANSFORM_FEEDBACK_BUFFER_START (default, never) : IndexedParameterIntegerEnum;
@@ -559,7 +559,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var TRANSFORM_FEEDBACK_BUFFER_SIZE (default, never) : IndexedParameterIntegerEnum;
 
 	/** Number of primitives that are written to transform feedback buffers. **/
-	public var TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN (default, never) : GLenum;
+	public var TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN (default, never) : QueryTargetEnum;
 
 	/** **/
 	public var MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS (default, never) : ParameterIntegerEnum;
@@ -619,16 +619,16 @@ extern class RenderingContext2 extends RenderingContext
 	public var FRAMEBUFFER_DEFAULT (default, never) : GLenum;
 
 	/** **/
-	public var DEPTH24_STENCIL8 (default, never) : GLenum;
+	public var DEPTH24_STENCIL8 (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var DRAW_FRAMEBUFFER_BINDING (default, never) : ParameterFramebufferEnum;
 
 	/** Used as a source for reading operations. **/
-	public var READ_FRAMEBUFFER (default, never) : GLenum;
+	public var READ_FRAMEBUFFER (default, never) : FramebufferEnum;
 
 	/** Equivalent to `FRAMEBUFFER`. Used as a destination for drawing, rendering, clearing, and writing operations. **/
-	public var DRAW_FRAMEBUFFER (default, never) : GLenum;
+	public var DRAW_FRAMEBUFFER (default, never) : FramebufferEnum;
 
 	/** **/
 	public var READ_FRAMEBUFFER_BINDING (default, never) : ParameterFramebufferEnum;
@@ -679,7 +679,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var UNIFORM_BUFFER_OFFSET_ALIGNMENT (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var ACTIVE_UNIFORM_BLOCKS (default, never) : GLenum;
+	public var ACTIVE_UNIFORM_BLOCKS (default, never) : ProgramParameterIntegerEnum;
 
 	/** The types of the uniforms. **/
 	public var UNIFORM_TYPE (default, never) : UniformsEnum;
@@ -769,37 +769,37 @@ extern class RenderingContext2 extends RenderingContext
 	public var STENCIL (default, never) : BufferTypeEnum;
 
 	/** Minimum of source and destination. **/
-	public var MIN (default, never) : GLenum;
+	public var MIN (default, never) : BlendEquationEnum;
 
 	/** Maximum of source and destination. **/
-	public var MAX (default, never) : GLenum;
+	public var MAX (default, never) : BlendEquationEnum;
 
 	/** **/
-	public var DEPTH_COMPONENT24 (default, never) : GLenum;
+	public var DEPTH_COMPONENT24 (default, never) : InternalFormatEnum;
 
 	/** Contents of the buffer are likely to not be used often. Contents are read from the buffer, but not written. **/
-	public var STREAM_READ (default, never) : GLenum;
+	public var STREAM_READ (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to be used often and not change often. Contents are neither written or read by the user. **/
-	public var STREAM_COPY (default, never) : GLenum;
+	public var STREAM_COPY (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to be used often and not change often. Contents are read from the buffer, but not written. **/
-	public var STATIC_READ (default, never) : GLenum;
+	public var STATIC_READ (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to be used often and not change often. Contents are neither written or read by the user. **/
-	public var STATIC_COPY (default, never) : GLenum;
+	public var STATIC_COPY (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to be used often and change often. Contents are read from the buffer, but not written. **/
-	public var DYNAMIC_READ (default, never) : GLenum;
+	public var DYNAMIC_READ (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to be used often and change often. Contents are neither written or read by the user. **/
-	public var DYNAMIC_COPY (default, never) : GLenum;
+	public var DYNAMIC_COPY (default, never) : BufferUsageEnum;
 
 	/** **/
-	public var DEPTH_COMPONENT32F (default, never) : GLenum;
+	public var DEPTH_COMPONENT32F (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var DEPTH32F_STENCIL8 (default, never) : GLenum;
+	public var DEPTH32F_STENCIL8 (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var INVALID_INDEX (default, never) : GLenum;
@@ -820,7 +820,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param target The target of the query.
 	@param query The query for which to start the querying.
 	**/
-	public function beginQuery (target:GLenum, query:Query) : Void;
+	public function beginQuery (target:QueryTargetEnum, query:Query) : Void;
 
 	/**
 	Start a transform feedback operation.
@@ -932,8 +932,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bufferSubData`
 	@see `RenderingContext.createBuffer`
 	**/
-	@:overload(function (target:BufferEnum, srcData:ArrayBufferView, usage:GLenum, srcOffset:Int, length:Int = 0) : Void {})
-	override public function bufferData (target:BufferEnum, srcData:ArrayBufferView, usage:GLenum) : Void;
+	@:overload(function (target:BufferEnum, srcData:ArrayBufferView, usage:BufferUsageEnum, srcOffset:Int, length:Int = 0) : Void {})
+	override public function bufferData (target:BufferEnum, srcData:ArrayBufferView, usage:BufferUsageEnum) : Void;
 
 	/**
 	Updates a subset of a buffer object's data store.
@@ -970,7 +970,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.clearBufferuiv`
 	@see `RenderingContext2.drawBuffers`
 	**/
-	public function clearBufferfi (buffer:GLenum, drawbuffer:Int, depth:Float, stencil:Int) : Void;
+	public function clearBufferfi (buffer:DepthStencilEnum, drawbuffer:Int, depth:Float, stencil:Int) : Void;
 
 	/**
 	Clear buffer from the currently bound framebuffer.
@@ -1138,8 +1138,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.compressedTexSubImage2D`
 	@see `RenderingContext2.compressedTexImage3D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, srcData:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
-	public function compressedTexSubImage3D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, imageSize:Int, offset:Int) : Void;
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, srcData:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
+	public function compressedTexSubImage3D (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, imageSize:Int, offset:Int) : Void;
 
 	/**
 	Copy part of the data of a buffer to another buffer.
@@ -1328,7 +1328,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@param target The target of the query.
 	**/
-	public function endQuery (target:GLenum) : Void;
+	public function endQuery (target:QueryTargetEnum) : Void;
 
 	/**
 	End a transform feedback operation.
@@ -1362,7 +1362,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.framebufferTexture2D`
 	**/
-	public function framebufferTextureLayer (target:GLenum, attachment:BufferAttachementEnum, texture:Texture, level:Int, layer:Int) : Void;
+	public function framebufferTextureLayer (target:FramebufferEnum, attachment:BufferAttachementEnum, texture:Texture, level:Int, layer:Int) : Void;
 
 	/**
 	Retrieve the name of the active uniform block at a given index within a `Program`.
@@ -1468,7 +1468,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.getRenderbufferParameter`
 	**/
-	public function getInternalformatParameter (target:GLenum, internalformat:GLenum, pname:SamplesEnum) : Any;
+	public function getInternalformatParameter (target:RenderbufferEnum, internalformat:InternalFormatEnum, pname:SamplesEnum) : Any;
 
 	/**
 	Returns the currently active `Query` for the target, or null.
@@ -1478,7 +1478,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param target The target of the query.
 	@param pname The query object target. Must be `CURRENT_QUERY`.
 	**/
-	public function getQuery (target:GLenum, pname:GLenum) : Query;
+	public function getQuery (target:QueryTargetEnum, pname:GLenum) : Query;
 
 	/**
 	Return parameter information of a `Query` object.
@@ -1560,7 +1560,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.invalidateSubFramebuffer`
 	**/
-	public function invalidateFramebuffer (target:GLenum, attachments:Array<BufferAttachementEnum>) : Void;
+	public function invalidateFramebuffer (target:FramebufferEnum, attachments:Array<BufferAttachementEnum>) : Void;
 
 	/**
 	Invalidate portions of the contents of attachments in a framebuffer.
@@ -1576,7 +1576,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.invalidateFramebuffer`
 	**/
-	public function invalidateSubFramebuffer (target:GLenum, attachments:Array<BufferAttachementEnum>, x:Int, y:Int, width:Int, height:Int) : Void;
+	public function invalidateSubFramebuffer (target:FramebufferEnum, attachments:Array<BufferAttachementEnum>, x:Int, y:Int, width:Int, height:Int) : Void;
 
 	/**
 	Return true if the passed object is a valid `Query` object.
@@ -1662,9 +1662,9 @@ extern class RenderingContext2 extends RenderingContext
 	@throws INVALID_OPERATION If `type` does not match the typed array type of pixels.
 	@throws INVALID_FRAMEBUFFER_OPERATION If the currently bound framebuffer is not framebuffer complete.
 	**/
-	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, offset:Int) : Void {})
-	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, pixels:ArrayBufferView, dstOffset:UInt) : Void {})
-	override public function readPixels (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:PixelsTypeEnum, pixels:ArrayBufferView) : Void;
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:PixelFormatEnum, type:PixelsTypeEnum, offset:Int) : Void {})
+	@:overload(function (x:Int, y:Int, width:Int, height:Int, format:PixelFormatEnum, type:PixelsTypeEnum, pixels:ArrayBufferView, dstOffset:UInt) : Void {})
+	override public function readPixels (x:Int, y:Int, width:Int, height:Int, format:PixelFormatEnum, type:PixelsTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Create and initialize a renderbuffer object's data store and allows specifying a number of samples to be used.
@@ -1681,7 +1681,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bindRenderbuffer`
 	@see `RenderingContext.createRenderbuffer`
 	**/
-	public function renderbufferStorageMultisample (target:GLenum, samples:Int, internalFormat:GLenum, width:Int, height:Int) : Void;
+	public function renderbufferStorageMultisample (target:RenderbufferEnum, samples:Int, internalFormat:InternalFormatEnum, width:Int, height:Int) : Void;
 
 	/**
 	Resume a transform feedback operation.
@@ -1731,14 +1731,14 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView, srcOffset:Int) : Void {})
-	override public function texImage2D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, offset:Int) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView, srcOffset:Int) : Void {})
+	override public function texImage2D (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional texture image.
@@ -1763,14 +1763,14 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.bindTexture`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, source:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView) : Void {})
-	public function texImage3D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, depth:Int, border:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView, srcOffset:Int) : Void;
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, offset:Int) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, source:CanvasElement) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, source:ImageElement) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, source:VideoElement) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, source:ImageBitmap) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, source:ImageData) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, srcData:ArrayBufferView) : Void {})
+	public function texImage3D (target:Texture3DBindingTypeEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, srcData:ArrayBufferView, srcOffset:Int) : Void;
 
 	/**
 	Specify all levels of two-dimensional texture storage.
@@ -1785,7 +1785,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext2.texStorage3D`
 	**/
-	public function texStorage2D (target:GLenum, levels:Int, internalformat:GLenum, width:Int, height:Int) : Void;
+	public function texStorage2D (target:Texture2DBindingTypeEnum, levels:Int, internalformat:InternalFormatEnum, width:Int, height:Int) : Void;
 
 	/**
 	Specify all levels of a three-dimensional texture or two-dimensional array texture.
@@ -1802,7 +1802,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.compressedTexImage2D`
 	@see `RenderingContext2.texStorage2D`
 	**/
-	public function texStorage3D (target:GLenum, levels:Int, internalformat:GLenum, width:Int, height:Int, depth:Int) : Void;
+	public function texStorage3D (target:Texture3DBindingTypeEnum, levels:Int, internalformat:InternalFormatEnum, width:Int, height:Int, depth:Int) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
@@ -1823,14 +1823,14 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, offset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView, offset:Int) : Void {})
-	override public function texSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:GLenum, offset:Int) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView, offset:Int) : Void {})
+	override public function texSubImage2D (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
@@ -1857,13 +1857,13 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContextcompressedTexImage2D`
 	@see `RenderingContextcopyTexImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, srcData:ArrayBufferView, ?srcOffset:Int) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
-	public function texSubImage3D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:GLenum, type:TextureTypeEnum, offset:Int) : Void;
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, srcData:ArrayBufferView, ?srcOffset:Int) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	public function texSubImage3D (target:Texture3DBindingTypeEnum, level:Int, xoffset:Int, yoffset:Int, zoffset:Int, width:Int, height:Int, depth:Int, format:InternalFormatEnum, type:TextureTypeEnum, offset:Int) : Void;
 
 	/**
 	Specify values to record in `TransformFeedback` buffers.

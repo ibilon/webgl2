@@ -97,13 +97,13 @@ extern class RenderingContext
 	public var ONE_MINUS_CONSTANT_ALPHA (default, never) : BlendFuncEnum;
 
 	/** Source + destination. **/
-	public var FUNC_ADD (default, never) : GLenum;
+	public var FUNC_ADD (default, never) : BlendEquationEnum;
 
 	/** Source - destination. **/
-	public var FUNC_SUBTRACT (default, never) : GLenum;
+	public var FUNC_SUBTRACT (default, never) : BlendEquationEnum;
 
 	/** Destination - source. **/
-	public var FUNC_REVERSE_SUBTRACT (default, never) : GLenum;
+	public var FUNC_REVERSE_SUBTRACT (default, never) : BlendEquationEnum;
 
 	/** Get the current RGB blend function. **/
 	public var BLEND_EQUATION (default, never) : ParameterBlendEquationEnum;
@@ -292,16 +292,16 @@ extern class RenderingContext
 	public var IMPLEMENTATION_COLOR_READ_FORMAT (default, never) : ParameterEnum;
 
 	/** **/
-	public var BROWSER_DEFAULT_WEBGL (default, never) : GLenum;
+	public var BROWSER_DEFAULT_WEBGL (default, never) : UnpackColorspaceConversionEnum;
 
 	/** Contents of the buffer are likely to be used often and not change often. Contents are written to the buffer, but not read. **/
-	public var STATIC_DRAW (default, never) : GLenum;
+	public var STATIC_DRAW (default, never) : BufferUsageEnum;
 
 	/** Contents of the buffer are likely to not be used often. Contents are written to the buffer, but not read. **/
-	public var STREAM_DRAW (default, never) : GLenum;
+	public var STREAM_DRAW (default, never) : BufferUsageEnum;
 
 	/** ontents of the buffer are likely to be used often and change often. Contents are written to the buffer, but not read. **/
-	public var DYNAMIC_DRAW (default, never) : GLenum;
+	public var DYNAMIC_DRAW (default, never) : BufferUsageEnum;
 
 	/** Buffer containing vertex attributes, such as vertex coordinates, texture coordinate data, or vertex color data. **/
 	public var ARRAY_BUFFER (default, never) : BufferEnum;
@@ -394,10 +394,10 @@ extern class RenderingContext
 	public var CONTEXT_LOST_WEBGL (default, never) : ErrorEnum;
 
 	/** Specify the front face of a polygon is drawn in the clockwise direction. **/
-	public var CW (default, never) : GLenum;
+	public var CW (default, never) : FaceModeEnum;
 
 	/** Specify the front face of a polygon is drawn in the counter clockwise direction. **/
-	public var CCW (default, never) : GLenum;
+	public var CCW (default, never) : FaceModeEnum;
 
 	/** There is no preference for this behavior. **/
 	public var DONT_CARE (default, never) : HintModeEnum;
@@ -433,22 +433,22 @@ extern class RenderingContext
 	public var FLOAT (default, never) : FloatTypeEnum;
 
 	/** **/
-	public var DEPTH_COMPONENT (default, never) : GLenum;
+	public var DEPTH_COMPONENT (default, never) : InternalFormatEnum;
 
 	/** Discards the red, green and blue components and reads the alpha component. **/
-	public var ALPHA (default, never) : GLenum;
+	public var ALPHA (default, never) : PixelFormatEnum;
 
 	/** Discards the alpha components and reads the red, green and blue components. **/
-	public var RGB (default, never) : GLenum;
+	public var RGB (default, never) : PixelFormatEnum;
 
 	/** Red, green, blue and alpha components are read from the color buffer. **/
-	public var RGBA (default, never) : GLenum;
+	public var RGBA (default, never) : PixelFormatEnum;
 
 	/** Each color component is a luminance component, alpha is 1.0. **/
-	public var LUMINANCE (default, never) : GLenum;
+	public var LUMINANCE (default, never) : PixelFormatLuminanceEnum;
 
 	/** Each component is a luminance/alpha component. **/
-	public var LUMINANCE_ALPHA (default, never) : GLenum;
+	public var LUMINANCE_ALPHA (default, never) : PixelFormatLuminanceEnum;
 
 	/** **/
 	public var UNSIGNED_SHORT_4_4_4_4 (default, never) : PixelsTypeEnum;
@@ -466,25 +466,25 @@ extern class RenderingContext
 	public var VERTEX_SHADER (default, never) : ShaderTypeEnum;
 
 	/** Get the status of the compilation. Returns false if the shader was not compiled. You can then query `getShaderInfoLog` to find the exact error. **/
-	public var COMPILE_STATUS (default, never) : GLenum;
+	public var COMPILE_STATUS (default, never) : ShaderStatusEnum;
 
 	/** Get if a shader was deleted via `deleteShader`. **/
-	public var DELETE_STATUS (default, never) : GLenum;
+	public var DELETE_STATUS (default, never) : DeleteStatusEnum;
 
 	/** Get if a program was linked correctly. Returns false if there were errors. Use `getProgramInfoLog` to find the exact error. **/
-	public var LINK_STATUS (default, never) : GLenum;
+	public var LINK_STATUS (default, never) : ProgramStatusEnum;
 
 	/** Get if program is valid. Returns false if errors were found. **/
-	public var VALIDATE_STATUS (default, never) : GLenum;
+	public var VALIDATE_STATUS (default, never) : ProgramStatusEnum;
 
 	/** Get if the shader was attached correctly. Returns false if errors occurred. **/
-	public var ATTACHED_SHADERS (default, never) : GLenum;
+	public var ATTACHED_SHADERS (default, never) : ProgramParameterIntegerEnum;
 
 	/** Get the number of attributes active in a program. **/
-	public var ACTIVE_ATTRIBUTES (default, never) : GLenum;
+	public var ACTIVE_ATTRIBUTES (default, never) : ProgramParameterIntegerEnum;
 
 	/** Get the number of uniforms active in a program. **/
-	public var ACTIVE_UNIFORMS (default, never) : GLenum;
+	public var ACTIVE_UNIFORMS (default, never) : ProgramParameterIntegerEnum;
 
 	/** The maximum number of entries possible in the vertex attribute list. **/
 	public var MAX_VERTEX_ATTRIBS (default, never) : ParameterIntegerEnum;
@@ -508,7 +508,7 @@ extern class RenderingContext
 	public var MAX_FRAGMENT_UNIFORM_VECTORS (default, never) : ParameterIntegerEnum;
 
 	/** **/
-	public var SHADER_TYPE (default, never) : GLenum;
+	public var SHADER_TYPE (default, never) : ShaderParameterEnum;
 
 	/** **/
 	public var SHADING_LANGUAGE_VERSION (default, never) : ParameterStringEnum;
@@ -592,34 +592,34 @@ extern class RenderingContext
 	public var TEXTURE_WRAP_T (default, never) : GLenum;
 
 	/** A two-dimensional texture. **/
-	public var TEXTURE_2D (default, never) : GLenum;
+	public var TEXTURE_2D (default, never) : Texture2DEnum;
 
 	/** **/
 	public var TEXTURE (default, never) : GLenum;
 
 	/** A cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP (default, never) : Texture2DBindingTypeEnum;
 
 	/** **/
 	public var TEXTURE_BINDING_CUBE_MAP (default, never) : ParameterTextureEnum;
 
 	/** Positive X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_X (default, never) : TextureBindingEnum;
 
 	/** Negative X face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_X (default, never) : TextureBindingEnum;
 
 	/** Positive Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Y (default, never) : TextureBindingEnum;
 
 	/** Negative Y face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Y (default, never) : TextureBindingEnum;
 
 	/** Positive Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_POSITIVE_Z (default, never) : TextureBindingEnum;
 
 	/** Negative Z face for a cube-mapped texture. **/
-	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never) : GLenum;
+	public var TEXTURE_CUBE_MAP_NEGATIVE_Z (default, never) : TextureBindingEnum;
 
 	/** **/
 	public var MAX_CUBE_MAP_TEXTURE_SIZE (default, never) : ParameterIntegerEnum;
@@ -733,49 +733,49 @@ extern class RenderingContext
 	public var MIRRORED_REPEAT (default, never) : GLenum;
 
 	/** **/
-	public var FLOAT_VEC2 (default, never) : GLenum;
+	public var FLOAT_VEC2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_VEC3 (default, never) : GLenum;
+	public var FLOAT_VEC3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_VEC4 (default, never) : GLenum;
+	public var FLOAT_VEC4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_VEC2 (default, never) : GLenum;
+	public var INT_VEC2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_VEC3 (default, never) : GLenum;
+	public var INT_VEC3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var INT_VEC4 (default, never) : GLenum;
+	public var INT_VEC4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var BOOL (default, never) : GLenum;
+	public var BOOL (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var BOOL_VEC2 (default, never) : GLenum;
+	public var BOOL_VEC2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var BOOL_VEC3 (default, never) : GLenum;
+	public var BOOL_VEC3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var BOOL_VEC4 (default, never) : GLenum;
+	public var BOOL_VEC4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT2 (default, never) : GLenum;
+	public var FLOAT_MAT2 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT3 (default, never) : GLenum;
+	public var FLOAT_MAT3 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var FLOAT_MAT4 (default, never) : GLenum;
+	public var FLOAT_MAT4 (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_2D (default, never) : GLenum;
+	public var SAMPLER_2D (default, never) : UniformsTypeEnum;
 
 	/** **/
-	public var SAMPLER_CUBE (default, never) : GLenum;
+	public var SAMPLER_CUBE (default, never) : UniformsTypeEnum;
 
 	/** **/
 	public var LOW_FLOAT (default, never) : ShaderPrecisionEnum;
@@ -796,31 +796,31 @@ extern class RenderingContext
 	public var HIGH_INT (default, never) : ShaderPrecisionEnum;
 
 	/** Collection buffer data storage of color, alpha, depth and stencil buffers used to render an image. **/
-	public var FRAMEBUFFER (default, never) : GLenum;
+	public var FRAMEBUFFER (default, never) : FramebufferEnum;
 
 	/** Buffer data storage for single images in a renderable internal format. **/
-	public var RENDERBUFFER (default, never) : GLenum;
+	public var RENDERBUFFER (default, never) : RenderbufferEnum;
 
 	/** Internal format of 4 red bits, 4 green bits, 4 blue bits 4 alpha bits. **/
-	public var RGBA4 (default, never) : GLenum;
+	public var RGBA4 (default, never) : InternalFormatEnum;
 
 	/** Internal format of 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit. **/
-	public var RGB5_A1 (default, never) : GLenum;
+	public var RGB5_A1 (default, never) : InternalFormatEnum;
 
 	/** Internal format of 5 red bits, 6 green bits, 5 blue bits. **/
-	public var RGB565 (default, never) : GLenum;
+	public var RGB565 (default, never) : InternalFormatEnum;
 
 	/** Internal format of 16 depth bits. **/
-	public var DEPTH_COMPONENT16 (default, never) : GLenum;
+	public var DEPTH_COMPONENT16 (default, never) : InternalFormatEnum;
 
 	/** **/
 	public var STENCIL_INDEX (default, never) : GLenum;
 
 	/** Internal format of 8 stencil bits. **/
-	public var STENCIL_INDEX8 (default, never) : GLenum;
+	public var STENCIL_INDEX8 (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var DEPTH_STENCIL (default, never) : GLenum;
+	public var DEPTH_STENCIL (default, never) : DepthStencilEnum;
 
 	/** **/
 	public var RENDERBUFFER_WIDTH (default, never) : GLenum;
@@ -874,7 +874,7 @@ extern class RenderingContext
 	public var DEPTH_STENCIL_ATTACHMENT (default, never) : BufferAttachementEnum;
 
 	/** **/
-	public var NONE (default, never) : AttachementEnum;
+	public var NONE (default, never) : NoneEnum;
 
 	/** The framebuffer is ready to display. **/
 	public var FRAMEBUFFER_COMPLETE (default, never) : GLenum;
@@ -913,34 +913,34 @@ extern class RenderingContext
 	public var UNPACK_COLORSPACE_CONVERSION_WEBGL (default, never) : PixelStorageEnum;
 
 	/** One-channel (red) unsigned format compression. **/
-	public var COMPRESSED_R11_EAC (default, never) : GLenum;
+	public var COMPRESSED_R11_EAC (default, never) : InternalFormatEnum;
 
 	/** One-channel (red) signed format compression. **/
-	public var COMPRESSED_SIGNED_R11_EAC (default, never) : GLenum;
+	public var COMPRESSED_SIGNED_R11_EAC (default, never) : InternalFormatEnum;
 
 	/** Two-channel (red and green) unsigned format compression. **/
-	public var COMPRESSED_RG11_EAC (default, never) : GLenum;
+	public var COMPRESSED_RG11_EAC (default, never) : InternalFormatEnum;
 
 	/** Two-channel (red and green) signed format compression. **/
-	public var COMPRESSED_SIGNED_RG11_EAC (default, never) : GLenum;
+	public var COMPRESSED_SIGNED_RG11_EAC (default, never) : InternalFormatEnum;
 
 	/** Compresses RGB8 data with no alpha channel. **/
-	public var COMPRESSED_RGB8_ETC2 (default, never) : GLenum;
+	public var COMPRESSED_RGB8_ETC2 (default, never) : InternalFormatEnum;
 
 	/** Compresses RGBA8 data. The RGB part is encoded the same as RGB_ETC2, but the alpha part is encoded separately. **/
-	public var COMPRESSED_RGBA8_ETC2_EAC (default, never) : GLenum;
+	public var COMPRESSED_RGBA8_ETC2_EAC (default, never) : InternalFormatEnum;
 
 	/** Compresses sRGB8 data with no alpha channel. **/
-	public var COMPRESSED_SRGB8_ETC2 (default, never) : GLenum;
+	public var COMPRESSED_SRGB8_ETC2 (default, never) : InternalFormatEnum;
 
 	/** Compresses sRGBA8 data. The sRGB part is encoded the same as SRGB_ETC2, but the alpha part is encoded separately. **/
-	public var COMPRESSED_SRGB8_ALPHA8_ETC2_EAC (default, never) : GLenum;
+	public var COMPRESSED_SRGB8_ALPHA8_ETC2_EAC (default, never) : InternalFormatEnum;
 
 	/** Similar to RGB8_ETC, but with ability to punch through the alpha channel, which means to make it completely opaque or transparent. **/
-	public var COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : GLenum;
+	public var COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : InternalFormatEnum;
 
 	/** Similar to SRGB8_ETC, but with ability to punch through the alpha channel, which means to make it completely opaque or transparent. **/
-	public var COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : GLenum;
+	public var COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 (default, never) : InternalFormatEnum;
 
 	/** A read-only back-reference to the CanvasElement. Might be null if it is not associated with a `<canvas>` element. **/
 	public var canvas (default, never) : CanvasElement;
@@ -1016,7 +1016,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function bindFramebuffer (target:GLenum, framebuffer:Framebuffer) : Void;
+	public function bindFramebuffer (target:FramebufferEnum, framebuffer:Framebuffer) : Void;
 
 	/**
 	Bind a given `Renderbuffer` to a target, which must be `RENDERBUFFER`.
@@ -1029,7 +1029,7 @@ extern class RenderingContext
 	@see `RenderingContext.createRenderbuffer`
 	@see `RenderingContext.isRenderbuffer`
 	**/
-	public function bindRenderbuffer (target:GLenum, renderbuffer:Renderbuffer) : Void;
+	public function bindRenderbuffer (target:RenderbufferEnum, renderbuffer:Renderbuffer) : Void;
 
 	/**
 	Bind a given `Texture` to a target.
@@ -1043,7 +1043,7 @@ extern class RenderingContext
 	@see `RenderingContext.isTexture`
 	@see `RenderingContext.texImage2D`
 	**/
-	public function bindTexture (target:GLenum, texture:Texture) : Void;
+	public function bindTexture (target:TextureBindingTypeEnum, texture:Texture) : Void;
 
 	/**
 	Set the source and destination blending factors.
@@ -1073,7 +1073,7 @@ extern class RenderingContext
 	@see `RenderingContext.blendColor`
 	@see `RenderingContext.blendFunc`
 	**/
-	public function blendEquation (mode:GLenum) : Void;
+	public function blendEquation (mode:BlendEquationEnum) : Void;
 
 	/**
 	Set the RGB blend equation and alpha blend equation separately.
@@ -1089,7 +1089,7 @@ extern class RenderingContext
 	@see `RenderingContext.blendEquation`
 	@see `RenderingContext.blendFunc`
 	**/
-	public function blendEquationSeparate (modeRGB:GLenum, modeAlpha:GLenum) : Void;
+	public function blendEquationSeparate (modeRGB:BlendEquationEnum, modeAlpha:BlendEquationEnum) : Void;
 
 	/**
 	Define which function is used for blending pixel arithmetic.
@@ -1145,9 +1145,9 @@ extern class RenderingContext
 	@see `RenderingContext.bufferSubData`
 	@see `RenderingContext.createBuffer`
 	**/
-	@:overload(function (target:GLenum, size:Int, usage:GLenum) : Void {})
-	@:overload(function (target:GLenum, srcData:ArrayBuffer, usage:GLenum) : Void {})
-	public function bufferData (target:GLenum, srcData:ArrayBufferView, usage:GLenum) : Void;
+	@:overload(function (target:BufferEnum, size:Int, usage:BufferUsageEnum) : Void {})
+	@:overload(function (target:BufferEnum, srcData:ArrayBuffer, usage:BufferUsageEnum) : Void {})
+	public function bufferData (target:BufferEnum, srcData:ArrayBufferView, usage:BufferUsageEnum) : Void;
 
 	/**
 	Updates a subset of a buffer object's data store.
@@ -1164,8 +1164,8 @@ extern class RenderingContext
 	@see `RenderingContext.bufferData`
 	@see `RenderingContext.createBuffer`
 	**/
-	@:overload(function (target:GLenum, offset:UInt, srcData:ArrayBufferView) : Void {})
-	public function bufferSubData (target:GLenum, offset:UInt, srcData:ArrayBuffer) : Void;
+	@:overload(function (target:BufferEnum, offset:UInt, srcData:ArrayBufferView) : Void {})
+	public function bufferSubData (target:BufferEnum, offset:UInt, srcData:ArrayBuffer) : Void;
 
 	/**
 	Return the completeness status of the `Framebuffer` object.
@@ -1177,7 +1177,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function checkFramebufferStatus (target:GLenum) : Int;
+	public function checkFramebufferStatus (target:FramebufferEnum) : Int;
 
 	/**
 	Clear buffers to preset values.
@@ -1291,7 +1291,7 @@ extern class RenderingContext
 	@see `RenderingContext.getExtension`
 	@see `RenderingContext.compressTexSubImage2D`
 	**/
-	public function compressedTexImage2D (target:GLenum, internalformat:GLenum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
+	public function compressedTexImage2D (target:GLenum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a two-dimensional sub-rectangle for a texture image in a compressed format.
@@ -1332,7 +1332,7 @@ extern class RenderingContext
 	@see `RenderingContext.copyTexSubImage2D`
 	@see `RenderingContext.texImage2D`
 	**/
-	public function copyTexImage2D (target:GLenum, level:Int, internalformat:GLenum, x:Int, y:Int, width:Int, height:Int, border:Int) : Void;
+	public function copyTexImage2D (target:TextureBindingEnum, level:Int, internalformat:PixelFormatLuminanceEnum, x:Int, y:Int, width:Int, height:Int, border:Int) : Void;
 
 	/**
 	Copy pixels from the current `Framebuffer` into an existing 2D texture sub-image.
@@ -1351,7 +1351,7 @@ extern class RenderingContext
 	@see `RenderingContext.copyTexImage2D`
 	@see `RenderingContext.texImage2D`
 	**/
-	public function copyTexSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, x:Int, y:Int, width:Int, height:Int) : Void;
+	public function copyTexSubImage2D (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, x:Int, y:Int, width:Int, height:Int) : Void;
 
 	/**
 	Create and initialize a `Buffer` storing data such as vertices or colors.
@@ -1701,7 +1701,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.createRenderbuffer`
 	**/
-	public function framebufferRenderbuffer (target:GLenum, attachment:BufferAttachementEnum, renderbuffertarget:GLenum, renderbuffer:Renderbuffer) : Void;
+	public function framebufferRenderbuffer (target:FramebufferEnum, attachment:BufferAttachementEnum, renderbuffertarget:RenderbufferEnum, renderbuffer:Renderbuffer) : Void;
 
 	/**
 	Attach a texture to a `Framebuffer`.
@@ -1719,7 +1719,7 @@ extern class RenderingContext
 	@see `RenderingContext.createFramebuffer`
 	@see `RenderingContext.createTexture`
 	**/
-	public function framebufferTexture2D (target:GLenum, attachment:BufferAttachementEnum, textarget:GLenum, texture:Texture, level:Int) : Void;
+	public function framebufferTexture2D (target:FramebufferEnum, attachment:BufferAttachementEnum, textarget:TextureBindingEnum, texture:Texture, level:Int) : Void;
 
 	/**
 	Specify whether polygons are front- or back-facing by setting a winding orientation.
@@ -1730,7 +1730,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.cullFace`
 	**/
-	public function frontFace (mode:GLenum) : Void;
+	public function frontFace (mode:FaceModeEnum) : Void;
 
 	/**
 	Generate a set of mipmaps for a `Texture` object.
@@ -1745,7 +1745,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.createTexture`
 	**/
-	public function generateMipmap (target:GLenum) : Void;
+	public function generateMipmap (target:TextureBindingTypeEnum) : Void;
 
 	/**
 	Return a `ActiveInfo` object containing size, type, and name of a vertex attribute.
@@ -1860,7 +1860,7 @@ extern class RenderingContext
 	@see `RenderingContext.deleteFramebuffer`
 	@see `RenderingContext.isFramebuffer`
 	**/
-	public function getFramebufferAttachmentParameter (target:GLenum, attachment:BufferAttachementEnum, pname:GLenum) : Any;
+	public function getFramebufferAttachmentParameter (target:FramebufferEnum, attachment:BufferAttachementEnum, pname:GLenum) : Any;
 
 	/**
 	Returns a value for the passed parameter name.
@@ -1903,7 +1903,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.getShaderParameter`
 	**/
-	public function getProgramParameter (program:Program, pname:GLenum) : Any;
+	public function getProgramParameter (program:Program, pname:ProgramParameterEnum) : Any;
 
 	/**
 	Return information about the renderbuffer.
@@ -1918,7 +1918,7 @@ extern class RenderingContext
 	@see `RenderingContext.createRenderbuffer`
 	@see `RenderingContext.deleteRenderbuffer`
 	**/
-	public function getRenderbufferParameter (target:GLenum, pname:GLenum) : Any;
+	public function getRenderbufferParameter (target:RenderbufferEnum, pname:GLenum) : Any;
 
 	/**
 	Return the information log for the specified `Shader` object.
@@ -1947,7 +1947,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.getProgramParameter`
 	**/
-	public function getShaderParameter (shader:Shader, pname:GLenum) : Any;
+	public function getShaderParameter (shader:Shader, pname:ShaderParameterEnum) : Any;
 
 	/**
 	Return a new `ShaderPrecisionFormat` object describing the range and precision for the specified shader numeric format.
@@ -1995,7 +1995,7 @@ extern class RenderingContext
 	@see `RenderingContext.texParameterf`
 	@see `RenderingContext.texParameteri`
 	**/
-	public function getTexParameter (target:GLenum, pname:GLenum) : Any;
+	public function getTexParameter (target:TextureBindingTypeEnum, pname:GLenum) : Any;
 
 	/**
 	Returns the value of a uniform variable at a given location.
@@ -2227,7 +2227,7 @@ extern class RenderingContext
 	@throws INVALID_OPERATION If `type` does not match the typed array type of pixels.
 	@throws INVALID_FRAMEBUFFER_OPERATION If the currently bound framebuffer is not framebuffer complete.
 	**/
-	public function readPixels (x:Int, y:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	public function readPixels (x:Int, y:Int, width:Int, height:Int, format:PixelFormatEnum, type:PixelsTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Create and initialize a renderbuffer object's data store.
@@ -2241,7 +2241,7 @@ extern class RenderingContext
 
 	@see `RenderingContext.createRenderbuffer`
 	**/
-	public function renderbufferStorage (target:GLenum, internalformat:GLenum, width:Int, height:Int) : Void;
+	public function renderbufferStorage (target:RenderbufferEnum, internalformat:InternalFormatEnum, width:Int, height:Int) : Void;
 
 	/**
 	Specifiy multi-sample coverage parameters for anti-aliasing effects.
@@ -2401,12 +2401,12 @@ extern class RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, internalformat:GLenum, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
-	public function texImage2D (target:GLenum, level:Int, internalformat:GLenum, width:Int, height:Int, border:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	public function texImage2D (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Set texture float parameter.
@@ -2420,7 +2420,7 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameteri`
 	**/
-	public function texParameterf (target:GLenum, pname:GLenum, param:Float) : Void;
+	public function texParameterf (target:TextureBindingTypeEnum, pname:GLenum, param:Float) : Void;
 
 	/**
 	Set texture int parameter.
@@ -2434,7 +2434,7 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameterf`
 	**/
-	public function texParameteri (target:GLenum, pname:GLenum, param:Int) : Void;
+	public function texParameteri (target:TextureBindingTypeEnum, pname:GLenum, param:Int) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.
@@ -2454,12 +2454,12 @@ extern class RenderingContext
 	@see `RenderingContext.createTexture`
 	@see `RenderingContext.texImage2D`
 	**/
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, pixels:ImageData) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, pixels:ImageElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, pixels:CanvasElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, pixels:VideoElement) : Void {})
-	@:overload(function (target:GLenum, level:Int, xoffset:Int, yoffset:Int, format:GLenum, type:GLenum, pixels:ImageBitmap) : Void {})
-	public function texSubImage2D (target:GLenum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:GLenum, type:GLenum, pixels:ArrayBufferView) : Void;
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageData) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:CanvasElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:VideoElement) : Void {})
+	@:overload(function (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ImageBitmap) : Void {})
+	public function texSubImage2D (target:TextureBindingEnum, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:InternalFormatEnum, type:TextureTypeEnum, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify values of uniform variable.
