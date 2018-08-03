@@ -1,5 +1,7 @@
 # WebGL2
 
+[![Build Status](https://travis-ci.org/ibilon/webgl2.svg?branch=master)](https://travis-ci.org/ibilon/webgl2)
+
 Haxe WebGL 1 and 2 externs.
 
 Requires Haxe 3.4.0 or above.
