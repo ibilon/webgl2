@@ -2,6 +2,8 @@
 
 Haxe WebGL 1 and 2 externs.
 
+Requires Haxe 3.1.0 or above.
+
 ## How to get context
 
 ```haxe
