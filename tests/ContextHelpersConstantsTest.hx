@@ -7,7 +7,7 @@ Compile time check to make sure that each function can use all of its constants.
 **/
 class HelpersConstantsTest
 {
-	public static function test ()
+	public static function test () : Void
 	{
 		var gl : js.webgl2.RenderingContext2 = null;
 

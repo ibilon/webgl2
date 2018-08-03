@@ -5,7 +5,7 @@ using js.webgl2.CanvasHelpers;
 
 class Main
 {
-	static function main ()
+	static function main () : Void
 	{
 		var canvas : CanvasElement = cast Browser.document.getElementById("webgl");
 		var gl = canvas.getWebGL2();

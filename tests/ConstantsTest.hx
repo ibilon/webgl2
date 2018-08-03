@@ -5,7 +5,7 @@ Compile time check to make sure that each function can use all of its constants.
 **/
 class ConstantsTest
 {
-	public static function test ()
+	public static function test () : Void
 	{
 		var gl : js.webgl2.RenderingContext2 = null;
 
@@ -1146,7 +1146,7 @@ class ConstantsTest
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGB, gl.UNSIGNED_SHORT_5_6_5, 0);
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.RGBA, gl.UNSIGNED_SHORT_4_4_4_4, 0);
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.LUMINANCE, gl.UNSIGNED_SHORT_5_5_5_1, 0);
-		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.LUMINANCE_ALPHA,gl.BYTE , 0);
+		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.LUMINANCE_ALPHA, gl.BYTE, 0);
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R8, gl.UNSIGNED_SHORT, 0);
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R16F, gl.SHORT, 0);
 		gl.texSubImage3D(gl.TEXTURE_2D_ARRAY, 0, 0, 0, 0, 0, 0, 0, gl.R32F, gl.UNSIGNED_INT, 0);

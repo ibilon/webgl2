@@ -7,7 +7,7 @@ Compile time check to make sure that each function return the correct constants.
 **/
 class ConstantsReturnTest
 {
-	public static function main ()
+	public static function main () : Void
 	{
 		var gl : js.webgl2.RenderingContext2 = null;
 
@@ -300,5 +300,5 @@ class ConstantsReturnTest
 		t(gl.getVertexAttribArrayType(0) == gl.FLOAT);
 	}
 
-	static function t (v:Bool) {} // To remove the no effect warning
+	static function t (v:Bool) : Void {} // To remove the no effect warning
 }

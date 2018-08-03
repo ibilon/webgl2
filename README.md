@@ -1,6 +1,7 @@
 # WebGL2
 
 [![Build Status](https://travis-ci.org/ibilon/webgl2.svg?branch=master)](https://travis-ci.org/ibilon/webgl2)
+[![Issue Count](https://codeclimate.com/github/ibilon/webgl2/badges/issue_count.svg)](https://codeclimate.com/github/ibilon/webgl2)
 
 Haxe WebGL 1 and 2 externs.
 

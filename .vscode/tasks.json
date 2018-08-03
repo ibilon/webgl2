@@ -10,7 +10,7 @@
 				"run",
 				"checkstyle",
 				"-s",
-				"js/webgl2"
+				"."
 			],
 			"problemMatcher": [
 				"$haxe-absolute",
