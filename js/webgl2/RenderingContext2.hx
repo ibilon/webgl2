@@ -319,7 +319,7 @@ extern class RenderingContext2 extends RenderingContext
 	public var RG_INTEGER (default, never) : InternalFormatEnum;
 
 	/** **/
-	public var INT_2_10_10_10_REV (default, never) : GLenum; //TODO can't find any use for it on the spec
+	public var INT_2_10_10_10_REV (default, never) : GLenum; // Can't find any use for it on the spec
 
 	/** **/
 	public var CURRENT_QUERY (default, never) : CurrentQueryEnum;
@@ -2064,8 +2064,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	override public function uniform1uiv (location:UniformLocation, data:Uint32Array) : Void;
+	public function uniform1uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2079,8 +2078,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	override public function uniform2uiv (location:UniformLocation, data:Uint32Array) : Void;
+	public function uniform2uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2094,8 +2092,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	override public function uniform3uiv (location:UniformLocation, data:Uint32Array) : Void;
+	public function uniform3uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2109,8 +2106,7 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	override public function uniform4uiv (location:UniformLocation, data:Uint32Array) : Void;
+	public function uniform4uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
 
 	/**
 	Assign binding points for active uniform blocks.

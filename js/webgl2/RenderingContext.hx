@@ -2501,26 +2501,6 @@ extern class RenderingContext
 	/**
 	Specify values of uniform variable.
 
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param x A new value to be used for the uniform variable.
-	**/
-	public function uniform1ui (location:UniformLocation, x:UInt) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param v A new value to be used for the uniform variable.
-	**/
-	public function uniform1uiv (location:UniformLocation, v:Uint32Array) : Void;
-
-	/**
-	Specify values of uniform variable.
-
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/uniform>.
 
 	@param location The location of the uniform attribute to modify.
@@ -2559,27 +2539,6 @@ extern class RenderingContext
 	@param v A new value to be used for the uniform variable.
 	**/
 	public function uniform2iv (location:UniformLocation, v:Int32Array) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param x A new value to be used for the uniform variable.
-	@param y A new value to be used for the uniform variable.
-	**/
-	public function uniform2ui (location:UniformLocation, x:UInt, y:UInt) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param v A new value to be used for the uniform variable.
-	**/
-	public function uniform2uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2628,28 +2587,6 @@ extern class RenderingContext
 	/**
 	Specify values of uniform variable.
 
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param x A new value to be used for the uniform variable.
-	@param y A new value to be used for the uniform variable.
-	@param z A new value to be used for the uniform variable.
-	**/
-	public function uniform3ui (location:UniformLocation, x:UInt, y:UInt, z:UInt) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param v A new value to be used for the uniform variable.
-	**/
-	public function uniform3uiv (location:UniformLocation, v:Uint32Array) : Void;
-
-	/**
-	Specify values of uniform variable.
-
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/uniform>.
 
 	@param location The location of the uniform attribute to modify.
@@ -2692,29 +2629,6 @@ extern class RenderingContext
 	@param v A new value to be used for the uniform variable.
 	**/
 	public function uniform4iv (location:UniformLocation, v:Int32Array) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param x A new value to be used for the uniform variable.
-	@param y A new value to be used for the uniform variable.
-	@param z A new value to be used for the uniform variable.
-	@param w A new value to be used for the uniform variable.
-	**/
-	public function uniform4ui (location:UniformLocation, x:UInt, y:UInt, z:UInt, w:UInt) : Void;
-
-	/**
-	Specify values of uniform variable.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform>.
-
-	@param location The location of the uniform attribute to modify.
-	@param v A new value to be used for the uniform variable.
-	**/
-	public function uniform4uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify matrix values of uniform variable. Take as the input value 2-component vectors.
