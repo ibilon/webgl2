@@ -1063,7 +1063,7 @@ extern class RenderingContext2 extends RenderingContext
 	**/
 	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, imageSize:Int, offset:Int) : Void {})
 	@:overload(function (target:TextureBindingEnum, level:Int, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView, ?srcOffset:Int, ?srcLengthOverride:Int) : Void {})
-	public function compressedTexImage2D (target:TextureBindingEnum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
+	override public function compressedTexImage2D (target:TextureBindingEnum, internalformat:InternalFormatEnum, width:Int, height:Int, border:Int, pixels:ArrayBufferView) : Void;
 
 	/**
 	Specify a three-dimensional texture image in a compressed format.
@@ -1944,7 +1944,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform1fv (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform1fv (location:UniformLocation, data:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -1958,7 +1959,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform2fv (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform2fv (location:UniformLocation, data:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -1972,7 +1974,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform3fv (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform3fv (location:UniformLocation, data:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -1986,7 +1989,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform4fv (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform4fv (location:UniformLocation, data:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2000,7 +2004,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform1iv (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform1iv (location:UniformLocation, data:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2014,7 +2019,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform2iv (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform2iv (location:UniformLocation, data:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2028,7 +2034,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform3iv (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform3iv (location:UniformLocation, data:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2042,7 +2049,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform4iv (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform4iv (location:UniformLocation, data:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2056,7 +2064,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform1uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform1uiv (location:UniformLocation, data:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2070,7 +2079,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform2uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform2uiv (location:UniformLocation, data:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2084,7 +2094,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform3uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform3uiv (location:UniformLocation, data:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variables.
@@ -2098,7 +2109,8 @@ extern class RenderingContext2 extends RenderingContext
 
 	@see `RenderingContext.uniform`
 	**/
-	public function uniform4uiv (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, data:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniform4uiv (location:UniformLocation, data:Uint32Array) : Void;
 
 	/**
 	Assign binding points for active uniform blocks.
@@ -2127,7 +2139,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.uniformMatrix`
 	**/
 	@:overload(function (location:UniformLocation, transpose:Bool, data:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix2fv (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniformMatrix2fv (location:UniformLocation, transpose:Bool, data:Float32Array) : Void;
 
 	/**
 	Specify matrix values for uniform variables.
@@ -2191,7 +2204,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.uniformMatrix`
 	**/
 	@:overload(function (location:UniformLocation, transpose:Bool, data:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix3fv (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniformMatrix3fv (location:UniformLocation, transpose:Bool, data:Float32Array) : Void;
 
 	/**
 	Specify matrix values for uniform variables.
@@ -2255,7 +2269,8 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.uniformMatrix`
 	**/
 	@:overload(function (location:UniformLocation, transpose:Bool, data:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix4fv (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, data:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void {})
+	override public function uniformMatrix4fv (location:UniformLocation, transpose:Bool, data:Float32Array) : Void;
 
 	/**
 	Modify the rate at which generic vertex attributes advance when rendering multiple instances of primitives with `drawArraysInstanced` and `drawElementsInstanced`.

@@ -2476,7 +2476,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform1fv (location:UniformLocation, v:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform1fv (location:UniformLocation, v:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2496,7 +2496,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform1iv (location:UniformLocation, v:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform1iv (location:UniformLocation, v:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2516,7 +2516,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform1uiv (location:UniformLocation, v:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform1uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2537,7 +2537,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform2fv (location:UniformLocation, v:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform2fv (location:UniformLocation, v:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2558,7 +2558,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform2iv (location:UniformLocation, v:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform2iv (location:UniformLocation, v:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2579,7 +2579,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform2uiv (location:UniformLocation, v:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform2uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2601,7 +2601,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform3fv (location:UniformLocation, v:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform3fv (location:UniformLocation, v:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2623,7 +2623,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform3iv (location:UniformLocation, v:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform3iv (location:UniformLocation, v:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2645,7 +2645,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform3uiv (location:UniformLocation, v:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform3uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2668,7 +2668,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform4fv (location:UniformLocation, v:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform4fv (location:UniformLocation, v:Float32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2691,7 +2691,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform4iv (location:UniformLocation, v:Int32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform4iv (location:UniformLocation, v:Int32Array) : Void;
 
 	/**
 	Specify values of uniform variable.
@@ -2714,7 +2714,7 @@ extern class RenderingContext
 	@param location The location of the uniform attribute to modify.
 	@param v A new value to be used for the uniform variable.
 	**/
-	public function uniform4uiv (location:UniformLocation, v:Uint32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	public function uniform4uiv (location:UniformLocation, v:Uint32Array) : Void;
 
 	/**
 	Specify matrix values of uniform variable. Take as the input value 2-component vectors.
@@ -2725,8 +2725,8 @@ extern class RenderingContext
 	@param transpose Whether to transpose the matrix. Must be false.
 	@param value A new value to be used for the uniform variable.
 	**/
-	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix2fv (location:UniformLocation, transpose:Bool, value:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>) : Void {})
+	public function uniformMatrix2fv (location:UniformLocation, transpose:Bool, value:Float32Array) : Void;
 
 	/**
 	Specify matrix values of uniform variable. Take as the input value 3-component vectors.
@@ -2737,8 +2737,8 @@ extern class RenderingContext
 	@param transpose Whether to transpose the matrix. Must be false.
 	@param value A new value to be used for the uniform variable.
 	**/
-	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix3fv (location:UniformLocation, transpose:Bool, value:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>) : Void {})
+	public function uniformMatrix3fv (location:UniformLocation, transpose:Bool, value:Float32Array) : Void;
 
 	/**
 	Specify matrix values of uniform variable. Take as the input value 4-component vectors.
@@ -2749,8 +2749,8 @@ extern class RenderingContext
 	@param transpose Whether to transpose the matrix. Must be false.
 	@param value A new value to be used for the uniform variable.
 	**/
-	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>, ?srcOffset:Int, ?srcLength:Int) : Void {})
-	public function uniformMatrix4fv (location:UniformLocation, transpose:Bool, value:Float32Array, ?srcOffset:Int, ?srcLength:Int) : Void;
+	@:overload(function (location:UniformLocation, transpose:Bool, value:Array<Float>) : Void {})
+	public function uniformMatrix4fv (location:UniformLocation, transpose:Bool, value:Float32Array) : Void;
 
 	/**
 	Set the specified `Program` as part of the current rendering state.
