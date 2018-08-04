@@ -12,7 +12,7 @@ Helpers functions not part of the WebGL spec, but giving type safe version of fu
 
 Meant to be used with `using js.webgl2.ContextHelpers;`.
 **/
-class ContextHelpers
+extern class ContextHelpers
 {
 // getActiveUniformBlockParameter
 

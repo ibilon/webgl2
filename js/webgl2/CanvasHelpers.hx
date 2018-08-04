@@ -7,7 +7,7 @@ Helpers functions to get a WebGL context.
 
 Meant to be used with `using js.webgl2.CanvasHelpers;`.
 **/
-class CanvasHelpers
+extern class CanvasHelpers
 {
 	/**
 	Return a WebGL drawing context on the canvas, or null if not supported.
