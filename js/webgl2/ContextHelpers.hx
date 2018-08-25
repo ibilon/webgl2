@@ -190,6 +190,22 @@ extern class ContextHelpers
 	/**
 	Type safe version of `RenderingContext.getFramebufferAttachmentParameter`, this isn't part of the WebGL spec.
 
+	Return integer information about the framebuffer's attachment.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter>.
+
+	@param target The binding point.
+	@param attachment The attachment point for the texture.
+	@param pname The information to query.
+	**/
+	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterIntegerEnum) : Int
+	{
+		return cast gl.getFramebufferAttachmentParameter(target, attachment, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getFramebufferAttachmentParameter`, this isn't part of the WebGL spec.
+
 	Return the texture or the renderbuffer of the framebuffer's attachment.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter>.
@@ -215,22 +231,6 @@ extern class ContextHelpers
 	public static inline function getFramebufferAttachmentParameterObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : ObjectType
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
-	}
-
-	/**
-	Type safe version of `RenderingContext.getFramebufferAttachmentParameter`, this isn't part of the WebGL spec.
-
-	Return integer information about the framebuffer's attachment.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter>.
-
-	@param target The binding point.
-	@param attachment The attachment point for the texture.
-	@param pname The information to query.
-	**/
-	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterIntegerEnum) : Int
-	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, pname);
 	}
 
 	/**
@@ -687,21 +687,6 @@ extern class ContextHelpers
 	/**
 	Type safe version of `RenderingContext.getProgramParameter`, this isn't part of the WebGL spec.
 
-	Return the buffer mode when transform feedback is active about the given program.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getProgramParameter>.
-
-	@param program The program to get parameter information from.
-	@param pname The information to query.
-	**/
-	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : TransformFeedbackBufferModeEnum
-	{
-		return cast gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
-	}
-
-	/**
-	Type safe version of `RenderingContext.getProgramParameter`, this isn't part of the WebGL spec.
-
 	Return status information about the given program.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getProgramParameter>.
@@ -712,6 +697,21 @@ extern class ContextHelpers
 	public static inline function getProgramParameterStatus (gl:RenderingContext, program:Program, pname:ProgramStatusEnum) : Bool
 	{
 		return cast gl.getProgramParameter(program, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getProgramParameter`, this isn't part of the WebGL spec.
+
+	Return the buffer mode when transform feedback is active about the given program.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getProgramParameter>.
+
+	@param program The program to get parameter information from.
+	@param pname The information to query.
+	**/
+	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : TransformFeedbackBufferModeEnum
+	{
+		return cast gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
 	}
 
 // getQueryParameter
@@ -749,20 +749,6 @@ extern class ContextHelpers
 	/**
 	Type safe version of `RenderingContext.getRenderbufferParameter`, this isn't part of the WebGL spec.
 
-	Return the internal format of the renderbuffer, the default is `gl.RGBA4`.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter>.
-
-	@param targe The target renderbuffer object
-	**/
-	public static inline function getRenderbufferParameterInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
-	{
-		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
-	}
-
-	/**
-	Type safe version of `RenderingContext.getRenderbufferParameter`, this isn't part of the WebGL spec.
-
 	Return integer information about the renderbuffer.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter>.
@@ -773,6 +759,20 @@ extern class ContextHelpers
 	public static inline function getRenderbufferParameterInteger (gl:RenderingContext, target:RenderbufferEnum, pname:RenderbufferParameterIntegerEnum) : Int
 	{
 		return cast gl.getRenderbufferParameter(target, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getRenderbufferParameter`, this isn't part of the WebGL spec.
+
+	Return the internal format of the renderbuffer, the default is `gl.RGBA4`.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter>.
+
+	@param targe The target renderbuffer object
+	**/
+	public static inline function getRenderbufferParameterInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
+	{
+		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
 	}
 
 // getSamplerParameter
@@ -1044,20 +1044,6 @@ extern class ContextHelpers
 	/**
 	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
 
-	Return the current value of a vertex attribute at a given position.
-
-	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
-
-	@param index The index of the vertex attribute.
-	**/
-	public static inline function getVertexAttribCurrent (gl:RenderingContext, index:UInt) : Float32Array
-	{
-		return cast gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
-	}
-
-	/**
-	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
-
 	Return the currently bound `Buffer` of a vertex attribute at a given position.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
@@ -1096,6 +1082,20 @@ extern class ContextHelpers
 	public static inline function getVertexAttribBoolean (gl:RenderingContext, index:UInt, pname:VertexAttribBooleanEnum) : Bool
 	{
 		return cast gl.getVertexAttrib(index, pname);
+	}
+
+	/**
+	Type safe version of `RenderingContext.getVertexAttrib`, this isn't part of the WebGL spec.
+
+	Return the current value of a vertex attribute at a given position.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getVertexAttrib>.
+
+	@param index The index of the vertex attribute.
+	**/
+	public static inline function getVertexAttribCurrent (gl:RenderingContext, index:UInt) : Float32Array
+	{
+		return cast gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
 	}
 
 	/**
