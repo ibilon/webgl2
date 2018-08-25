@@ -1800,6 +1800,7 @@ extern class RenderingContext
 	**/
 	public function getAttribLocation (program:Program, name:String) : Int;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about the buffer.
 
@@ -1814,6 +1815,7 @@ extern class RenderingContext
 	@see `RenderingContext.createBuffer`
 	**/
 	public function getBufferParameter (target:BufferEnum, pname:BufferParameterEnum) : Any;
+#end
 
 	/**
 	Return a `ContextAttributes` object that contains the actual context parameters.
@@ -1842,6 +1844,7 @@ extern class RenderingContext
 	**/
 	public function getExtension (name:String) : Any;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about a framebuffer's attachment.
 
@@ -1858,7 +1861,9 @@ extern class RenderingContext
 	@see `RenderingContext.isFramebuffer`
 	**/
 	public function getFramebufferAttachmentParameter (target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterEnum) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Returns a value for the passed parameter name.
 
@@ -1872,6 +1877,7 @@ extern class RenderingContext
 	@see `RenderingContext.disable`
 	**/
 	public function getParameter (pname:ParameterEnum) : Any;
+#end
 
 	/**
 	Return the information log for the specified `Program` object.
@@ -1888,6 +1894,7 @@ extern class RenderingContext
 	**/
 	public function getProgramInfoLog (program:Program) : String;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about the given program.
 
@@ -1901,7 +1908,9 @@ extern class RenderingContext
 	@see `RenderingContext.getShaderParameter`
 	**/
 	public function getProgramParameter (program:Program, pname:ProgramParameterEnum) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about the renderbuffer.
 
@@ -1916,6 +1925,7 @@ extern class RenderingContext
 	@see `RenderingContext.deleteRenderbuffer`
 	**/
 	public function getRenderbufferParameter (target:RenderbufferEnum, pname:RenderbufferParameterEnum) : Any;
+#end
 
 	/**
 	Return the information log for the specified `Shader` object.
@@ -1932,6 +1942,7 @@ extern class RenderingContext
 	**/
 	public function getShaderInfoLog (shader:Shader) : String;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about the given shader.
 
@@ -1945,6 +1956,7 @@ extern class RenderingContext
 	@see `RenderingContext.getProgramParameter`
 	**/
 	public function getShaderParameter (shader:Shader, pname:ShaderParameterEnum) : Any;
+#end
 
 	/**
 	Return a new `ShaderPrecisionFormat` object describing the range and precision for the specified shader numeric format.
@@ -1979,6 +1991,7 @@ extern class RenderingContext
 	**/
 	public function getSupportedExtensions () : Array<String>;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about the given texture.
 
@@ -1993,6 +2006,7 @@ extern class RenderingContext
 	@see `RenderingContext.texParameteri`
 	**/
 	public function getTexParameter (target:TextureBindingTypeEnum, pname:TextureParameterEnum) : Any;
+#end
 
 	/**
 	Returns the value of a uniform variable at a given location.
@@ -2023,6 +2037,7 @@ extern class RenderingContext
 	**/
 	public function getUniformLocation (program:Program, name:String) : UniformLocation;
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about a vertex attribute at a given position.
 
@@ -2036,6 +2051,7 @@ extern class RenderingContext
 	@see `RenderingContext.getVertexAttribOffset`
 	**/
 	public function getVertexAttrib (index:UInt, pname:VertexAttribEnum) : Any;
+#end
 
 	/**
 	Return the address of a specified vertex attribute.
@@ -2179,6 +2195,7 @@ extern class RenderingContext
 	**/
 	public function linkProgram (program:Program) : Void;
 
+#if !webgl2_no_unsafe
 	/**
 	Specify the pixel storage modes.
 
@@ -2194,6 +2211,7 @@ extern class RenderingContext
 	@see `RenderingContext.texSubImage2D`
 	**/
 	public function pixelStorei (pname:PixelStorageEnum, param:PixelStorageParamEnum) : Void;
+#end
 
 	/**
 	Specify the scale factors and units to calculate depth values.
@@ -2421,6 +2439,7 @@ extern class RenderingContext
 	**/
 	public function texParameterf (target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum, param:Float) : Void;
 
+#if !webgl2_no_unsafe
 	/**
 	Set texture int parameter.
 
@@ -2436,6 +2455,7 @@ extern class RenderingContext
 	@see `RenderingContext.texParameterf`
 	**/
 	public function texParameteri (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:SamplerParameterIntegerParamIntEnum) : Void;
+#end
 
 	/**
 	Specify a sub-rectangle of the current texture.

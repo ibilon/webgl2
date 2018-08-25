@@ -39,6 +39,8 @@ Some functions have type safe helpers when the return type depends on a paramete
 
 These can be used by adding a `using js.webgl2.ContextHelpers;`.
 
+You can add the define `-D webgl2_no_unsafe` to hide the unsafe raw externs and prevent their (mis)use.
+
 ## License
 
 The code is released under the MIT license, see [LICENSE.md](LICENSE.md).

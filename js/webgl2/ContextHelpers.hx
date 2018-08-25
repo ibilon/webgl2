@@ -28,7 +28,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformBlockParameterActiveUniformIndices (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt) : Array<UInt>
 	{
-		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, gl.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniformBlockParameter(program, uniformBlockIndex, gl.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES);
 	}
 
 	/**
@@ -44,7 +44,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformBlockParameterBoolean (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterBooleanEnum) : Bool
 	{
-		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
 	}
 
 	/**
@@ -60,7 +60,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformBlockParameterInteger (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterIntegerEnum) : UInt
 	{
-		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniformBlockParameter(program, uniformBlockIndex, pname);
 	}
 
 // getActiveUniforms
@@ -77,7 +77,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformsInteger (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>, pname:UniformsIntegerEnum) : Array<Int>
 	{
-		return cast gl.getActiveUniforms(program, uniformIndices, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniforms(program, uniformIndices, pname);
 	}
 
 	/**
@@ -92,7 +92,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformsIsRowMajor (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>) : Array<Bool>
 	{
-		return cast gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_IS_ROW_MAJOR);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_IS_ROW_MAJOR);
 	}
 
 	/**
@@ -107,7 +107,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformsSize (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>) : Array<UInt>
 	{
-		return cast gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_SIZE);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_SIZE);
 	}
 
 	/**
@@ -122,7 +122,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getActiveUniformsType (gl:RenderingContext2, program:Program, uniformIndices:Array<UInt>) : Array<UniformsTypeEnum>
 	{
-		return cast gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getActiveUniforms(program, uniformIndices, gl.UNIFORM_TYPE);
 	}
 
 // getBufferParameter
@@ -138,7 +138,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getBufferParameterSize (gl:RenderingContext, target:BufferEnum) : Int
 	{
-		return cast gl.getBufferParameter(target, gl.BUFFER_SIZE);
+		return #if webgl2_no_unsafe untyped #end gl.getBufferParameter(target, gl.BUFFER_SIZE);
 	}
 
 	/**
@@ -152,7 +152,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getBufferParameterUsage (gl:RenderingContext, target:BufferEnum) : BufferUsageEnum
 	{
-		return cast gl.getBufferParameter(target, gl.BUFFER_USAGE);
+		return #if webgl2_no_unsafe untyped #end gl.getBufferParameter(target, gl.BUFFER_USAGE);
 	}
 
 // getFramebufferAttachmentParameter
@@ -169,7 +169,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterColorEncoding (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ColorEncodingEnum
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
 	}
 
 	/**
@@ -184,7 +184,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterComponentType (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ComponentTypeEnum
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
 	}
 
 	/**
@@ -200,7 +200,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterInteger (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum, pname:AttachementParameterIntegerEnum) : Int
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, pname);
 	}
 
 	/**
@@ -215,7 +215,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterObjectName (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : EitherType<Texture, Renderbuffer>
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME);
 	}
 
 	/**
@@ -230,7 +230,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : ObjectType
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 	}
 
 	/**
@@ -245,7 +245,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getFramebufferAttachmentParameterTextureCubeMapFace (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : CubeMapEnum
 	{
-		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
+		return #if webgl2_no_unsafe untyped #end gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 	}
 
 // getIndexedParameter
@@ -262,7 +262,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getIndexedParameterBuffer (gl:RenderingContext2, target:IndexedParameterBufferEnum, index:UInt) : Buffer
 	{
-		return cast gl.getIndexedParameter(target, index);
+		return #if webgl2_no_unsafe untyped #end gl.getIndexedParameter(target, index);
 	}
 
 	/**
@@ -277,7 +277,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getIndexedParameterInteger (gl:RenderingContext2, target:IndexedParameterIntegerEnum, index:UInt) : Int
 	{
-		return cast gl.getIndexedParameter(target, index);
+		return #if webgl2_no_unsafe untyped #end gl.getIndexedParameter(target, index);
 	}
 
 // getInternalformatParameter
@@ -294,7 +294,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getInternalformatParameterSamples (gl:RenderingContext2, target:RenderbufferEnum, internalformat:InternalFormatEnum) : Int32Array
 	{
-		return cast gl.getInternalformatParameter(target, internalformat, gl.SAMPLES);
+		return #if webgl2_no_unsafe untyped #end gl.getInternalformatParameter(target, internalformat, gl.SAMPLES);
 	}
 
 // getParameter
@@ -310,7 +310,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterBlendEquation (gl:RenderingContext, pname:ParameterBlendEquationEnum) : BlendEquationEnum
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -324,7 +324,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterBlendFunc (gl:RenderingContext, pname:ParameterBlendFuncEnum) : BlendFuncEnum
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -338,7 +338,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterBoolean (gl:RenderingContext, pname:ParameterBooleanEnum) : Bool
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -352,7 +352,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterBuffer (gl:RenderingContext, pname:ParameterBufferEnum) : Buffer
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -366,7 +366,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterColorBuffer (gl:RenderingContext, pname:ParameterColorBufferEnum) : AttachementEnum
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -378,7 +378,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterColorWriteMask (gl:RenderingContext) : Array<Bool>
 	{
-		return cast gl.getParameter(gl.COLOR_WRITEMASK);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.COLOR_WRITEMASK);
 	}
 
 	/**
@@ -390,7 +390,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterCompressedTextureFormats (gl:RenderingContext) : Uint32Array
 	{
-		return cast gl.getParameter(gl.COMPRESSED_TEXTURE_FORMATS);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.COMPRESSED_TEXTURE_FORMATS);
 	}
 
 	/**
@@ -402,7 +402,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterCullFaceMode (gl:RenderingContext) : CullFaceModeEnum
 	{
-		return cast gl.getParameter(gl.CULL_FACE_MODE);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.CULL_FACE_MODE);
 	}
 
 	/**
@@ -414,7 +414,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterCurrentProgram (gl:RenderingContext) : Program
 	{
-		return cast gl.getParameter(gl.CURRENT_PROGRAM);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.CURRENT_PROGRAM);
 	}
 
 	/**
@@ -428,7 +428,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterFloat (gl:RenderingContext, pname:ParameterFloatEnum) : Float
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -442,7 +442,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterFloat32Array (gl:RenderingContext, pname:ParameterFloat32ArrayEnum) : Float32Array
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -454,7 +454,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterFrontFace (gl:RenderingContext) : FaceModeEnum
 	{
-		return cast gl.getParameter(gl.FRONT_FACE);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.FRONT_FACE);
 	}
 
 	/**
@@ -468,7 +468,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterHint (gl:RenderingContext2, param:HintEnum) : HintModeEnum
 	{
-		return cast gl.getParameter(param);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(param);
 	}
 
 	/**
@@ -482,7 +482,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterFramebuffer (gl:RenderingContext, pname:ParameterFramebufferEnum) : Framebuffer
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -494,7 +494,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterImplementationColorReadFormat (gl:RenderingContext) : PixelFormatEnum
 	{
-		return cast gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_FORMAT);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_FORMAT);
 	}
 
 	/**
@@ -506,7 +506,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterImplementationColorReadType (gl:RenderingContext) : PixelsTypeEnum
 	{
-		return cast gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.IMPLEMENTATION_COLOR_READ_TYPE);
 	}
 
 	/**
@@ -520,7 +520,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterInteger (gl:RenderingContext, pname:ParameterIntegerEnum) : Int
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -534,7 +534,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterInt32Array (gl:RenderingContext, pname:ParameterInt32ArrayEnum) : Int32Array
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -546,7 +546,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterRenderbufferBinding (gl:RenderingContext) : Renderbuffer
 	{
-		return cast gl.getParameter(gl.RENDERBUFFER_BINDING);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.RENDERBUFFER_BINDING);
 	}
 
 	/**
@@ -558,7 +558,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterSamplerBinding (gl:RenderingContext2) : Sampler
 	{
-		return cast gl.getParameter(gl.SAMPLER_BINDING);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.SAMPLER_BINDING);
 	}
 
 	/**
@@ -572,7 +572,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterStencilFunc (gl:RenderingContext, pname:ParameterStencilFuncEnum) : CompFuncEnum
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -586,7 +586,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterString (gl:RenderingContext, pname:ParameterStringEnum) : String
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -600,7 +600,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterTestFunc(gl:RenderingContext, pname:ParameterTestFuncEnum) : CompFuncEnum
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -614,7 +614,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterTexture (gl:RenderingContext, pname:ParameterTextureEnum) : Texture
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -626,7 +626,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterTransformFeedbackBinding (gl:RenderingContext2) : TransformFeedback
 	{
-		return cast gl.getParameter(gl.TRANSFORM_FEEDBACK_BINDING);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.TRANSFORM_FEEDBACK_BINDING);
 	}
 
 	/**
@@ -638,7 +638,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterUnpackColorspaceConversion (gl:RenderingContext) : UnpackColorspaceConversionEnum
 	{
-		return cast gl.getParameter(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL);
 	}
 
 	/**
@@ -652,7 +652,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterUnsignedInt (gl:RenderingContext, pname:ParameterUnsignedIntEnum) : UInt
 	{
-		return cast gl.getParameter(pname);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(pname);
 	}
 
 	/**
@@ -664,7 +664,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getParameterVertexArrayBinding (gl:RenderingContext2) : VertexArrayObject
 	{
-		return cast gl.getParameter(gl.VERTEX_ARRAY_BINDING);
+		return #if webgl2_no_unsafe untyped #end gl.getParameter(gl.VERTEX_ARRAY_BINDING);
 	}
 
 // getProgramParameter
@@ -681,7 +681,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getProgramParameterInteger (gl:RenderingContext, program:Program, pname:ProgramParameterIntegerEnum) : Int
 	{
-		return cast gl.getProgramParameter(program, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getProgramParameter(program, pname);
 	}
 
 	/**
@@ -696,7 +696,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getProgramParameterStatus (gl:RenderingContext, program:Program, pname:ProgramStatusEnum) : Bool
 	{
-		return cast gl.getProgramParameter(program, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getProgramParameter(program, pname);
 	}
 
 	/**
@@ -711,7 +711,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getProgramParameterTransformFeedbackBufferMode (gl:RenderingContext2, program:Program) : TransformFeedbackBufferModeEnum
 	{
-		return cast gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
+		return #if webgl2_no_unsafe untyped #end gl.getProgramParameter(program, gl.TRANSFORM_FEEDBACK_BUFFER_MODE);
 	}
 
 // getQueryParameter
@@ -727,7 +727,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getQueryParameterResult (gl:RenderingContext2, query:Query) : UInt
 	{
-		return cast gl.getQueryParameter(query, gl.QUERY_RESULT);
+		return #if webgl2_no_unsafe untyped #end gl.getQueryParameter(query, gl.QUERY_RESULT);
 	}
 
 	/**
@@ -741,7 +741,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getQueryParameterResultAvailable (gl:RenderingContext2, query:Query) : Bool
 	{
-		return cast gl.getQueryParameter(query, gl.QUERY_RESULT_AVAILABLE);
+		return #if webgl2_no_unsafe untyped #end gl.getQueryParameter(query, gl.QUERY_RESULT_AVAILABLE);
 	}
 
 // getRenderbufferParameter
@@ -758,7 +758,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getRenderbufferParameterInteger (gl:RenderingContext, target:RenderbufferEnum, pname:RenderbufferParameterIntegerEnum) : Int
 	{
-		return cast gl.getRenderbufferParameter(target, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getRenderbufferParameter(target, pname);
 	}
 
 	/**
@@ -772,7 +772,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getRenderbufferParameterInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
 	{
-		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
+		return #if webgl2_no_unsafe untyped #end gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
 	}
 
 // getSamplerParameter
@@ -788,7 +788,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterCompareFunc (gl:RenderingContext2, sampler:Sampler) : CompFuncEnum
 	{
-		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_FUNC);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_FUNC);
 	}
 
 	/**
@@ -802,7 +802,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterCompareMode (gl:RenderingContext2, sampler:Sampler) : TextureCompareModeEnum
 	{
-		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_MODE);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_MODE);
 	}
 
 	/**
@@ -817,7 +817,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterLOD (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterLODEnum) : Float
 	{
-		return cast gl.getSamplerParameter(sampler, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, pname);
 	}
 
 	/**
@@ -831,7 +831,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterMagFilter (gl:RenderingContext2, sampler:Sampler) : TexMagFilterEnum
 	{
-		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MAG_FILTER);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, gl.TEXTURE_MAG_FILTER);
 	}
 
 	/**
@@ -845,7 +845,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterMinFilter (gl:RenderingContext2, sampler:Sampler) : TexMinFilterEnum
 	{
-		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MIN_FILTER);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, gl.TEXTURE_MIN_FILTER);
 	}
 
 	/**
@@ -860,7 +860,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSamplerParameterWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
-		return cast gl.getSamplerParameter(sampler, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getSamplerParameter(sampler, pname);
 	}
 
 // getShaderParameter
@@ -877,7 +877,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getShaderParameterStatus (gl:RenderingContext, shader:Shader, pname:ShaderStatusEnum) : Bool
 	{
-		return cast gl.getShaderParameter(shader, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getShaderParameter(shader, pname);
 	}
 
 	/**
@@ -891,7 +891,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getShaderParameterType (gl:RenderingContext, shader:Shader) : ShaderTypeEnum
 	{
-		return cast gl.getShaderParameter(shader, gl.SHADER_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getShaderParameter(shader, gl.SHADER_TYPE);
 	}
 
 // getSyncParameter
@@ -907,7 +907,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getSyncParameterStatus (gl:RenderingContext2, sync:Sync) : SyncParameterValueEnum
 	{
-		return cast gl.getSyncParameter(sync, gl.SYNC_STATUS);
+		return #if webgl2_no_unsafe untyped #end gl.getSyncParameter(sync, gl.SYNC_STATUS);
 	}
 
 // getTexParameter
@@ -923,7 +923,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum) : CompFuncEnum
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_FUNC);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_COMPARE_FUNC);
 	}
 
 	/**
@@ -937,7 +937,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum) : TextureCompareModeEnum
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_MODE);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_COMPARE_MODE);
 	}
 
 	/**
@@ -951,7 +951,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterImmutableFormat (gl:RenderingContext2, target:TextureBindingTypeEnum) : Bool
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_FORMAT);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_FORMAT);
 	}
 
 	/**
@@ -963,7 +963,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterImmutableLevels (gl:RenderingContext2, target:TextureBindingTypeEnum) : UInt
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_LEVELS);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_LEVELS);
 	}
 
 	/**
@@ -978,7 +978,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterLOD (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum) : Float
 	{
-		return cast gl.getTexParameter(target, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, pname);
 	}
 
 	/**
@@ -992,7 +992,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMagFilterEnum
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_MAG_FILTER);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_MAG_FILTER);
 	}
 
 	/**
@@ -1006,7 +1006,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMinFilterEnum
 	{
-		return cast gl.getTexParameter(target, gl.TEXTURE_MIN_FILTER);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, gl.TEXTURE_MIN_FILTER);
 	}
 
 	/**
@@ -1021,7 +1021,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterMipmapLevel (gl:RenderingContext, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum) : Int
 	{
-		return cast gl.getTexParameter(target, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, pname);
 	}
 
 	/**
@@ -1036,7 +1036,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getTexParameterWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
-		return cast gl.getTexParameter(target, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getTexParameter(target, pname);
 	}
 
 // getVertexAttrib
@@ -1052,7 +1052,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getVertexAttribArrayBufferBinding (gl:RenderingContext, index:UInt) : Buffer
 	{
-		return cast gl.getVertexAttrib(index, gl.ARRAY_BUFFER_BINDING);
+		return #if webgl2_no_unsafe untyped #end gl.getVertexAttrib(index, gl.ARRAY_BUFFER_BINDING);
 	}
 
 	/**
@@ -1066,7 +1066,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getVertexAttribArrayType (gl:RenderingContext, index:UInt) : VertexAttribFloatTypeEnum
 	{
-		return cast gl.getVertexAttrib(index, gl.VERTEX_ATTRIB_ARRAY_TYPE);
+		return #if webgl2_no_unsafe untyped #end gl.getVertexAttrib(index, gl.VERTEX_ATTRIB_ARRAY_TYPE);
 	}
 
 	/**
@@ -1081,7 +1081,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getVertexAttribBoolean (gl:RenderingContext, index:UInt, pname:VertexAttribBooleanEnum) : Bool
 	{
-		return cast gl.getVertexAttrib(index, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getVertexAttrib(index, pname);
 	}
 
 	/**
@@ -1095,7 +1095,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getVertexAttribCurrent (gl:RenderingContext, index:UInt) : Float32Array
 	{
-		return cast gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
+		return #if webgl2_no_unsafe untyped #end gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
 	}
 
 	/**
@@ -1110,7 +1110,7 @@ extern class ContextHelpers
 	**/
 	public static inline function getVertexAttribInteger (gl:RenderingContext, index:UInt, pname:VertexAttribIntegerEnum) : Int
 	{
-		return cast gl.getVertexAttrib(index, pname);
+		return #if webgl2_no_unsafe untyped #end gl.getVertexAttrib(index, pname);
 	}
 
 // pixelStorei
@@ -1127,7 +1127,7 @@ extern class ContextHelpers
 	**/
 	public static inline function pixelStoreiBoolean (gl:RenderingContext, pname:PixelStorageBooleanEnum, param:Bool) : Void
 	{
-		return gl.pixelStorei(pname, param);
+		#if webgl2_no_unsafe untyped #end gl.pixelStorei(pname, param);
 	}
 
 	/**
@@ -1142,7 +1142,7 @@ extern class ContextHelpers
 	**/
 	public static inline function pixelStoreiInteger (gl:RenderingContext, pname:PixelStorageIntegerEnum, param:Int) : Void
 	{
-		return gl.pixelStorei(pname, param);
+		#if webgl2_no_unsafe untyped #end gl.pixelStorei(pname, param);
 	}
 
 	/**
@@ -1156,7 +1156,7 @@ extern class ContextHelpers
 	**/
 	public static inline function pixelStoreiUnpackColorspaceConversionWebGL (gl:RenderingContext, param:UnpackColorspaceConversionEnum) : Void
 	{
-		gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, param);
+		#if webgl2_no_unsafe untyped #end gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, param);
 	}
 
 // samplerParameteri
@@ -1173,7 +1173,7 @@ extern class ContextHelpers
 	**/
 	public static inline function samplerParameteriTextureCompareFunc (gl:RenderingContext2, sampler:Sampler, param:CompFuncEnum) : Void
 	{
-		gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_FUNC, param);
+		#if webgl2_no_unsafe untyped #end gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_FUNC, param);
 	}
 
 	/**
@@ -1188,7 +1188,7 @@ extern class ContextHelpers
 	**/
 	public static inline function samplerParameteriTextureCompareMode (gl:RenderingContext2, sampler:Sampler, param:TextureCompareModeEnum) : Void
 	{
-		gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_MODE, param);
+		#if webgl2_no_unsafe untyped #end gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_MODE, param);
 	}
 
 	/**
@@ -1203,7 +1203,7 @@ extern class ContextHelpers
 	**/
 	public static inline function samplerParameteriTextureMagFilter (gl:RenderingContext2, sampler:Sampler, param:TexMagFilterEnum) : Void
 	{
-		gl.samplerParameteri(sampler, gl.TEXTURE_MAG_FILTER, param);
+		#if webgl2_no_unsafe untyped #end gl.samplerParameteri(sampler, gl.TEXTURE_MAG_FILTER, param);
 	}
 
 	/**
@@ -1218,7 +1218,7 @@ extern class ContextHelpers
 	**/
 	public static inline function samplerParameteriTextureMinFilter (gl:RenderingContext2, sampler:Sampler, param:TexMinFilterEnum) : Void
 	{
-		gl.samplerParameteri(sampler, gl.TEXTURE_MIN_FILTER, param);
+		#if webgl2_no_unsafe untyped #end gl.samplerParameteri(sampler, gl.TEXTURE_MIN_FILTER, param);
 	}
 
 	/**
@@ -1234,7 +1234,7 @@ extern class ContextHelpers
 	**/
 	public static inline function samplerParameteriTextureWrap (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum, param:WrapFunctionEnum) : Void
 	{
-		gl.samplerParameteri(sampler, pname, param);
+		#if webgl2_no_unsafe untyped #end gl.samplerParameteri(sampler, pname, param);
 	}
 
 // texParameteri
@@ -1251,7 +1251,7 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum, param:CompFuncEnum) : Void
 	{
-		gl.texParameteri(target, gl.TEXTURE_COMPARE_FUNC, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, gl.TEXTURE_COMPARE_FUNC, param);
 	}
 
 	/**
@@ -1266,7 +1266,7 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum, param:TextureCompareModeEnum) : Void
 	{
-		gl.texParameteri(target, gl.TEXTURE_COMPARE_MODE, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, gl.TEXTURE_COMPARE_MODE, param);
 	}
 
 	/**
@@ -1282,7 +1282,7 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureLevel (gl:RenderingContext2, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum, param:Int) : Void
 	{
-		gl.texParameteri(target, pname, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, pname, param);
 	}
 
 	/**
@@ -1297,7 +1297,7 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum, param:TexMagFilterEnum) : Void
 	{
-		gl.texParameteri(target, gl.TEXTURE_MAG_FILTER, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, gl.TEXTURE_MAG_FILTER, param);
 	}
 
 	/**
@@ -1312,7 +1312,7 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum, param:TexMinFilterEnum) : Void
 	{
-		gl.texParameteri(target, gl.TEXTURE_MIN_FILTER, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, gl.TEXTURE_MIN_FILTER, param);
 	}
 
 	/**
@@ -1328,6 +1328,6 @@ extern class ContextHelpers
 	**/
 	public static inline function texParameteriTextureWrap (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum, param:WrapFunctionEnum) : Void
 	{
-		gl.texParameteri(target, pname, param);
+		#if webgl2_no_unsafe untyped #end gl.texParameteri(target, pname, param);
 	}
 }

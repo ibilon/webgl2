@@ -1376,6 +1376,7 @@ extern class RenderingContext2 extends RenderingContext
 	**/
 	public function getActiveUniformBlockName (program:Program, uniformBlockIndex:UInt) : String;
 
+#if !webgl2_no_unsafe
 	/**
 	Retrieve information about an active uniform block within a `Program`.
 
@@ -1390,7 +1391,9 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.getActiveUniforms`
 	**/
 	public function getActiveUniformBlockParameter (program:Program, uniformBlockIndex:UInt, pname:UniformBlockParameterEnum) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Retrieve information about active uniforms within a `Program`.
 
@@ -1405,6 +1408,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext2.getActiveUniformBlockParameter`
 	**/
 	public function getActiveUniforms (program:Program, uniformIndices:Array<UInt>, pname:UniformsEnum) : Any;
+#end
 
 	/**
 	Read data from a buffer binding point and writes them to an `ArrayBuffer` or `SharedArrayBuffer`.
@@ -1441,6 +1445,7 @@ extern class RenderingContext2 extends RenderingContext
 	**/
 	public function getFragDataLocation (program:Program, name:String) : Int;
 
+#if !webgl2_no_unsafe
 	/**
 	Return indexed information about a given target.
 
@@ -1454,7 +1459,9 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.getParameter`
 	**/
 	public function getIndexedParameter (target:IndexedParameterEnum, index:UInt) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Return information about implementation-dependent support for internal formats.
 
@@ -1469,6 +1476,7 @@ extern class RenderingContext2 extends RenderingContext
 	@see `RenderingContext.getRenderbufferParameter`
 	**/
 	public function getInternalformatParameter (target:RenderbufferEnum, internalformat:InternalFormatEnum, pname:SamplesEnum) : Any;
+#end
 
 	/**
 	Returns the currently active `Query` for the target, or null.
@@ -1480,6 +1488,7 @@ extern class RenderingContext2 extends RenderingContext
 	**/
 	public function getQuery (target:QueryTargetEnum, pname:CurrentQueryEnum) : Query;
 
+#if !webgl2_no_unsafe
 	/**
 	Return parameter information of a `Query` object.
 
@@ -1491,7 +1500,9 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which information to return.
 	**/
 	public function getQueryParameter (query:Query, pname:QueryParameterEnum) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Return parameter information of a `Sampler` object.
 
@@ -1503,7 +1514,9 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which information to return.
 	**/
 	public function getSamplerParameter (sampler:Sampler, pname:SamplerParameterEnum) : Any;
+#end
 
+#if !webgl2_no_unsafe
 	/**
 	Returns parameter information of a `Sync` object.
 
@@ -1515,6 +1528,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which information to return.
 	**/
 	public function getSyncParameter (sync:Sync, pname:SyncParameterEnum) : SyncParameterValueEnum;
+#end
 
 	/**
 	Return information about varying variables from `TransformFeedback` buffers.
@@ -1703,6 +1717,7 @@ extern class RenderingContext2 extends RenderingContext
 	**/
 	public function samplerParameterf (sampler:Sampler, pname:SamplerParameterLODEnum, param:Float) : Void;
 
+#if !webgl2_no_unsafe
 	/**
 	Set `Sampler` parameters.
 
@@ -1715,6 +1730,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param param The value to set.
 	**/
 	public function samplerParameteri (sampler:Sampler, pname:SamplerParameterIntegerEnum, param:SamplerParameterIntegerParamEnum) : Void;
+#end
 
 	/**
 	Specify a two-dimensional texture image.

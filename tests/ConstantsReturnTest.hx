@@ -258,11 +258,13 @@ class ConstantsReturnTest
 		t(gl.getShaderParameterType(null) == gl.VERTEX_SHADER);
 		t(gl.getShaderParameterType(null) == gl.FRAGMENT_SHADER);
 
+#if !webgl2_no_unsafe
 		t(gl.getSyncParameter(null, null) == gl.SYNC_FENCE);
 		t(gl.getSyncParameter(null, null) == gl.SIGNALED);
 		t(gl.getSyncParameter(null, null) == gl.UNSIGNALED);
 		t(gl.getSyncParameter(null, null) == gl.SYNC_GPU_COMMANDS_COMPLETE);
 		t(gl.getSyncParameter(null, null) == gl.ZERO);
+#end
 
 		t(gl.getSyncParameterStatus(null) == gl.SIGNALED);
 		t(gl.getSyncParameterStatus(null) == gl.UNSIGNALED);
