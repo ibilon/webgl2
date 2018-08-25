@@ -580,10 +580,10 @@ extern class RenderingContext
 	public var LINEAR_MIPMAP_LINEAR (default, never) : TexMinFilterEnum;
 
 	/** Texture magnification filter. Available values: `LINEAR`, `NEAREST`. Default value: `LINEAR`. **/
-	public var TEXTURE_MAG_FILTER (default, never) : SamplerParameterEnum;
+	public var TEXTURE_MAG_FILTER (default, never) : SamplerParameterIntegerEnum;
 
 	/** Texture minification filter. Available values: `LINEAR`, `NEAREST`, `NEAREST_MIPMAP_NEAREST`, `LINEAR_MIPMAP_NEAREST`, `NEAREST_MIPMAP_LINEAR`. Default value: `NEAREST_MIPMAP_LINEAR`. **/
-	public var TEXTURE_MIN_FILTER (default, never) : SamplerParameterEnum;
+	public var TEXTURE_MIN_FILTER (default, never) : SamplerParameterIntegerEnum;
 
 	/** Wrapping function for texture coordinate s. Available values: `REPEAT`, `CLAMP_TO_EDGE`, `MIRRORED_REPEAT`. Default value: `REPEAT`. **/
 	public var TEXTURE_WRAP_S (default, never) : SamplerParameterWrapEnum;
@@ -2182,6 +2182,8 @@ extern class RenderingContext
 	/**
 	Specify the pixel storage modes.
 
+	The accepted type for `param` depends on `pname`.
+
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/pixelStorei>.
 
 	@param pname Which parameter to set.
@@ -2191,7 +2193,7 @@ extern class RenderingContext
 	@see `RenderingContext.texImage2D`
 	@see `RenderingContext.texSubImage2D`
 	**/
-	public function pixelStorei (pname:PixelStorageEnum, param:Int) : Void;
+	public function pixelStorei (pname:PixelStorageEnum, param:PixelStorageParamEnum) : Void;
 
 	/**
 	Specify the scale factors and units to calculate depth values.
@@ -2417,10 +2419,12 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameteri`
 	**/
-	public function texParameterf (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:Float) : Void;
+	public function texParameterf (target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum, param:Float) : Void;
 
 	/**
 	Set texture int parameter.
+
+	The accepted type for `param` depends on `pname`.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
 
@@ -2431,7 +2435,7 @@ extern class RenderingContext
 	@see `RenderingContext.getTextParameter`
 	@see `RenderingContext.texParameterf`
 	**/
-	public function texParameteri (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:Int) : Void;
+	public function texParameteri (target:TextureBindingTypeEnum, pname:TextureParameterfiEnum, param:SamplerParameterIntegerParamIntEnum) : Void;
 
 	/**
 	Specify a sub-rectangle of the current texture.

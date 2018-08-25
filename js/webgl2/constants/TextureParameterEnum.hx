@@ -21,6 +21,7 @@ Represent the following constants:
 **/
 abstract TextureParameterEnum (GLenum)
 {
+	@:extern @:from static inline function fromSamplerParameterIntegerEnum (value:SamplerParameterIntegerEnum) : TextureParameterEnum return cast value;
 	@:extern @:from static inline function fromSamplerParameterEnum (value:SamplerParameterEnum) : TextureParameterEnum return cast value;
 	@:extern @:from static inline function fromSamplerParameterLODEnum (value:SamplerParameterLODEnum) : TextureParameterEnum return cast value;
 	@:extern @:from static inline function fromSamplerParameterWrapEnum (value:SamplerParameterWrapEnum) : TextureParameterEnum return cast value;

@@ -1112,4 +1112,222 @@ extern class ContextHelpers
 	{
 		return cast gl.getVertexAttrib(index, pname);
 	}
+
+// pixelStorei
+
+	/**
+	Type safe version of `RenderingContext.pixelStorei`, this isn't part of the WebGL spec.
+
+	Set boolean information for the pixel storage modes.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/pixelStorei>.
+
+	@param pname Which parameter to set.
+	@param param The value to set.
+	**/
+	public static inline function pixelStoreiBoolean (gl:RenderingContext, pname:PixelStorageBooleanEnum, param:Bool) : Void
+	{
+		return gl.pixelStorei(pname, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.pixelStorei`, this isn't part of the WebGL spec.
+
+	Set integer information for the pixel storage modes.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/pixelStorei>.
+
+	@param pname Which parameter to set.
+	@param param The value to set.
+	**/
+	public static inline function pixelStoreiInteger (gl:RenderingContext, pname:PixelStorageIntegerEnum, param:Int) : Void
+	{
+		return gl.pixelStorei(pname, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.pixelStorei`, this isn't part of the WebGL spec.
+
+	Set color space conversion information for the pixel storage modes.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/pixelStorei>.
+
+	@param param The value to set.
+	**/
+	public static inline function pixelStoreiUnpackColorspaceConversionWebGL (gl:RenderingContext, param:UnpackColorspaceConversionEnum) : Void
+	{
+		gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, param);
+	}
+
+// samplerParameter
+
+	/**
+	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
+
+	Set the texture comparison function `Sampler` parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param param The value to set.
+	**/
+	public static inline function samplerParameteriTextureCompareFunc (gl:RenderingContext2, sampler:Sampler, param:CompFuncEnum) : Void
+	{
+		gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_FUNC, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
+
+	Set the texture comparison mode `Sampler` parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param param The value to set.
+	**/
+	public static inline function samplerParameteriTextureCompareMode (gl:RenderingContext2, sampler:Sampler, param:TextureCompareModeEnum) : Void
+	{
+		gl.samplerParameteri(sampler, gl.TEXTURE_COMPARE_MODE, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
+
+	Set the texture magnification filter `Sampler` parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param param The value to set.
+	**/
+	public static inline function samplerParameteriTextureMagFilter (gl:RenderingContext2, sampler:Sampler, param:TexMagFilterEnum) : Void
+	{
+		gl.samplerParameteri(sampler, gl.TEXTURE_MAG_FILTER, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
+
+	Set the texture minification filter `Sampler` parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param param The value to set.
+	**/
+	public static inline function samplerParameteriTextureMinFilter (gl:RenderingContext2, sampler:Sampler, param:TexMinFilterEnum) : Void
+	{
+		gl.samplerParameteri(sampler, gl.TEXTURE_MIN_FILTER, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
+
+	Set the texture wrapping function `Sampler` parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
+
+	@param sampler The `Sampler` object.
+	@param pname Which parameter to set.
+	@param param The value to set.
+	**/
+	public static inline function samplerParameteriTextureWrap (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum, param:WrapFunctionEnum) : Void
+	{
+		gl.samplerParameteri(sampler, pname, param);
+	}
+
+// texParameter
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture compare function parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum, param:CompFuncEnum) : Void
+	{
+		gl.texParameteri(target, gl.TEXTURE_COMPARE_FUNC, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture compare mode parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum, param:TextureCompareModeEnum) : Void
+	{
+		gl.texParameteri(target, gl.TEXTURE_COMPARE_MODE, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture level parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param pname The texture parameter to set.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureLevel (gl:RenderingContext2, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum, param:Int) : Void
+	{
+		gl.texParameteri(target, pname, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture magnification filter parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum, param:TexMagFilterEnum) : Void
+	{
+		gl.texParameteri(target, gl.TEXTURE_MAG_FILTER, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture minification filter parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum, param:TexMinFilterEnum) : Void
+	{
+		gl.texParameteri(target, gl.TEXTURE_MIN_FILTER, param);
+	}
+
+	/**
+	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.
+
+	Set texture wrapping function parameter.
+
+	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter>.
+
+	@param target The binding point.
+	@param pname The texture parameter to set.
+	@param param The value for the specified parameter `pname`.
+	**/
+	public static inline function texParameteriTextureWrap (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum, param:WrapFunctionEnum) : Void
+	{
+		gl.texParameteri(target, pname, param);
+	}
 }

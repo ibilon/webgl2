@@ -421,5 +421,103 @@ class HelpersConstantsTest
 		gl.getVertexAttribInteger(0, gl.VERTEX_ATTRIB_ARRAY_SIZE);
 		gl.getVertexAttribInteger(0, gl.VERTEX_ATTRIB_ARRAY_STRIDE);
 		gl.getVertexAttribInteger(0, gl.VERTEX_ATTRIB_ARRAY_DIVISOR);
+
+		gl.pixelStoreiBoolean(gl.UNPACK_FLIP_Y_WEBGL, false);
+		gl.pixelStoreiBoolean(gl.UNPACK_FLIP_Y_WEBGL, true);
+		gl.pixelStoreiBoolean(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+		gl.pixelStoreiBoolean(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+
+		gl.pixelStoreiInteger(gl.PACK_ALIGNMENT, 1);
+		gl.pixelStoreiInteger(gl.PACK_ALIGNMENT, 2);
+		gl.pixelStoreiInteger(gl.PACK_ALIGNMENT, 4);
+		gl.pixelStoreiInteger(gl.PACK_ALIGNMENT, 8);
+		gl.pixelStoreiInteger(gl.UNPACK_ALIGNMENT, 1);
+		gl.pixelStoreiInteger(gl.UNPACK_ALIGNMENT, 2);
+		gl.pixelStoreiInteger(gl.UNPACK_ALIGNMENT, 4);
+		gl.pixelStoreiInteger(gl.UNPACK_ALIGNMENT, 8);
+		gl.pixelStoreiInteger(gl.PACK_ROW_LENGTH, 0);
+		gl.pixelStoreiInteger(gl.PACK_SKIP_PIXELS, 0);
+		gl.pixelStoreiInteger(gl.PACK_SKIP_ROWS, 0);
+		gl.pixelStoreiInteger(gl.UNPACK_ROW_LENGTH, 0);
+		gl.pixelStoreiInteger(gl.UNPACK_IMAGE_HEIGHT, 0);
+		gl.pixelStoreiInteger(gl.UNPACK_SKIP_PIXELS, 0);
+		gl.pixelStoreiInteger(gl.UNPACK_SKIP_ROWS, 0);
+		gl.pixelStoreiInteger(gl.UNPACK_SKIP_IMAGES, 0);
+
+		gl.pixelStoreiUnpackColorspaceConversionWebGL(gl.NONE);
+		gl.pixelStoreiUnpackColorspaceConversionWebGL(gl.BROWSER_DEFAULT_WEBGL);
+
+		gl.samplerParameteriTextureCompareFunc(null, gl.LEQUAL);
+		gl.samplerParameteriTextureCompareFunc(null, gl.GEQUAL);
+		gl.samplerParameteriTextureCompareFunc(null, gl.LESS);
+		gl.samplerParameteriTextureCompareFunc(null, gl.GREATER);
+		gl.samplerParameteriTextureCompareFunc(null, gl.EQUAL);
+		gl.samplerParameteriTextureCompareFunc(null, gl.NOTEQUAL);
+		gl.samplerParameteriTextureCompareFunc(null, gl.ALWAYS);
+		gl.samplerParameteriTextureCompareFunc(null, gl.NEVER);
+
+		gl.samplerParameteriTextureCompareMode(null, gl.NONE);
+		gl.samplerParameteriTextureCompareMode(null, gl.COMPARE_REF_TO_TEXTURE);
+
+		gl.samplerParameteriTextureMagFilter(null, gl.LINEAR);
+		gl.samplerParameteriTextureMagFilter(null, gl.NEAREST);
+
+		gl.samplerParameteriTextureMinFilter(null, gl.LINEAR);
+		gl.samplerParameteriTextureMinFilter(null, gl.NEAREST);
+		gl.samplerParameteriTextureMinFilter(null, gl.NEAREST_MIPMAP_NEAREST);
+		gl.samplerParameteriTextureMinFilter(null, gl.LINEAR_MIPMAP_NEAREST);
+		gl.samplerParameteriTextureMinFilter(null, gl.NEAREST_MIPMAP_LINEAR);
+		gl.samplerParameteriTextureMinFilter(null, gl.LINEAR_MIPMAP_LINEAR);
+
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_R, gl.REPEAT);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_R, gl.CLAMP_TO_EDGE);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_R, gl.MIRRORED_REPEAT);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_S, gl.REPEAT);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_S, gl.MIRRORED_REPEAT);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_T, gl.REPEAT);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+		gl.samplerParameteriTextureWrap(null, gl.TEXTURE_WRAP_T, gl.MIRRORED_REPEAT);
+
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D, gl.LEQUAL);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_CUBE_MAP, gl.GEQUAL);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_3D, gl.LESS);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D_ARRAY, gl.GREATER);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D_ARRAY, gl.EQUAL);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D_ARRAY, gl.NOTEQUAL);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D_ARRAY, gl.ALWAYS);
+		gl.texParameteriTextureCompareFunc(gl.TEXTURE_2D_ARRAY, gl.NEVER);
+
+		gl.texParameteriTextureCompareMode(gl.TEXTURE_2D, gl.NONE);
+		gl.texParameteriTextureCompareMode(gl.TEXTURE_CUBE_MAP, gl.COMPARE_REF_TO_TEXTURE);
+		gl.texParameteriTextureCompareMode(gl.TEXTURE_3D, gl.COMPARE_REF_TO_TEXTURE);
+		gl.texParameteriTextureCompareMode(gl.TEXTURE_2D_ARRAY, gl.COMPARE_REF_TO_TEXTURE);
+
+		gl.texParameteriTextureLevel(gl.TEXTURE_2D, gl.TEXTURE_BASE_LEVEL, 0);
+		gl.texParameteriTextureLevel(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_MAX_LEVEL, 0);
+		gl.texParameteriTextureLevel(gl.TEXTURE_3D, gl.TEXTURE_MAX_LEVEL, 0);
+		gl.texParameteriTextureLevel(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MAX_LEVEL, 0);
+
+		gl.texParameteriTextureMagFilter(gl.TEXTURE_2D, gl.LINEAR);
+		gl.texParameteriTextureMagFilter(gl.TEXTURE_CUBE_MAP, gl.NEAREST);
+		gl.texParameteriTextureMagFilter(gl.TEXTURE_3D, gl.NEAREST);
+		gl.texParameteriTextureMagFilter(gl.TEXTURE_2D_ARRAY, gl.NEAREST);
+
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_2D, gl.LINEAR);
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_CUBE_MAP, gl.NEAREST);
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_3D, gl.NEAREST_MIPMAP_NEAREST);
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_2D_ARRAY, gl.LINEAR_MIPMAP_NEAREST);
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_2D_ARRAY, gl.NEAREST_MIPMAP_LINEAR);
+		gl.texParameteriTextureMinFilter(gl.TEXTURE_2D_ARRAY, gl.LINEAR_MIPMAP_LINEAR);
+
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+		gl.texParameteriTextureWrap(gl.TEXTURE_CUBE_MAP, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+		gl.texParameteriTextureWrap(gl.TEXTURE_3D, gl.TEXTURE_WRAP_S, gl.MIRRORED_REPEAT);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_T, gl.REPEAT);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_T, gl.MIRRORED_REPEAT);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_R, gl.REPEAT);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_R, gl.CLAMP_TO_EDGE);
+		gl.texParameteriTextureWrap(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_WRAP_R, gl.MIRRORED_REPEAT);
 	}
 }

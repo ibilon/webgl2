@@ -133,10 +133,10 @@ extern class RenderingContext2 extends RenderingContext
 	public var TEXTURE_MAX_LEVEL (default, never) : TextureParameterLevelEnum;
 
 	/** Texture comparison mode. Available values: `NONE`, `COMPARE_REF_TO_TEXTURE`. Default value: `NONE`. **/
-	public var TEXTURE_COMPARE_MODE (default, never) : SamplerParameterEnum;
+	public var TEXTURE_COMPARE_MODE (default, never) : SamplerParameterIntegerEnum;
 
 	/** Texture Comparison function. Available values: `LEQUAL`, `GEQUAL`, `LESS`, `GREATER`, `EQUAL`, `NOTEQUAL`, `ALWAYS`, `NEVER`. Default value: `LEQUAL`. **/
-	public var TEXTURE_COMPARE_FUNC (default, never) : SamplerParameterEnum;
+	public var TEXTURE_COMPARE_FUNC (default, never) : SamplerParameterIntegerEnum;
 
 	/** **/
 	public var SRGB (default, never) : ColorEncodingEnum;
@@ -1701,10 +1701,12 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which parameter to set.
 	@param param The value to set.
 	**/
-	public function samplerParameterf (sampler:Sampler, pname:SamplerParameterEnum, param:Float) : Void;
+	public function samplerParameterf (sampler:Sampler, pname:SamplerParameterLODEnum, param:Float) : Void;
 
 	/**
 	Set `Sampler` parameters.
+
+	The accepted type for `param` depends on `pname`.
 
 	More information at <https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter>.
 
@@ -1712,7 +1714,7 @@ extern class RenderingContext2 extends RenderingContext
 	@param pname Which parameter to set.
 	@param param The value to set.
 	**/
-	public function samplerParameteri (sampler:Sampler, pname:SamplerParameterEnum, param:Int) : Void;
+	public function samplerParameteri (sampler:Sampler, pname:SamplerParameterIntegerEnum, param:SamplerParameterIntegerParamEnum) : Void;
 
 	/**
 	Specify a two-dimensional texture image.
