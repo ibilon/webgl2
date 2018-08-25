@@ -14,4 +14,4 @@ sudo: false
 
 script:
   - haxe test.hxml -D webgl2_no_unsafe
-  - haxe test.hxml --no-output
+  - haxe test.hxml
