@@ -26,7 +26,7 @@ extern class ContextHelpers
 	@param program The `Program` containing the active uniform block.
 	@param uniformBlockIndex The index of the active uniform block within the program.
 	**/
-	public static inline function getActiveUniformBlockActiveUniformIndices (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt) : Array<UInt>
+	public static inline function getActiveUniformBlockParameterActiveUniformIndices (gl:RenderingContext2, program:Program, uniformBlockIndex:UInt) : Array<UInt>
 	{
 		return cast gl.getActiveUniformBlockParameter(program, uniformBlockIndex, gl.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES);
 	}
@@ -136,7 +136,7 @@ extern class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferSize (gl:RenderingContext, target:BufferEnum) : Int
+	public static inline function getBufferParameterSize (gl:RenderingContext, target:BufferEnum) : Int
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_SIZE);
 	}
@@ -150,7 +150,7 @@ extern class ContextHelpers
 
 	@param target The target buffer object.
 	**/
-	public static inline function getBufferUsage (gl:RenderingContext, target:BufferEnum) : BufferUsageEnum
+	public static inline function getBufferParameterUsage (gl:RenderingContext, target:BufferEnum) : BufferUsageEnum
 	{
 		return cast gl.getBufferParameter(target, gl.BUFFER_USAGE);
 	}
@@ -167,7 +167,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentColorEncoding (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ColorEncodingEnum
+	public static inline function getFramebufferAttachmentParameterColorEncoding (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ColorEncodingEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING);
 	}
@@ -182,7 +182,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentComponentType (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ComponentTypeEnum
+	public static inline function getFramebufferAttachmentParameterComponentType (gl:RenderingContext2, target:FramebufferEnum, attachment:BufferAttachementEnum) : ComponentTypeEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE);
 	}
@@ -197,7 +197,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectName (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : EitherType<Texture, Renderbuffer>
+	public static inline function getFramebufferAttachmentParameterObjectName (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : EitherType<Texture, Renderbuffer>
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME);
 	}
@@ -212,7 +212,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : ObjectType
+	public static inline function getFramebufferAttachmentParameterObjectType (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : ObjectType
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE);
 	}
@@ -243,7 +243,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param attachment The attachment point for the texture.
 	**/
-	public static inline function getFramebufferAttachmentTextureCubeMapFace (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : CubeMapEnum
+	public static inline function getFramebufferAttachmentParameterTextureCubeMapFace (gl:RenderingContext, target:FramebufferEnum, attachment:BufferAttachementEnum) : CubeMapEnum
 	{
 		return cast gl.getFramebufferAttachmentParameter(target, attachment, gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 	}
@@ -292,7 +292,7 @@ extern class ContextHelpers
 	@param target The target renderbuffer object
 	@param internalformat The internal format about which to retrieve information (must be a color-renderable, depth-renderable or stencil-renderable format).
 	**/
-	public static inline function getInternalformatSamples (gl:RenderingContext2, target:RenderbufferEnum, internalformat:InternalFormatEnum) : Int32Array
+	public static inline function getInternalformatParameterSamples (gl:RenderingContext2, target:RenderbufferEnum, internalformat:InternalFormatEnum) : Int32Array
 	{
 		return cast gl.getInternalformatParameter(target, internalformat, gl.SAMPLES);
 	}
@@ -709,7 +709,7 @@ extern class ContextHelpers
 	@param program The program to get parameter information from.
 	@param pname The information to query.
 	**/
-	public static inline function getProgramStatus (gl:RenderingContext, program:Program, pname:ProgramStatusEnum) : Bool
+	public static inline function getProgramParameterStatus (gl:RenderingContext, program:Program, pname:ProgramStatusEnum) : Bool
 	{
 		return cast gl.getProgramParameter(program, pname);
 	}
@@ -725,7 +725,7 @@ extern class ContextHelpers
 
 	@param query The `Query` object.
 	**/
-	public static inline function getQueryResult (gl:RenderingContext2, query:Query) : UInt
+	public static inline function getQueryParameterResult (gl:RenderingContext2, query:Query) : UInt
 	{
 		return cast gl.getQueryParameter(query, gl.QUERY_RESULT);
 	}
@@ -739,7 +739,7 @@ extern class ContextHelpers
 
 	@param query The `Query` object.
 	**/
-	public static inline function getQueryResultAvailable (gl:RenderingContext2, query:Query) : Bool
+	public static inline function getQueryParameterResultAvailable (gl:RenderingContext2, query:Query) : Bool
 	{
 		return cast gl.getQueryParameter(query, gl.QUERY_RESULT_AVAILABLE);
 	}
@@ -755,7 +755,7 @@ extern class ContextHelpers
 
 	@param targe The target renderbuffer object
 	**/
-	public static inline function getRenderbufferInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
+	public static inline function getRenderbufferParameterInternalFormat (gl:RenderingContext, target:RenderbufferEnum) : RenderbufferInternalFormatEnum
 	{
 		return cast gl.getRenderbufferParameter(target, gl.RENDERBUFFER_INTERNAL_FORMAT);
 	}
@@ -786,7 +786,7 @@ extern class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerCompareFunc (gl:RenderingContext2, sampler:Sampler) : CompFuncEnum
+	public static inline function getSamplerParameterCompareFunc (gl:RenderingContext2, sampler:Sampler) : CompFuncEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_FUNC);
 	}
@@ -800,7 +800,7 @@ extern class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerCompareMode (gl:RenderingContext2, sampler:Sampler) : TextureCompareModeEnum
+	public static inline function getSamplerParameterCompareMode (gl:RenderingContext2, sampler:Sampler) : TextureCompareModeEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_COMPARE_MODE);
 	}
@@ -815,7 +815,7 @@ extern class ContextHelpers
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public static inline function getSamplerLOD (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterLODEnum) : Float
+	public static inline function getSamplerParameterLOD (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterLODEnum) : Float
 	{
 		return cast gl.getSamplerParameter(sampler, pname);
 	}
@@ -829,7 +829,7 @@ extern class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerMagFilter (gl:RenderingContext2, sampler:Sampler) : TexMagFilterEnum
+	public static inline function getSamplerParameterMagFilter (gl:RenderingContext2, sampler:Sampler) : TexMagFilterEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MAG_FILTER);
 	}
@@ -843,7 +843,7 @@ extern class ContextHelpers
 
 	@param sampler The `Sampler` object.
 	**/
-	public static inline function getSamplerMinFilter (gl:RenderingContext2, sampler:Sampler) : TexMinFilterEnum
+	public static inline function getSamplerParameterMinFilter (gl:RenderingContext2, sampler:Sampler) : TexMinFilterEnum
 	{
 		return cast gl.getSamplerParameter(sampler, gl.TEXTURE_MIN_FILTER);
 	}
@@ -858,7 +858,7 @@ extern class ContextHelpers
 	@param sampler The `Sampler` object.
 	@param pname Which information to return.
 	**/
-	public static inline function getSamplerWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
+	public static inline function getSamplerParameterWrapFunction (gl:RenderingContext2, sampler:Sampler, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
 		return cast gl.getSamplerParameter(sampler, pname);
 	}
@@ -875,7 +875,7 @@ extern class ContextHelpers
 	@param shader The shader to get parameter information from.
 	@param pname The information to query.
 	**/
-	public static inline function getShaderStatus (gl:RenderingContext, shader:Shader, pname:ShaderStatusEnum) : Bool
+	public static inline function getShaderParameterStatus (gl:RenderingContext, shader:Shader, pname:ShaderStatusEnum) : Bool
 	{
 		return cast gl.getShaderParameter(shader, pname);
 	}
@@ -889,7 +889,7 @@ extern class ContextHelpers
 
 	@param shader The shader to get parameter information from.
 	**/
-	public static inline function getShaderType (gl:RenderingContext, shader:Shader) : ShaderTypeEnum
+	public static inline function getShaderParameterType (gl:RenderingContext, shader:Shader) : ShaderTypeEnum
 	{
 		return cast gl.getShaderParameter(shader, gl.SHADER_TYPE);
 	}
@@ -905,7 +905,7 @@ extern class ContextHelpers
 
 	@param sync The `Sync` object.
 	**/
-	public static inline function getSyncStatus (gl:RenderingContext2, sync:Sync) : SyncParameterValueEnum
+	public static inline function getSyncParameterStatus (gl:RenderingContext2, sync:Sync) : SyncParameterValueEnum
 	{
 		return cast gl.getSyncParameter(sync, gl.SYNC_STATUS);
 	}
@@ -921,7 +921,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum) : CompFuncEnum
+	public static inline function getTexParameterCompareFunc (gl:RenderingContext2, target:TextureBindingTypeEnum) : CompFuncEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_FUNC);
 	}
@@ -935,7 +935,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum) : TextureCompareModeEnum
+	public static inline function getTexParameterCompareMode (gl:RenderingContext2, target:TextureBindingTypeEnum) : TextureCompareModeEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_COMPARE_MODE);
 	}
@@ -949,7 +949,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexImmutableFormat (gl:RenderingContext2, target:TextureBindingTypeEnum) : Bool
+	public static inline function getTexParameterImmutableFormat (gl:RenderingContext2, target:TextureBindingTypeEnum) : Bool
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_FORMAT);
 	}
@@ -961,7 +961,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexImmutableLevels (gl:RenderingContext2, target:TextureBindingTypeEnum) : UInt
+	public static inline function getTexParameterImmutableLevels (gl:RenderingContext2, target:TextureBindingTypeEnum) : UInt
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_IMMUTABLE_LEVELS);
 	}
@@ -976,7 +976,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexLOD (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum) : Float
+	public static inline function getTexParameterLOD (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterLODEnum) : Float
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -990,7 +990,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMagFilterEnum
+	public static inline function getTexParameterMagFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMagFilterEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_MAG_FILTER);
 	}
@@ -1004,7 +1004,7 @@ extern class ContextHelpers
 
 	@param target The binding point.
 	**/
-	public static inline function getTexMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMinFilterEnum
+	public static inline function getTexParameterMinFilter (gl:RenderingContext, target:TextureBindingTypeEnum) : TexMinFilterEnum
 	{
 		return cast gl.getTexParameter(target, gl.TEXTURE_MIN_FILTER);
 	}
@@ -1019,7 +1019,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexMipmapLevel (gl:RenderingContext, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum) : Int
+	public static inline function getTexParameterMipmapLevel (gl:RenderingContext, target:TextureBindingTypeEnum, pname:TextureParameterLevelEnum) : Int
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -1034,7 +1034,7 @@ extern class ContextHelpers
 	@param target The binding point.
 	@param pname The information to query.
 	**/
-	public static inline function getTexWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
+	public static inline function getTexParameterWrapFunction (gl:RenderingContext, target:TextureBindingTypeEnum, pname:SamplerParameterWrapEnum) : WrapFunctionEnum
 	{
 		return cast gl.getTexParameter(target, pname);
 	}
@@ -1050,7 +1050,7 @@ extern class ContextHelpers
 
 	@param index The index of the vertex attribute.
 	**/
-	public static inline function getCurrentVertexAttrib (gl:RenderingContext, index:UInt) : Float32Array
+	public static inline function getVertexAttribCurrent (gl:RenderingContext, index:UInt) : Float32Array
 	{
 		return cast gl.getVertexAttrib(index, gl.CURRENT_VERTEX_ATTRIB);
 	}
@@ -1159,7 +1159,7 @@ extern class ContextHelpers
 		gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, param);
 	}
 
-// samplerParameter
+// samplerParameteri
 
 	/**
 	Type safe version of `RenderingContext2.samplerParameter`, this isn't part of the WebGL spec.
@@ -1237,7 +1237,7 @@ extern class ContextHelpers
 		gl.samplerParameteri(sampler, pname, param);
 	}
 
-// texParameter
+// texParameteri
 
 	/**
 	Type safe version of `RenderingContext.texParameter`, this isn't part of the WebGL spec.

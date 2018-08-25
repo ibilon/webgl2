@@ -109,15 +109,15 @@ class ConstantsReturnTest
 		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_CUBE]);
 		t(gl.getActiveUniformsType(null, []) == [gl.UNSIGNED_INT_SAMPLER_2D_ARRAY]);
 
-		t(gl.getBufferUsage(null) == gl.STATIC_DRAW);
-		t(gl.getBufferUsage(null) == gl.DYNAMIC_DRAW);
-		t(gl.getBufferUsage(null) == gl.STREAM_DRAW);
-		t(gl.getBufferUsage(null) == gl.STATIC_READ);
-		t(gl.getBufferUsage(null) == gl.DYNAMIC_READ);
-		t(gl.getBufferUsage(null) == gl.STREAM_READ);
-		t(gl.getBufferUsage(null) == gl.STATIC_COPY);
-		t(gl.getBufferUsage(null) == gl.DYNAMIC_COPY);
-		t(gl.getBufferUsage(null) == gl.STREAM_COPY);
+		t(gl.getBufferParameterUsage(null) == gl.STATIC_DRAW);
+		t(gl.getBufferParameterUsage(null) == gl.DYNAMIC_DRAW);
+		t(gl.getBufferParameterUsage(null) == gl.STREAM_DRAW);
+		t(gl.getBufferParameterUsage(null) == gl.STATIC_READ);
+		t(gl.getBufferParameterUsage(null) == gl.DYNAMIC_READ);
+		t(gl.getBufferParameterUsage(null) == gl.STREAM_READ);
+		t(gl.getBufferParameterUsage(null) == gl.STATIC_COPY);
+		t(gl.getBufferParameterUsage(null) == gl.DYNAMIC_COPY);
+		t(gl.getBufferParameterUsage(null) == gl.STREAM_COPY);
 
 		t(gl.getError() == gl.NO_ERROR);
 		t(gl.getError() == gl.INVALID_ENUM);
@@ -127,26 +127,26 @@ class ConstantsReturnTest
 		t(gl.getError() == gl.OUT_OF_MEMORY);
 		t(gl.getError() == gl.CONTEXT_LOST_WEBGL);
 
-		t(gl.getFramebufferAttachmentColorEncoding(null, null) == gl.LINEAR);
-		t(gl.getFramebufferAttachmentColorEncoding(null, null) == gl.SRGB);
+		t(gl.getFramebufferAttachmentParameterColorEncoding(null, null) == gl.LINEAR);
+		t(gl.getFramebufferAttachmentParameterColorEncoding(null, null) == gl.SRGB);
 
-		t(gl.getFramebufferAttachmentComponentType(null, null) == gl.FLOAT);
-		t(gl.getFramebufferAttachmentComponentType(null, null) == gl.INT);
-		t(gl.getFramebufferAttachmentComponentType(null, null) == gl.UNSIGNED_INT);
-		t(gl.getFramebufferAttachmentComponentType(null, null) == gl.SIGNED_NORMALIZED);
-		t(gl.getFramebufferAttachmentComponentType(null, null) == gl.UNSIGNED_NORMALIZED);
+		t(gl.getFramebufferAttachmentParameterComponentType(null, null) == gl.FLOAT);
+		t(gl.getFramebufferAttachmentParameterComponentType(null, null) == gl.INT);
+		t(gl.getFramebufferAttachmentParameterComponentType(null, null) == gl.UNSIGNED_INT);
+		t(gl.getFramebufferAttachmentParameterComponentType(null, null) == gl.SIGNED_NORMALIZED);
+		t(gl.getFramebufferAttachmentParameterComponentType(null, null) == gl.UNSIGNED_NORMALIZED);
 
-		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.RENDERBUFFER);
-		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.TEXTURE);
-		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.FRAMEBUFFER_DEFAULT);
-		t(gl.getFramebufferAttachmentObjectType(null, null) == gl.NONE);
+		t(gl.getFramebufferAttachmentParameterObjectType(null, null) == gl.RENDERBUFFER);
+		t(gl.getFramebufferAttachmentParameterObjectType(null, null) == gl.TEXTURE);
+		t(gl.getFramebufferAttachmentParameterObjectType(null, null) == gl.FRAMEBUFFER_DEFAULT);
+		t(gl.getFramebufferAttachmentParameterObjectType(null, null) == gl.NONE);
 
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_X);
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_X);
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_Y);
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_Y);
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_Z);
-		t(gl.getFramebufferAttachmentTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_Z);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_X);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_X);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_Y);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_Y);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_POSITIVE_Z);
+		t(gl.getFramebufferAttachmentParameterTextureCubeMapFace(null, null) == gl.TEXTURE_CUBE_MAP_NEGATIVE_Z);
 
 		t(gl.getParameterBlendEquation(null) == gl.FUNC_ADD);
 		t(gl.getParameterBlendEquation(null) == gl.FUNC_SUBTRACT);
@@ -223,40 +223,40 @@ class ConstantsReturnTest
 		t(gl.getProgramParameterTransformFeedbackBufferMode(null) == gl.SEPARATE_ATTRIBS);
 		t(gl.getProgramParameterTransformFeedbackBufferMode(null) == gl.INTERLEAVED_ATTRIBS);
 
-		t(gl.getRenderbufferInternalFormat(null) == gl.RGBA4);
-		t(gl.getRenderbufferInternalFormat(null) == gl.RGB565);
-		t(gl.getRenderbufferInternalFormat(null) == gl.RGB5_A1);
-		t(gl.getRenderbufferInternalFormat(null) == gl.DEPTH_COMPONENT16);
-		t(gl.getRenderbufferInternalFormat(null) == gl.STENCIL_INDEX8);
+		t(gl.getRenderbufferParameterInternalFormat(null) == gl.RGBA4);
+		t(gl.getRenderbufferParameterInternalFormat(null) == gl.RGB565);
+		t(gl.getRenderbufferParameterInternalFormat(null) == gl.RGB5_A1);
+		t(gl.getRenderbufferParameterInternalFormat(null) == gl.DEPTH_COMPONENT16);
+		t(gl.getRenderbufferParameterInternalFormat(null) == gl.STENCIL_INDEX8);
 
-		t(gl.getSamplerCompareFunc(null) == gl.LEQUAL);
-		t(gl.getSamplerCompareFunc(null) == gl.GEQUAL);
-		t(gl.getSamplerCompareFunc(null) == gl.LESS);
-		t(gl.getSamplerCompareFunc(null) == gl.GREATER);
-		t(gl.getSamplerCompareFunc(null) == gl.EQUAL);
-		t(gl.getSamplerCompareFunc(null) == gl.NOTEQUAL);
-		t(gl.getSamplerCompareFunc(null) == gl.ALWAYS);
-		t(gl.getSamplerCompareFunc(null) == gl.NEVER);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.LEQUAL);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.GEQUAL);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.LESS);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.GREATER);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.EQUAL);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.NOTEQUAL);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.ALWAYS);
+		t(gl.getSamplerParameterCompareFunc(null) == gl.NEVER);
 
-		t(gl.getSamplerCompareMode(null) == gl.NONE);
-		t(gl.getSamplerCompareMode(null) == gl.COMPARE_REF_TO_TEXTURE);
+		t(gl.getSamplerParameterCompareMode(null) == gl.NONE);
+		t(gl.getSamplerParameterCompareMode(null) == gl.COMPARE_REF_TO_TEXTURE);
 
-		t(gl.getSamplerMagFilter(null) == gl.LINEAR);
-		t(gl.getSamplerMagFilter(null) == gl.NEAREST);
+		t(gl.getSamplerParameterMagFilter(null) == gl.LINEAR);
+		t(gl.getSamplerParameterMagFilter(null) == gl.NEAREST);
 
-		t(gl.getSamplerMinFilter(null) == gl.LINEAR);
-		t(gl.getSamplerMinFilter(null) == gl.NEAREST);
-		t(gl.getSamplerMinFilter(null) == gl.NEAREST_MIPMAP_NEAREST);
-		t(gl.getSamplerMinFilter(null) == gl.LINEAR_MIPMAP_NEAREST);
-		t(gl.getSamplerMinFilter(null) == gl.NEAREST_MIPMAP_LINEAR);
-		t(gl.getSamplerMinFilter(null) == gl.LINEAR_MIPMAP_LINEAR);
+		t(gl.getSamplerParameterMinFilter(null) == gl.LINEAR);
+		t(gl.getSamplerParameterMinFilter(null) == gl.NEAREST);
+		t(gl.getSamplerParameterMinFilter(null) == gl.NEAREST_MIPMAP_NEAREST);
+		t(gl.getSamplerParameterMinFilter(null) == gl.LINEAR_MIPMAP_NEAREST);
+		t(gl.getSamplerParameterMinFilter(null) == gl.NEAREST_MIPMAP_LINEAR);
+		t(gl.getSamplerParameterMinFilter(null) == gl.LINEAR_MIPMAP_LINEAR);
 
-		t(gl.getSamplerWrapFunction(null, null) == gl.REPEAT);
-		t(gl.getSamplerWrapFunction(null, null) == gl.CLAMP_TO_EDGE);
-		t(gl.getSamplerWrapFunction(null, null) == gl.MIRRORED_REPEAT);
+		t(gl.getSamplerParameterWrapFunction(null, null) == gl.REPEAT);
+		t(gl.getSamplerParameterWrapFunction(null, null) == gl.CLAMP_TO_EDGE);
+		t(gl.getSamplerParameterWrapFunction(null, null) == gl.MIRRORED_REPEAT);
 
-		t(gl.getShaderType(null) == gl.VERTEX_SHADER);
-		t(gl.getShaderType(null) == gl.FRAGMENT_SHADER);
+		t(gl.getShaderParameterType(null) == gl.VERTEX_SHADER);
+		t(gl.getShaderParameterType(null) == gl.FRAGMENT_SHADER);
 
 		t(gl.getSyncParameter(null, null) == gl.SYNC_FENCE);
 		t(gl.getSyncParameter(null, null) == gl.SIGNALED);
@@ -264,34 +264,34 @@ class ConstantsReturnTest
 		t(gl.getSyncParameter(null, null) == gl.SYNC_GPU_COMMANDS_COMPLETE);
 		t(gl.getSyncParameter(null, null) == gl.ZERO);
 
-		t(gl.getSyncStatus(null) == gl.SIGNALED);
-		t(gl.getSyncStatus(null) == gl.UNSIGNALED);
+		t(gl.getSyncParameterStatus(null) == gl.SIGNALED);
+		t(gl.getSyncParameterStatus(null) == gl.UNSIGNALED);
 
-		t(gl.getTexCompareFunc(null) == gl.LEQUAL);
-		t(gl.getTexCompareFunc(null) == gl.GEQUAL);
-		t(gl.getTexCompareFunc(null) == gl.LESS);
-		t(gl.getTexCompareFunc(null) == gl.GREATER);
-		t(gl.getTexCompareFunc(null) == gl.EQUAL);
-		t(gl.getTexCompareFunc(null) == gl.NOTEQUAL);
-		t(gl.getTexCompareFunc(null) == gl.ALWAYS);
-		t(gl.getTexCompareFunc(null) == gl.NEVER);
+		t(gl.getTexParameterCompareFunc(null) == gl.LEQUAL);
+		t(gl.getTexParameterCompareFunc(null) == gl.GEQUAL);
+		t(gl.getTexParameterCompareFunc(null) == gl.LESS);
+		t(gl.getTexParameterCompareFunc(null) == gl.GREATER);
+		t(gl.getTexParameterCompareFunc(null) == gl.EQUAL);
+		t(gl.getTexParameterCompareFunc(null) == gl.NOTEQUAL);
+		t(gl.getTexParameterCompareFunc(null) == gl.ALWAYS);
+		t(gl.getTexParameterCompareFunc(null) == gl.NEVER);
 
-		t(gl.getTexCompareMode(null) == gl.NONE);
-		t(gl.getTexCompareMode(null) == gl.COMPARE_REF_TO_TEXTURE);
+		t(gl.getTexParameterCompareMode(null) == gl.NONE);
+		t(gl.getTexParameterCompareMode(null) == gl.COMPARE_REF_TO_TEXTURE);
 
-		t(gl.getTexMagFilter(null) == gl.LINEAR);
-		t(gl.getTexMagFilter(null) == gl.NEAREST);
+		t(gl.getTexParameterMagFilter(null) == gl.LINEAR);
+		t(gl.getTexParameterMagFilter(null) == gl.NEAREST);
 
-		t(gl.getTexMinFilter(null) == gl.LINEAR);
-		t(gl.getTexMinFilter(null) == gl.NEAREST);
-		t(gl.getTexMinFilter(null) == gl.NEAREST_MIPMAP_NEAREST);
-		t(gl.getTexMinFilter(null) == gl.LINEAR_MIPMAP_NEAREST);
-		t(gl.getTexMinFilter(null) == gl.NEAREST_MIPMAP_LINEAR);
-		t(gl.getTexMinFilter(null) == gl.LINEAR_MIPMAP_LINEAR);
+		t(gl.getTexParameterMinFilter(null) == gl.LINEAR);
+		t(gl.getTexParameterMinFilter(null) == gl.NEAREST);
+		t(gl.getTexParameterMinFilter(null) == gl.NEAREST_MIPMAP_NEAREST);
+		t(gl.getTexParameterMinFilter(null) == gl.LINEAR_MIPMAP_NEAREST);
+		t(gl.getTexParameterMinFilter(null) == gl.NEAREST_MIPMAP_LINEAR);
+		t(gl.getTexParameterMinFilter(null) == gl.LINEAR_MIPMAP_LINEAR);
 
-		t(gl.getTexWrapFunction(null, null) == gl.REPEAT);
-		t(gl.getTexWrapFunction(null, null) == gl.CLAMP_TO_EDGE);
-		t(gl.getTexWrapFunction(null, null) == gl.MIRRORED_REPEAT);
+		t(gl.getTexParameterWrapFunction(null, null) == gl.REPEAT);
+		t(gl.getTexParameterWrapFunction(null, null) == gl.CLAMP_TO_EDGE);
+		t(gl.getTexParameterWrapFunction(null, null) == gl.MIRRORED_REPEAT);
 
 		t(gl.getVertexAttribArrayType(0) == gl.BYTE);
 		t(gl.getVertexAttribArrayType(0) == gl.UNSIGNED_BYTE);
