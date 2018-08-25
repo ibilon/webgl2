@@ -27,7 +27,7 @@
 		},
 		{
 			"props": {
-				"policy": "aligned",
+				"policy": "startOfLine",
 				"allowSingleline": true
 			},
 			"type": "ConditionalCompilation"
