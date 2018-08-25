@@ -41,13 +41,7 @@
 			"label": "testNoUnsafe",
 			"command": "haxe",
 			"args": [
-				"--macro",
-				"include(\"js.webgl2\")",
-				"--macro",
-				"include(\"tests\")",
-				"-js",
-				"dummy.js",
-				"--no-output",
+				"test.hxml",
 				"-D",
 				"webgl2_no_unsafe"
 			],
@@ -62,15 +56,7 @@
 			"label": "test",
 			"command": "haxe",
 			"args": [
-				"--macro",
-				"include(\"js.webgl2\")",
-				"--macro",
-				"include(\"tests\")",
-				"-js",
-				"dummy.js",
-				"--no-output",
-				"-xml",
-				"webgl2.xml"
+				"test.hxml"
 			],
 			"dependsOn": "testNoUnsafe",
 			"problemMatcher": [

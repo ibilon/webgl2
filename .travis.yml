@@ -13,5 +13,5 @@ haxe:
 sudo: false
 
 script:
-  - haxe --macro include\(\"js.webgl2\"\) --macro include\(\"tests\"\) -js dummy.js --no-output -D webgl2_no_unsafe
-  - haxe --macro include\(\"js.webgl2\"\) --macro include\(\"tests\"\) -js dummy.js --no-output
+  - haxe test.hxml -D webgl2_no_unsafe
+  - haxe test.hxml --no-output
