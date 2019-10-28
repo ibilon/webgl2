@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"tags": ["webgl", "webgl2", "js"],
 	"description": "WebGL 2 externs",
-	"version": "1.1.0",
-	"releasenote": "Fix externs, helper function naming uniformization, and add -D webgl2_no_unsafe",
+	"version": "1.2.0",
+	"releasenote": "Remove haxe 4 warnings",
 	"contributors": ["_ibilon"]
 }
