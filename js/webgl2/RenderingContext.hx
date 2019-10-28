@@ -1,15 +1,22 @@
 package js.webgl2;
 
-import js.html.ArrayBuffer;
-import js.html.ArrayBufferView;
 import js.html.CanvasElement;
-import js.html.Float32Array;
 import js.html.ImageBitmap;
 import js.html.ImageData;
 import js.html.ImageElement;
-import js.html.Int32Array;
-import js.html.Uint32Array;
 import js.html.VideoElement;
+
+#if haxe4
+import js.lib.ArrayBuffer;
+import js.lib.ArrayBufferView;
+import js.lib.Float32Array;
+import js.lib.Int32Array;
+#else
+import js.html.ArrayBuffer;
+import js.html.ArrayBufferView;
+import js.html.Float32Array;
+import js.html.Int32Array;
+#end
 
 import js.webgl2.constants.*;
 

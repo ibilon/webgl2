@@ -1,9 +1,16 @@
 package js.webgl2;
 
 import haxe.extern.EitherType;
-import js.html.Int32Array;
+
+#if haxe4
+import js.lib.Float32Array;
+import js.lib.Int32Array;
+import js.lib.Uint32Array;
+#else
 import js.html.Float32Array;
+import js.html.Int32Array;
 import js.html.Uint32Array;
+#end
 
 import js.webgl2.constants.*;
 
